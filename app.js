@@ -3,9 +3,11 @@ const R = window.Reform;
 const STORAGE_KEY = 'reform-workshop.v1';
 let state = R.defaults();
 let storageAvailable = true;
+let quickstartHidden = false;
 try {
   const saved = localStorage.getItem(STORAGE_KEY);
   if(saved) state = R.sanitize(JSON.parse(saved));
+  quickstartHidden = localStorage.getItem(STORAGE_KEY+'.quickstart-hidden') === '1';
   // One-time default backfills. Each entry runs once per browser and only for
   // a price the user never set, so custom and cleared prices survive.
   // [flag suffix, price key, new default, extra stale value it also replaces]
@@ -41,6 +43,13 @@ try {
   }
   if(migrated) localStorage.setItem(STORAGE_KEY,JSON.stringify(state));
 } catch { storageAvailable = false; }
+// The built-in target and empty inventory look like a real result to a new
+// visitor. Label them as an example until the user changes something. Compared
+// by value because the price migrations above already write a saved state.
+const DEFAULTS = R.defaults();
+const same = (a,b) => JSON.stringify(a) === JSON.stringify(b);
+let showingExample = state.type === DEFAULTS.type && state.grade === DEFAULTS.grade && state.quantity === DEFAULTS.quantity
+  && same(state.inventory,DEFAULTS.inventory) && same(state.reform,DEFAULTS.reform);
 const $ = id => document.getElementById(id);
 const fmt = n => new Intl.NumberFormat('en-US',{maximumFractionDigits:2}).format(n);
 const z = n => n == null ? 'ยังไม่ได้ใส่ราคา' : `${fmt(n)} z`;
@@ -119,6 +128,7 @@ async function copyPlainText(text) {
   else {window.prompt('คัดลอกอัตโนมัติไม่ได้ คัดลอกข้อความด้านล่างแทน',text);copyNotice('เลือกข้อความแล้วกด Ctrl+C เพื่อคัดลอก');}
 }
 function save() {
+  if(showingExample){showingExample=false;$('example-banner').hidden=true;}
   try { localStorage.setItem(STORAGE_KEY,JSON.stringify(state)); storageAvailable=true; }
   catch { storageAvailable=false; }
   $('save-status').textContent=storageAvailable?'✓ บันทึกอัตโนมัติแล้ว':'บันทึกไม่ได้ · ข้อมูลอาจหายเมื่อปิดหรือโหลดหน้าใหม่';
@@ -312,6 +322,12 @@ function renderResults() {
     return `<div class="recipe-step"><span class="recipe-order">${++order}</span><div class="recipe-title">${title} <small><span class="recipe-materials"><span>${icon(recipeItems[key][0])}${copyName(recipeItems[key][0],source)} ${fmt(input)}</span><span aria-hidden="true">→</span><span>${icon(recipeItems[key][1])}${copyName(recipeItems[key][1],target)} ${fmt(b*n)}</span></span>${sourceNote(key,input)}${npcLine(npc)}</small></div>${feeCell}</div>`;
   }).join('')||'<div class="empty-message">'+(state.quantity?(rows.length?'✓ ไม่ต้องแลกกับ NPC เลย · ซื้อหินตามรายการด้านบนได้เลย':'✓ มีหินครบแล้ว ไม่ต้องทำอะไรเพิ่ม'):'ใส่จำนวนหินที่ต้องการก่อน แล้วขั้นตอนจะขึ้นตรงนี้')+'</div>';
   markPlanRows(plan);
+  // Default prices are a snapshot, not the live market. Point at the ones this
+  // plan actually spends money on so the user knows what to double-check.
+  const defaultPrices=DEFAULTS.prices;
+  const staleRows=rows.filter(([k])=>state.prices[k]!==''&&state.prices[k]===defaultPrices[k]);
+  $('price-warning').hidden=!staleRows.length;
+  if(staleRows.length)$('price-warning').textContent=`⚠ ยังใช้ราคาเริ่มต้นอยู่ ${staleRows.length} รายการ · เช็กราคาตลาดจริงก่อน ↓`;
   const stockRows=Object.keys(state.inventory).filter(k=>state.inventory[k]>0 && (k.startsWith(state.type)||k.startsWith('shadow')||k.startsWith('zelunium')));
   $('inventory-summary').innerHTML=stockRows.length?'<div class="stock-row"><span>วัตถุดิบ</span><span>ใช้</span><span>คงเหลือ</span></div>'+stockRows.map(k=>`<div class="stock-row"><span>${copyName(k)}</span><span>${fmt(plan.used[k]||0)}</span><span>${fmt(plan.remaining[k]||0)}</span></div>`).join(''):'<p class="field-hint">ยังไม่ได้ใส่ของที่มี</p>';
   $('route-hint').textContent=state.mode==='shadow'?'ใช้หินที่มี + Shadowdecon และ Rough Shadowdecon เท่านั้น · ไม่แตะ Enhancement Ore':'หักของที่มีออกก่อน แล้วเทียบทุกทางทีละเม็ด เลือกทางที่จ่ายเพิ่มน้อยที่สุด';
@@ -395,5 +411,18 @@ if(stickyBar&&totalCard&&typeof addEventListener==='function') {
   addEventListener('resize',queueSticky,{passive:true});
   updateSticky();
 }
+function setQuickstart(hidden) {
+  quickstartHidden=hidden;
+  $('quickstart').classList?.toggle('quickstart-collapsed',hidden);
+  $('quickstart-body').hidden=hidden;
+  $('quickstart-toggle').textContent=hidden?'แสดงวิธีใช้':'ซ่อน';
+  $('quickstart-toggle').setAttribute?.('aria-expanded',String(!hidden));
+}
+$('quickstart-toggle').addEventListener('click',()=>{
+  setQuickstart(!quickstartHidden);
+  try{localStorage.setItem(STORAGE_KEY+'.quickstart-hidden',quickstartHidden?'1':'0');}catch{}
+});
+setQuickstart(quickstartHidden);
+$('example-banner').hidden=!showingExample;
 syncControls();drawInventory();drawPrices();renderResults();
 if(!storageAvailable)$('save-status').textContent='บันทึกไม่ได้ · ข้อมูลอาจหายเมื่อปิดหรือโหลดหน้าใหม่';

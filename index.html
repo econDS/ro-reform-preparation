@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#173d35">
+  <meta name="theme-color" content="#0f2e27">
   <meta name="description" content="คำนวณต้นทุน Enhancement Stone สำหรับ Ragnarok Online หักของที่มี เปรียบเทียบ Shadowdecon และวางขั้นตอนแลกกับ NPC">
   <title>Reform Workshop — Enhancement Calculator</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23173d35'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-size='48' fill='%23d6ef94'%3E◇%3C/text%3E%3C/svg%3E">
@@ -13,34 +13,58 @@
 </head>
 <body>
 <a class="skip" href="#main">ข้ามไปเครื่องคำนวณ</a>
-<aside class="sidebar">
-  <a class="brand" href="./"><span class="brand-mark">◇</span><span>REFORM<span class="brand-sub">WORKSHOP</span></span></a>
-  <div class="sidebar-label">RAGNAROK ONLINE</div>
-  <nav aria-label="เมนูหลัก">
-    <a class="nav-item active" href="#calculator"><span class="nav-glyph" aria-hidden="true">▦</span><span class="nav-text">เครื่องคำนวณ</span><span class="nav-arrow" aria-hidden="true">↗</span></a>
-    <a class="nav-item" href="#materials"><span class="nav-glyph" aria-hidden="true">▤</span><span class="nav-text">ราคาวัตถุดิบ</span></a>
-    <a class="nav-item" href="#recipe"><span class="nav-glyph" aria-hidden="true">⇄</span><span class="nav-text">สูตรและขั้นตอน</span></a>
-  </nav>
-  <div class="sidebar-note"><span class="tiny-tag">ENHANCEMENT STONE</span><p>วางแผนก่อนแลก<br>เตรียมของให้พอดี</p><span class="muted-light">Weapon · Armor · Accessory</span></div>
-  <a class="wiki-link" href="https://irowiki.org/wiki/Item_Reform#Materials" target="_blank" rel="noreferrer">สูตรจาก iRO Wiki <span>↗</span></a>
-  <div class="sidebar-bottom"><span class="status-dot"></span> เก็บข้อมูลบนเครื่องของคุณ</div>
-</aside>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="./"><svg class="gem" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="gem-a" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9ffb0"/><stop offset=".55" stop-color="#9fdc6a"/><stop offset="1" stop-color="#2f8f6b"/></linearGradient></defs><path d="M9 4h14l7 8-14 17L2 12z" fill="url(#gem-a)"/><path d="M2 12h28M9 4l3 8 4 17 4-17 3-8M12 12l4-8 4 8" fill="none" stroke="#0f3a2f" stroke-opacity=".45" stroke-width="1.1" stroke-linejoin="round"/></svg><span class="brand-text">Reform Workshop<small>Ragnarok Online · Enhancement</small></span></a>
+    <nav aria-label="เมนูหลัก">
+      <a class="nav-item active" href="#calculator"><span class="nav-glyph" aria-hidden="true">▦</span><span class="nav-text">คำนวณ</span></a>
+      <a class="nav-item" href="#materials"><span class="nav-glyph" aria-hidden="true">▤</span><span class="nav-text">ราคา</span></a>
+      <a class="nav-item" href="#recipe"><span class="nav-glyph" aria-hidden="true">⇄</span><span class="nav-text">ขั้นตอนแลก</span></a>
+    </nav>
+    <span id="save-status" class="save-status" role="status">✓ บันทึกอัตโนมัติ</span>
+  </div>
+</header>
+<section class="hero" id="calculator">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>เตรียมหินสำหรับ Reform · RO GGT</div>
+      <h1>คำนวณให้พร้อม<br>แล้วค่อย <span class="accent">Reform</span></h1>
+      <p>บอกว่าจะ Reform อะไร ใส่ของที่มี แล้วเว็บจะบอกว่าต้องเตรียมเงินเท่าไร ซื้ออะไร และแลกกับ NPC ตามลำดับไหน</p>
+      <div class="hero-meta"><span>◉ เก็บข้อมูลบนเครื่องคุณเท่านั้น</span><a href="https://irowiki.org/wiki/Item_Reform#Materials" target="_blank" rel="noreferrer">สูตรจาก iRO Wiki ↗</a></div>
+    </div>
+    <section class="quickstart" id="quickstart" aria-labelledby="quickstart-title">
+    <div class="quickstart-head"><h2 id="quickstart-title">ใช้ยังไง · 3 ขั้น</h2><button type="button" class="text-button quickstart-toggle" id="quickstart-toggle" aria-expanded="true" aria-controls="quickstart-body">ซ่อน</button></div>
+    <div id="quickstart-body">
+      <ol class="quickstart-steps">
+        <li><span class="qs-no">1</span><div><b>ดูว่าอุปกรณ์ใช้หินอะไร</b><p>ค้นชื่ออุปกรณ์ใน <a href="https://ro.gnjoy.in.th/item-gradereform/" target="_blank" rel="noopener noreferrer">ตาราง Reform ของ RO GGT ↗</a> จดประเภทหิน ระดับ และจำนวน</p></div></li>
+        <li><span class="qs-no">2</span><div><b>ใส่ลงในช่อง 01 และ 02</b><p>เลือก Weapon / Armor / Accessory ระดับ และจำนวน แล้วใส่ของที่มีในกระเป๋า ถ้าไม่มีก็ปล่อยเป็น 0</p></div></li>
+        <li><span class="qs-no">3</span><div><b>เช็กราคา แล้วอ่านผล</b><p>แก้ราคาใน <a href="#materials">ตารางราคา 03</a> ให้ตรงตลาด ยอดเงินจะขึ้นด้านขวาทันที แล้วทำตาม <a href="#recipe">ขั้นตอนแลก 04</a></p></div></li>
+      </ol>
+      <details class="glossary"><summary>ไม่รู้จักชื่อของ? ดูคำศัพท์ <span aria-hidden="true">＋</span></summary><dl>
+        <div><dt>Enhancement Stone</dt><dd>หินที่สูตร Reform ใช้ มี 4 ระดับ Low → Medium → High → Supreme แลกขึ้นระดับได้ทีละ 3 เม็ด</dd></div>
+        <div><dt>Enhancement Ore</dt><dd>แร่ดิบ 5 ชิ้นแลกเป็นหิน Low หรือ Medium ได้ 1 เม็ด</dd></div>
+        <div><dt>Shadowdecon</dt><dd>แร่ใช้ร่วมทุกประเภท 1 ก้อนแลกเป็น Low Stone ได้ และบางสูตร Reform ใช้ตรง ๆ</dd></div>
+        <div><dt>Rough Shadowdecon / Rough Zelunium</dt><dd>แบบดิบ รวม 20 ชิ้นได้ก้อนใหญ่ 1 ก้อน ฟรีค่าแลก</dd></div>
+        <div><dt>Zelunium</dt><dd>วัตถุดิบที่บางสูตร Reform ใช้ตรง ๆ ไม่ได้ใช้ทำหิน</dd></div>
+      </dl></details>
+    </div>
+  </section>
+  </div>
+</section>
 <main id="main">
-  <header class="topbar"><div class="breadcrumb">WORKSHOP <span>/</span> คำนวณหิน Reform</div><span id="save-status" class="save-status" role="status">✓ บันทึกอัตโนมัติ</span></header>
-  <section class="page-heading" id="calculator"><div><div class="eyebrow">เตรียมหินสำหรับ REFORM</div><h1>คำนวณให้พร้อม แล้วค่อย Reform<span class="accent">.</span></h1><p>เลือกหินที่ต้องการ ใส่ของที่มี แล้วดูงบที่ต้องเตรียมเพิ่ม</p></div><span class="version">RO GGT · Enhancement</span></section>
   <div class="workspace">
     <div class="controls-column">
       <section class="panel target-panel">
         <div class="section-heading"><h2><span class="step-no">01</span> หินที่ต้องการ</h2><span class="meta">เลือกหินและจำนวน</span></div>
-        <p class="reform-guide"><a href="https://ro.gnjoy.in.th/item-gradereform/" target="_blank" rel="noopener noreferrer">ดูว่าอุปกรณ์ที่ต้องการ Reform ใช้หินอะไร กี่เม็ด · RO GGT ↗</a><small>ค้นชื่ออุปกรณ์ในตารางนั้น แล้วเอาชนิดหิน ระดับ และจำนวน มาใส่ด้านล่าง</small></p>
-        <div class="field-label" id="type-label">ประเภท Enhancement Stone</div>
+        <p class="reform-guide"><a href="https://ro.gnjoy.in.th/item-gradereform/" target="_blank" rel="noopener noreferrer">ยังไม่รู้ว่าใช้หินอะไร? เปิดตาราง Reform ของ RO GGT ↗</a><small>ค้นชื่ออุปกรณ์ แล้วเอาชนิดหิน ระดับ และจำนวนมาใส่ด้านล่าง</small></p>
+        <div class="field-label" id="type-label">ประเภทหิน <small>ดูจากตาราง RO GGT</small></div>
         <div class="segmented" role="group" aria-labelledby="type-label">
           <button type="button" data-type="weapon"><img class="item-icon" src="assets/items/1000433.png" width="24" height="24" alt="">Weapon</button>
           <button type="button" data-type="armor"><img class="item-icon" src="assets/items/1000437.png" width="24" height="24" alt="">Armor</button>
           <button type="button" data-type="accessory"><img class="item-icon" src="assets/items/1000441.png" width="24" height="24" alt="">Accessory</button>
         </div>
         <div class="target-fields"><label>ระดับหิน<select id="grade"><option value="0">Low Grade</option><option value="1">Medium Grade</option><option value="2">High Grade</option><option value="3">Supreme Grade</option></select></label><label>จำนวนที่ต้องการ<div class="input-unit"><input id="quantity" type="number" min="0" max="10000" step="1" inputmode="numeric" value="100"><span>เม็ด</span></div></label></div>
-        <div class="reform-extras"><div class="field-label" id="reform-label">วัตถุดิบอื่นในสูตร Reform</div><p class="section-description">สูตรส่วนใหญ่ใช้ Shadowdecon หรือ Zelunium ตรง ๆ นอกเหนือจากหิน · ใส่ตามแถวในตาราง RO GGT · ไม่มีก็เว้นเป็น 0</p><div class="reform-fields" role="group" aria-labelledby="reform-label"><label>Shadowdecon<input id="reform-shadow" type="number" min="0" max="1000000" step="1" inputmode="numeric" data-reform="shadow" value="0"></label><label>Zelunium<input id="reform-zelunium" type="number" min="0" max="1000000" step="1" inputmode="numeric" data-reform="zelunium" value="0"></label></div></div><label class="route-label">วิธีเตรียมหิน<select id="mode"><option value="auto">จ่ายเพิ่มน้อยที่สุด · เปรียบเทียบซื้อและแลก</option><option value="shadow">ผ่าน Shadowdecon · ไม่ใช้ Enhancement Ore</option></select></label>
+        <div class="reform-extras"><div class="field-label" id="reform-label">วัตถุดิบอื่นในสูตร Reform <small>ไม่บังคับ</small></div><p class="section-description">สูตรส่วนใหญ่ใช้ Shadowdecon หรือ Zelunium ตรง ๆ นอกเหนือจากหิน · ใส่ตามแถวในตาราง RO GGT · ไม่มีก็เว้นเป็น 0</p><div class="reform-fields" role="group" aria-labelledby="reform-label"><label>Shadowdecon<input id="reform-shadow" type="number" min="0" max="1000000" step="1" inputmode="numeric" data-reform="shadow" value="0"></label><label>Zelunium<input id="reform-zelunium" type="number" min="0" max="1000000" step="1" inputmode="numeric" data-reform="zelunium" value="0"></label></div></div><label class="route-label">วิธีเตรียมหิน<select id="mode"><option value="auto">จ่ายเพิ่มน้อยที่สุด · เปรียบเทียบซื้อและแลก</option><option value="shadow">ผ่าน Shadowdecon · ไม่ใช้ Enhancement Ore</option></select></label>
         <p class="field-hint" id="route-hint">หักของที่มีออกก่อน แล้วเทียบทุกทางทีละเม็ด เลือกทางที่จ่ายเพิ่มน้อยที่สุด</p>
       </section>
       <section class="panel inventory-panel">
@@ -53,15 +77,15 @@
     <div class="results-column">
       <section class="total-card" id="results" aria-label="ผลคำนวณ">
         <div class="total-card-top"><span class="tiny-tag">สรุปค่าใช้จ่าย</span><span class="live-dot">คำนวณทันที</span></div>
-        <div id="target-name" class="target-name"></div>
+        <div id="example-banner" class="example-banner" hidden><b>นี่คือตัวอย่าง</b> · ตั้งไว้เป็น Accessory Supreme 100 เม็ด ลองเปลี่ยนในช่อง 01 เพื่อคำนวณของคุณเอง</div><div id="target-name" class="target-name"></div>
         <div class="total-label">เงินที่ต้องเตรียมเพิ่ม</div>
         <div class="total-number"><span id="total">125,300,000</span> <span class="currency">z</span></div>
         <div id="unit-cost" class="unit-cost"></div>
         <div class="cost-breakdown"><div><span>ค่าซื้อไอเท็มที่ยังขาด</span><strong id="material-cost"></strong></div><span class="plus">+</span><div><span>ค่าแลกกับ NPC ทุกขั้นรวมกัน</span><strong id="npc-cost"></strong></div></div><div id="reform-cost-row" class="reform-cost-row" hidden><span>ในนี้เป็นค่า Shadowdecon / Zelunium ที่สูตรใช้</span><strong id="reform-cost"></strong></div>
-        <div id="savings" class="savings"></div>
+        <div id="savings" class="savings"></div><a id="price-warning" class="price-warning" href="#materials" hidden></a>
       </section>
-      <section class="panel route-comparison" aria-label="เปรียบเทียบแลกเองกับซื้อจากตลาด"><h2>แลกเองหรือซื้อจากตลาด?</h2><p class="section-description">เทียบเฉพาะค่าหิน Enhancement Stone ว่าถ้าเลือกแต่ละวิธีจะต้องจ่ายเพิ่มเท่าไร</p><div id="route-comparison-cards" class="route-comparison-cards"></div><div id="route-comparison-verdict" class="compare-verdict" role="status"></div><p id="route-reform-note" class="field-hint route-reform-note" hidden></p><p class="field-hint">ของที่มีอยู่แล้วคิดเป็น 0 z · ส่วนที่ขาดคิดจากราคาที่ใส่ไว้ และไม่ได้ตีค่าเวลาที่ใช้ฟาร์ม</p></section>
-      <div class="mini-stats"><section class="panel mini-stat"><span>Shadowdecon ที่แผนนี้ใช้</span><strong id="shadow-total"></strong><small id="shadow-detail-total"></small><div id="shadow-split" class="shadow-split" hidden></div></section><section class="panel mini-stat"><span>Shadowdecon ที่ต้องเตรียมเอง</span><strong id="shadow-additional"></strong><small id="shadow-detail"></small></section></div>
+      <details class="advanced-details"><summary><span><b>ดูรายละเอียดเพิ่ม</b><small>เทียบแลกเองกับซื้อจากตลาด · Shadowdecon ที่ใช้</small></span><span aria-hidden="true">＋</span></summary><section class="panel route-comparison" aria-label="เปรียบเทียบแลกเองกับซื้อจากตลาด"><h2>แลกเองหรือซื้อจากตลาด?</h2><p class="section-description">เทียบเฉพาะค่าหิน Enhancement Stone ว่าถ้าเลือกแต่ละวิธีจะต้องจ่ายเพิ่มเท่าไร</p><div id="route-comparison-cards" class="route-comparison-cards"></div><div id="route-comparison-verdict" class="compare-verdict" role="status"></div><p id="route-reform-note" class="field-hint route-reform-note" hidden></p><p class="field-hint">ของที่มีอยู่แล้วคิดเป็น 0 z · ส่วนที่ขาดคิดจากราคาที่ใส่ไว้ และไม่ได้ตีค่าเวลาที่ใช้ฟาร์ม</p></section>
+      <div class="mini-stats"><section class="panel mini-stat"><span>Shadowdecon ที่แผนนี้ใช้</span><strong id="shadow-total"></strong><small id="shadow-detail-total"></small><div id="shadow-split" class="shadow-split" hidden></div></section><section class="panel mini-stat"><span>Shadowdecon ที่ต้องเตรียมเอง</span><strong id="shadow-additional"></strong><small id="shadow-detail"></small></section></div></details>
       <section class="panel shopping-panel"><div id="stock-plan" class="stock-plan" hidden></div><div class="section-heading"><h2>รายการที่ต้องซื้อเพิ่ม</h2><span class="tag" id="shopping-count"></span></div><div id="shopping-list"></div><div class="shopping-foot">ยอดตรงนี้คือค่าซื้อไอเท็มอย่างเดียว · ค่าแลก NPC แยกไปอยู่ในสรุปค่าใช้จ่ายด้านบน</div></section>
     </div>
   </div>
