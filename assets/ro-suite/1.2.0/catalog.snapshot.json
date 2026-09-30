@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "catalogVersion": "0.1.0-design",
+  "tools": [
+    {
+      "id": "leveling-map",
+      "title": "แผนที่เก็บเลเวล",
+      "canonicalUrl": "https://econds.github.io/ro-leveling-map/",
+      "listingStatus": "listed",
+      "identity": {
+        "accent": "#2f7a4f",
+        "icon": "map"
+      }
+    },
+    {
+      "id": "reform-workshop",
+      "title": "Reform Workshop",
+      "canonicalUrl": "https://econds.github.io/ro-reform-preparation/",
+      "listingStatus": "listed",
+      "identity": {
+        "accent": "#9a5b12",
+        "icon": "anvil"
+      }
+    },
+    {
+      "id": "dim-glacier",
+      "title": "Dim Glacier Planner",
+      "canonicalUrl": "https://econds.github.io/dim_glacier_planner/",
+      "listingStatus": "listed",
+      "identity": {
+        "accent": "#2b6fa3",
+        "icon": "snowflake"
+      }
+    },
+    {
+      "id": "ocean-week-guide",
+      "title": "Sessrumnir Ocean Week",
+      "canonicalUrl": "https://econds.github.io/sessrumnir-ocean-week-guide/",
+      "listingStatus": "listed",
+      "identity": {
+        "accent": "#0f7686",
+        "icon": "wave"
+      }
+    },
+    {
+      "id": "grade-refine",
+      "title": "Grade & Refine Workshop",
+      "canonicalUrl": null,
+      "listingStatus": "planned",
+      "identity": {
+        "accent": "#636c67",
+        "icon": "gem"
+      }
+    }
+  ]
+}
