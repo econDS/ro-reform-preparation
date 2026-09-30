@@ -1,0 +1,68 @@
+name: RO Suite navigation QA
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ro-suite-nav-qa-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  navigation-qa:
+    # This temporary integration check cannot run for other feature branches,
+    # push events, deployments, or manually dispatched events.
+    if: github.head_ref == 'feat/ro-suite-nav' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare artifact directory
+        run: |
+          mkdir -p artifacts/ro-suite-nav
+          node -e "require('node:fs').writeFileSync('artifacts/ro-suite-nav/report.json', JSON.stringify({status:'not-run', reason:'Browser setup or execution did not complete; inspect workflow logs'}, null, 2) + '\n')"
+      - name: Existing and integration unit tests
+        run: npm test 2>&1 | tee artifacts/ro-suite-nav/unit-tests.log
+      - name: Install pinned browser tooling outside the project
+        id: browser-tools
+        if: always()
+        run: |
+          npm install --prefix "$RUNNER_TEMP/ro-suite-nav-qa" --no-save --package-lock=false --ignore-scripts playwright@1.55.1
+          node "$RUNNER_TEMP/ro-suite-nav-qa/node_modules/playwright/cli.js" install --with-deps chromium
+      - name: Browser matrix, keyboard, fallback and calculator regression
+        if: always() && steps.browser-tools.outcome == 'success'
+        env:
+          NODE_PATH: ${{ runner.temp }}/ro-suite-nav-qa/node_modules
+          RO_QA_OUTPUT: ${{ github.workspace }}/artifacts/ro-suite-nav
+          RO_QA_COMMIT: ${{ github.event.pull_request.head.sha }}
+        run: |
+          npm start > artifacts/ro-suite-nav/server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 50); do
+            if curl --fail --silent http://127.0.0.1:4173/ > /dev/null; then break; fi
+            sleep 0.2
+          done
+          node tests/ro-suite-nav.browser.cjs 2>&1 | tee artifacts/ro-suite-nav/browser-tests.log
+      - name: Upload real screenshots and JSON report, including failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ro-suite-nav-qa-${{ github.event.pull_request.head.sha }}
+          path: artifacts/ro-suite-nav/
+          if-no-files-found: warn
+          retention-days: 14
