@@ -361,11 +361,18 @@ async function main() {
           await fallback.waitFor({state: 'visible'});
           assert.equal(await fallback.getAttribute('href'), portalURL);
           const bounds = await fallback.boundingBox();
-          assert.ok(bounds && bounds.width > 0 && bounds.height > 0, 'Fallback has a real visible hit target');
+          assert.ok(bounds && bounds.width >= 44 && bounds.height >= 44, `Fallback target is at least 44 × 44 CSS pixels: ${JSON.stringify(bounds)}`);
           for (const fixtureCase of fixture.cases) await applyCase(fallbackPage, fixtureCase, fixture.storageKeys);
           assert.equal(new URL(fallbackPage.url()).search, query);
           assert.equal(new URL(fallbackPage.url()).hash, '#calculator');
-          await fallbackPage.evaluate(() => window.scrollTo(0, 0));
+          await fallbackPage.evaluate(() => window.scrollTo({top: 0, left: 0, behavior: 'instant'}));
+          await fallbackPage.waitForFunction(() => window.scrollY === 0 && window.scrollX === 0);
+          await fallbackPage.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+          const screenshotBounds = await fallback.boundingBox();
+          assert.ok(screenshotBounds && screenshotBounds.x >= 0 && screenshotBounds.y >= 0 &&
+            screenshotBounds.x + screenshotBounds.width <= viewport.width &&
+            screenshotBounds.y + screenshotBounds.height <= viewport.height,
+          'The fallback is fully within the screenshot viewport after scrolling settles');
           if ([390, 1440].includes(width)) await screenshot(fallbackPage, `${label}-blocked-module`);
           scenario.fallbackGeometry = await geometry(fallbackPage, false);
           await fallbackPage.route(portalURL, route => route.fulfill({status: 200, contentType: 'text/html', body: '<title>Portal fallback destination</title><p>Test destination</p>'}));

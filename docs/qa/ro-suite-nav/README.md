@@ -39,11 +39,13 @@ The third case includes 4,990 z of direct Reform material cost in the total.
 
 ## Runtime change
 
-Only six lines are added to `index.html`: the fallback-containing nav and the
-relative, versioned module script immediately after the skip link. The original
+The nav and relative, versioned module script are added immediately after the
+skip link. A three-line style block in the head targets only
+`ro-suite-nav > nav > a`, giving the no-JS fallback a 44px-high touch target.
+This selector cannot cross the component shadow boundary or style app controls. The original
 sticky header remains after the nav. `app.js`, `calculator.js`, and `styles.css`
-remain byte-for-byte identical. No CSS override, global selector, sticky-header
-adjustment, new storage key, iframe or remote catalog is introduced.
+remain byte-for-byte identical. No global selector, sticky-header adjustment,
+new storage key, iframe or remote catalog is introduced.
 
 ## Verified release hashes
 
@@ -74,8 +76,8 @@ workflow and documented in the PR with the exact successful run and artifacts.
 
 [Successful run 36757603021](https://github.com/econDS/ro-reform-preparation/actions/runs/36757603021)
 tested commit `0d204d8cab39c4a491aa296bc3cdb01ee7b5fe6f` with
-Playwright **1.55.1** / Chromium **140.0.7339.186**. The evidence-only follow-up
-commit does not modify the app, nav assets, or test code.
+Playwright **1.55.1** / Chromium **140.0.7339.186**. A subsequent scoped fallback-only style strengthens the no-JS touch target;
+the full matrix is rerun for that change before delivery.
 
 Commands actually run in CI:
 

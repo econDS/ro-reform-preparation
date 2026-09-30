@@ -28,7 +28,9 @@ test('release bytes match both approved SHA-256 values and immutable lock',() =>
 test('nav is local, immediately after skip link, and preserves original header',() => {
   assert.match(html,/<body>\s*<a class="skip" href="#main">ข้ามไปเครื่องคำนวณ<\/a>\s*<ro-suite-nav tool-id="reform-workshop" portal-url="https:\/\/econds\.github\.io\/ro_tools_portal\/">\s*<nav aria-label="เครื่องมือ RO">\s*<a href="https:\/\/econds\.github\.io\/ro_tools_portal\/">กลับ RO Tools Portal<\/a>\s*<\/nav>\s*<\/ro-suite-nav>\s*<script type="module" src="\.\/assets\/ro-suite\/1\.2\.0\/nav\.js"><\/script>\s*<header class="site-header">/);
   assert.equal((html.match(/<ro-suite-nav\b/g)||[]).length,1);
-  const original = html.replace(/<ro-suite-nav[^]*?<\/ro-suite-nav>\r?\n<script type="module" src="\.\/assets\/ro-suite\/1\.2\.0\/nav\.js"><\/script>\r?\n/,'');
+  const fallbackStyle = '  <style>\r\n    ro-suite-nav > nav > a { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 12px; }\r\n  </style>\r\n';
+  assert.ok(html.includes(fallbackStyle), 'Only the light-DOM fallback gets a 44px touch target');
+  const original = html.replace(/<ro-suite-nav[^]*?<\/ro-suite-nav>\r?\n<script type="module" src="\.\/assets\/ro-suite\/1\.2\.0\/nav\.js"><\/script>\r?\n/,'').replace(fallbackStyle,'');
   assert.equal(sha256(original),'3a62cb06d545fd805d7f90e980d82e322cb19cfd996fad3c229860e96e1c43b2');
   assert.doesNotMatch(html,/<ro-suite-nav[^>]*\b(?:catalog-url|theme)=/);
   assert.doesNotMatch(html,/<script[^>]*src="(?:https?:|\/\/)[^"]*nav\.js/);
