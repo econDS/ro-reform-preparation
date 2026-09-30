@@ -69,3 +69,78 @@ artifact hashes or a claim that this integration rebuilt the bundle.
 
 Browser checks and screenshots are run by the narrowly scoped, read-only PR
 workflow and documented in the PR with the exact successful run and artifacts.
+
+## Browser results and screenshots
+
+[Successful run 36757603021](https://github.com/econDS/ro-reform-preparation/actions/runs/36757603021)
+tested commit `0d204d8cab39c4a491aa296bc3cdb01ee7b5fe6f` with
+Playwright **1.55.1** / Chromium **140.0.7339.186**. The evidence-only follow-up
+commit does not modify the app, nav assets, or test code.
+
+Commands actually run in CI:
+
+```sh
+npm test
+npm install --prefix "$RUNNER_TEMP/ro-suite-nav-qa" --no-save --package-lock=false --ignore-scripts playwright@1.55.1
+node "$RUNNER_TEMP/ro-suite-nav-qa/node_modules/playwright/cli.js" install --with-deps chromium
+npm start
+NODE_PATH="$RUNNER_TEMP/ro-suite-nav-qa/node_modules" node tests/ro-suite-nav.browser.cjs
+```
+
+Results: **77/77 unit tests and 65/65 browser checks passed**. The full machine
+report is preserved in [`report.json`](report.json); the
+[original artifact](https://github.com/econDS/ro-reform-preparation/actions/runs/36757603021/artifacts/11117663241)
+also contains the logs and all 12 screenshots (including closed and blocked-module states).
+
+- Widths 360, 390, 768 and 1440, each in light and dark mode: no document/nav
+  horizontal overflow, no control overlap, no nav/header/hero overlap at page top
+- All upgraded nav links/buttons measured at least 44 × 44 CSS pixels
+- Navigation text meets 4.5:1 contrast; theme changes on the same page update
+  both nav and app without changing calculation, URL or storage
+- Tab reaches skip link, portal link, toggle and tool links in order;
+  Enter/Space open the menu, Escape closes it and restores opener focus;
+  Tab-away and repeated activation work; Reform Workshop has `aria-current="page"`
+- All three baseline cases match in the original page, integrated page and
+  blocked-module page, including saved state/reload and complete model outputs
+- The existing query and five hashes remain unchanged through calculator/nav use;
+  all 22 app keys match; no new storage keys are written
+- Blocking the exact local `nav.js` request preserves the visible, keyboard-usable
+  fallback link and working calculator. Portal activation was verified by
+  intercepting that destination with a test response, not by changing app markup
+- **Zero** baseline or normal-page console/page/network/HTTP errors;
+  the blocked-module scenario contains only its deliberate loading failure
+- The real portal returned HTTP 200 in a separate `curl -IL --max-time 30`
+  check on 2026-09-30
+
+### Mobile, 390 × 844
+
+Light:
+
+![Mobile light, expanded nav](390-light-open.png)
+
+Dark:
+
+![Mobile dark, expanded nav](390-dark-open.png)
+
+### Desktop, 1440 × 1000
+
+Light:
+
+![Desktop light, expanded nav](1440-light-open.png)
+
+Dark:
+
+![Desktop dark, expanded nav](1440-dark-open.png)
+
+## Not tested / limits
+
+- Physical phones/tablets, Firefox, Safari/WebKit and screen-reader output
+- Post-merge GitHub Pages behavior: this PR has not been merged or deployed
+- End-to-end navigation across every external tool; the fallback's portal
+  destination is intercepted in automated tests, with a separate live HTTP check
+- Import/export and state-sharing roundtrips are not applicable: the baseline
+  app has neither feature. Existing persistence and query/hash behavior were tested
+
+The workflow is limited to same-repository `feat/ro-suite-nav` pull requests into
+`main`, has `contents: read`, does not persist checkout credentials, and has no
+push, deployment, `workflow_dispatch` or Pages-configuration step.
