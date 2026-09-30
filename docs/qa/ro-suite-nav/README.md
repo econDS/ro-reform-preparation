@@ -74,10 +74,12 @@ workflow and documented in the PR with the exact successful run and artifacts.
 
 ## Browser results and screenshots
 
-[Successful run 36757603021](https://github.com/econDS/ro-reform-preparation/actions/runs/36757603021)
-tested commit `0d204d8cab39c4a491aa296bc3cdb01ee7b5fe6f` with
-Playwright **1.55.1** / Chromium **140.0.7339.186**. A subsequent scoped fallback-only style strengthens the no-JS touch target;
-the full matrix is rerun for that change before delivery.
+[Successful run 36759969160](https://github.com/econDS/ro-reform-preparation/actions/runs/36759969160)
+tested commit `7e98c442e0232fbdccc5e5b614dac9d6bb94a2fc` with
+Playwright **1.55.1** / Chromium **140.0.7339.186**. This run includes the scoped fallback-only style. The four expanded-nav
+screenshots are byte-identical to the initial run, confirming the fallback style
+does not affect the upgraded component. An evidence-only follow-up preserves
+the tested application and test code unchanged.
 
 Commands actually run in CI:
 
@@ -91,12 +93,13 @@ NODE_PATH="$RUNNER_TEMP/ro-suite-nav-qa/node_modules" node tests/ro-suite-nav.br
 
 Results: **77/77 unit tests and 65/65 browser checks passed**. The full machine
 report is preserved in [`report.json`](report.json); the
-[original artifact](https://github.com/econDS/ro-reform-preparation/actions/runs/36757603021/artifacts/11117663241)
+[original artifact](https://github.com/econDS/ro-reform-preparation/actions/runs/36759969160/artifacts/11117029814)
 also contains the logs and all 12 screenshots (including closed and blocked-module states).
 
 - Widths 360, 390, 768 and 1440, each in light and dark mode: no document/nav
   horizontal overflow, no control overlap, no nav/header/hero overlap at page top
-- All upgraded nav links/buttons measured at least 44 × 44 CSS pixels
+- All upgraded nav links/buttons and the blocked-module fallback link measured
+  at least 44 × 44 CSS pixels
 - Navigation text meets 4.5:1 contrast; theme changes on the same page update
   both nav and app without changing calculation, URL or storage
 - Tab reaches skip link, portal link, toggle and tool links in order;
@@ -133,6 +136,14 @@ Light:
 Dark:
 
 ![Desktop dark, expanded nav](1440-dark-open.png)
+
+### Blocked local nav.js, 390 × 844
+
+The fallback remains visible and keyboard-activatable with a 44px-high target.
+
+![Blocked module, mobile light](390-light-blocked-module.png)
+
+![Blocked module, mobile dark](390-dark-blocked-module.png)
 
 ## Not tested / limits
 
