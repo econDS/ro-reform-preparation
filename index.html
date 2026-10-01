@@ -8,11 +8,20 @@
   <title>Reform Workshop — Enhancement Calculator</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23173d35'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-size='48' fill='%23d6ef94'%3E◇%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    ro-suite-nav > nav > a { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 12px; }
+  </style>
   <script defer src="calculator.js"></script>
   <script defer src="app.js"></script>
 </head>
 <body>
 <a class="skip" href="#main">ข้ามไปเครื่องคำนวณ</a>
+<ro-suite-nav tool-id="reform-workshop" portal-url="https://econds.github.io/ro_tools_portal/">
+  <nav aria-label="เครื่องมือ RO">
+    <a href="https://econds.github.io/ro_tools_portal/">กลับ RO Tools Portal</a>
+  </nav>
+</ro-suite-nav>
+<script type="module" src="./assets/ro-suite/1.2.0/nav.js"></script>
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href="./"><svg class="gem" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="gem-a" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9ffb0"/><stop offset=".55" stop-color="#9fdc6a"/><stop offset="1" stop-color="#2f8f6b"/></linearGradient></defs><path d="M9 4h14l7 8-14 17L2 12z" fill="url(#gem-a)"/><path d="M2 12h28M9 4l3 8 4 17 4-17 3-8M12 12l4-8 4 8" fill="none" stroke="#0f3a2f" stroke-opacity=".45" stroke-width="1.1" stroke-linejoin="round"/></svg><span class="brand-text">Reform Workshop<small>Ragnarok Online · Enhancement</small></span></a>

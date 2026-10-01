@@ -1,0 +1,3438 @@
+{
+  "startedAt": "2026-09-30T18:39:34.501Z",
+  "status": "passed",
+  "browser": "Chromium",
+  "themeMethod": "Browser prefers-color-scheme emulation; no app theme switch",
+  "checks": [
+    {
+      "name": "App, calculator, and CSS match the frozen baseline byte-for-byte",
+      "status": "passed"
+    },
+    {
+      "name": "360-light: original page baseline",
+      "status": "passed"
+    },
+    {
+      "name": "360-light: initial calculation and closed navigation",
+      "status": "passed"
+    },
+    {
+      "name": "360-light: live system-theme changes preserve calculation and storage",
+      "status": "passed"
+    },
+    {
+      "name": "360-light: Tab, Enter, Space, Escape, focus return and open layout",
+      "status": "passed"
+    },
+    {
+      "name": "360-light: query/hash and calculator state survive navigation interaction",
+      "status": "passed",
+      "detail": {
+        "cases": [
+          {
+            "name": "default-accessory-supreme-100",
+            "total": 114473000
+          },
+          {
+            "name": "weapon-medium-12-with-stock",
+            "total": 777500
+          },
+          {
+            "name": "armor-high-5-shadow-and-reform",
+            "total": 1783740
+          }
+        ],
+        "query": "?qa=preserve%20query&count=3",
+        "hashes": [
+          "#main",
+          "#calculator",
+          "#materials",
+          "#recipe",
+          "#results"
+        ]
+      }
+    },
+    {
+      "name": "360-light: no new console, page, request or HTTP errors",
+      "status": "passed"
+    },
+    {
+      "name": "360-light: blocked nav.js retains functional fallback and calculator",
+      "status": "passed",
+      "detail": {
+        "blockedRequests": 7,
+        "fallbackBounds": {
+          "x": 0,
+          "y": -37,
+          "width": 168,
+          "height": 44
+        }
+      }
+    },
+    {
+      "name": "360-light: no unexpected errors with module blocked",
+      "status": "passed"
+    },
+    {
+      "name": "360-dark: original page baseline",
+      "status": "passed"
+    },
+    {
+      "name": "360-dark: initial calculation and closed navigation",
+      "status": "passed"
+    },
+    {
+      "name": "360-dark: live system-theme changes preserve calculation and storage",
+      "status": "passed"
+    },
+    {
+      "name": "360-dark: Tab, Enter, Space, Escape, focus return and open layout",
+      "status": "passed"
+    },
+    {
+      "name": "360-dark: query/hash and calculator state survive navigation interaction",
+      "status": "passed",
+      "detail": {
+        "cases": [
+          {
+            "name": "default-accessory-supreme-100",
+            "total": 114473000
+          },
+          {
+            "name": "weapon-medium-12-with-stock",
+            "total": 777500
+          },
+          {
+            "name": "armor-high-5-shadow-and-reform",
+            "total": 1783740
+          }
+        ],
+        "query": "?qa=preserve%20query&count=3",
+        "hashes": [
+          "#main",
+          "#calculator",
+          "#materials",
+          "#recipe",
+          "#results"
+        ]
+      }
+    },
+    {
+      "name": "360-dark: no new console, page, request or HTTP errors",
+      "status": "passed"
+    },
+    {
+      "name": "360-dark: blocked nav.js retains functional fallback and calculator",
+      "status": "passed",
+      "detail": {
+        "blockedRequests": 7,
+        "fallbackBounds": {
+          "x": 0,
+          "y": -37,
+          "width": 168,
+          "height": 44
+        }
+      }
+    },
+    {
+      "name": "360-dark: no unexpected errors with module blocked",
+      "status": "passed"
+    },
+    {
+      "name": "390-light: original page baseline",
+      "status": "passed"
+    },
+    {
+      "name": "390-light: initial calculation and closed navigation",
+      "status": "passed"
+    },
+    {
+      "name": "390-light: live system-theme changes preserve calculation and storage",
+      "status": "passed"
+    },
+    {
+      "name": "390-light: Tab, Enter, Space, Escape, focus return and open layout",
+      "status": "passed"
+    },
+    {
+      "name": "390-light: query/hash and calculator state survive navigation interaction",
+      "status": "passed",
+      "detail": {
+        "cases": [
+          {
+            "name": "default-accessory-supreme-100",
+            "total": 114473000
+          },
+          {
+            "name": "weapon-medium-12-with-stock",
+            "total": 777500
+          },
+          {
+            "name": "armor-high-5-shadow-and-reform",
+            "total": 1783740
+          }
+        ],
+        "query": "?qa=preserve%20query&count=3",
+        "hashes": [
+          "#main",
+          "#calculator",
+          "#materials",
+          "#recipe",
+          "#results"
+        ]
+      }
+    },
+    {
+      "name": "390-light: no new console, page, request or HTTP errors",
+      "status": "passed"
+    },
+    {
+      "name": "390-light: blocked nav.js retains functional fallback and calculator",
+      "status": "passed",
+      "detail": {
+        "blockedRequests": 7,
+        "fallbackBounds": {
+          "x": 0,
+          "y": -37,
+          "width": 168,
+          "height": 44
+        }
+      }
+    },
+    {
+      "name": "390-light: no unexpected errors with module blocked",
+      "status": "passed"
+    },
+    {
+      "name": "390-dark: original page baseline",
+      "status": "passed"
+    },
+    {
+      "name": "390-dark: initial calculation and closed navigation",
+      "status": "passed"
+    },
+    {
+      "name": "390-dark: live system-theme changes preserve calculation and storage",
+      "status": "passed"
+    },
+    {
+      "name": "390-dark: Tab, Enter, Space, Escape, focus return and open layout",
+      "status": "passed"
+    },
+    {
+      "name": "390-dark: query/hash and calculator state survive navigation interaction",
+      "status": "passed",
+      "detail": {
+        "cases": [
+          {
+            "name": "default-accessory-supreme-100",
+            "total": 114473000
+          },
+          {
+            "name": "weapon-medium-12-with-stock",
+            "total": 777500
+          },
+          {
+            "name": "armor-high-5-shadow-and-reform",
+            "total": 1783740
+          }
+        ],
+        "query": "?qa=preserve%20query&count=3",
+        "hashes": [
+          "#main",
+          "#calculator",
+          "#materials",
+          "#recipe",
+          "#results"
+        ]
+      }
+    },
+    {
+      "name": "390-dark: no new console, page, request or HTTP errors",
+      "status": "passed"
+    },
+    {
+      "name": "390-dark: blocked nav.js retains functional fallback and calculator",
+      "status": "passed",
+      "detail": {
+        "blockedRequests": 7,
+        "fallbackBounds": {
+          "x": 0,
+          "y": -37,
+          "width": 168,
+          "height": 44
+        }
+      }
+    },
+    {
+      "name": "390-dark: no unexpected errors with module blocked",
+      "status": "passed"
+    },
+    {
+      "name": "768-light: original page baseline",
+      "status": "passed"
+    },
+    {
+      "name": "768-light: initial calculation and closed navigation",
+      "status": "passed"
+    },
+    {
+      "name": "768-light: live system-theme changes preserve calculation and storage",
+      "status": "passed"
+    },
+    {
+      "name": "768-light: Tab, Enter, Space, Escape, focus return and open layout",
+      "status": "passed"
+    },
+    {
+      "name": "768-light: query/hash and calculator state survive navigation interaction",
+      "status": "passed",
+      "detail": {
+        "cases": [
+          {
+            "name": "default-accessory-supreme-100",
+            "total": 114473000
+          },
+          {
+            "name": "weapon-medium-12-with-stock",
+            "total": 777500
+          },
+          {
+            "name": "armor-high-5-shadow-and-reform",
+            "total": 1783740
+          }
+        ],
+        "query": "?qa=preserve%20query&count=3",
+        "hashes": [
+          "#main",
+          "#calculator",
+          "#materials",
+          "#recipe",
+          "#results"
+        ]
+      }
+    },
+    {
+      "name": "768-light: no new console, page, request or HTTP errors",
+      "status": "passed"
+    },
+    {
+      "name": "768-light: blocked nav.js retains functional fallback and calculator",
+      "status": "passed",
+      "detail": {
+        "blockedRequests": 7,
+        "fallbackBounds": {
+          "x": 0,
+          "y": -45,
+          "width": 168,
+          "height": 44
+        }
+      }
+    },
+    {
+      "name": "768-light: no unexpected errors with module blocked",
+      "status": "passed"
+    },
+    {
+      "name": "768-dark: original page baseline",
+      "status": "passed"
+    },
+    {
+      "name": "768-dark: initial calculation and closed navigation",
+      "status": "passed"
+    },
+    {
+      "name": "768-dark: live system-theme changes preserve calculation and storage",
+      "status": "passed"
+    },
+    {
+      "name": "768-dark: Tab, Enter, Space, Escape, focus return and open layout",
+      "status": "passed"
+    },
+    {
+      "name": "768-dark: query/hash and calculator state survive navigation interaction",
+      "status": "passed",
+      "detail": {
+        "cases": [
+          {
+            "name": "default-accessory-supreme-100",
+            "total": 114473000
+          },
+          {
+            "name": "weapon-medium-12-with-stock",
+            "total": 777500
+          },
+          {
+            "name": "armor-high-5-shadow-and-reform",
+            "total": 1783740
+          }
+        ],
+        "query": "?qa=preserve%20query&count=3",
+        "hashes": [
+          "#main",
+          "#calculator",
+          "#materials",
+          "#recipe",
+          "#results"
+        ]
+      }
+    },
+    {
+      "name": "768-dark: no new console, page, request or HTTP errors",
+      "status": "passed"
+    },
+    {
+      "name": "768-dark: blocked nav.js retains functional fallback and calculator",
+      "status": "passed",
+      "detail": {
+        "blockedRequests": 7,
+        "fallbackBounds": {
+          "x": 0,
+          "y": -45,
+          "width": 168,
+          "height": 44
+        }
+      }
+    },
+    {
+      "name": "768-dark: no unexpected errors with module blocked",
+      "status": "passed"
+    },
+    {
+      "name": "1440-light: original page baseline",
+      "status": "passed"
+    },
+    {
+      "name": "1440-light: initial calculation and closed navigation",
+      "status": "passed"
+    },
+    {
+      "name": "1440-light: live system-theme changes preserve calculation and storage",
+      "status": "passed"
+    },
+    {
+      "name": "1440-light: Tab, Enter, Space, Escape, focus return and open layout",
+      "status": "passed"
+    },
+    {
+      "name": "1440-light: query/hash and calculator state survive navigation interaction",
+      "status": "passed",
+      "detail": {
+        "cases": [
+          {
+            "name": "default-accessory-supreme-100",
+            "total": 114473000
+          },
+          {
+            "name": "weapon-medium-12-with-stock",
+            "total": 777500
+          },
+          {
+            "name": "armor-high-5-shadow-and-reform",
+            "total": 1783740
+          }
+        ],
+        "query": "?qa=preserve%20query&count=3",
+        "hashes": [
+          "#main",
+          "#calculator",
+          "#materials",
+          "#recipe",
+          "#results"
+        ]
+      }
+    },
+    {
+      "name": "1440-light: no new console, page, request or HTTP errors",
+      "status": "passed"
+    },
+    {
+      "name": "1440-light: blocked nav.js retains functional fallback and calculator",
+      "status": "passed",
+      "detail": {
+        "blockedRequests": 7,
+        "fallbackBounds": {
+          "x": 0,
+          "y": -45,
+          "width": 168,
+          "height": 44
+        }
+      }
+    },
+    {
+      "name": "1440-light: no unexpected errors with module blocked",
+      "status": "passed"
+    },
+    {
+      "name": "1440-dark: original page baseline",
+      "status": "passed"
+    },
+    {
+      "name": "1440-dark: initial calculation and closed navigation",
+      "status": "passed"
+    },
+    {
+      "name": "1440-dark: live system-theme changes preserve calculation and storage",
+      "status": "passed"
+    },
+    {
+      "name": "1440-dark: Tab, Enter, Space, Escape, focus return and open layout",
+      "status": "passed"
+    },
+    {
+      "name": "1440-dark: query/hash and calculator state survive navigation interaction",
+      "status": "passed",
+      "detail": {
+        "cases": [
+          {
+            "name": "default-accessory-supreme-100",
+            "total": 114473000
+          },
+          {
+            "name": "weapon-medium-12-with-stock",
+            "total": 777500
+          },
+          {
+            "name": "armor-high-5-shadow-and-reform",
+            "total": 1783740
+          }
+        ],
+        "query": "?qa=preserve%20query&count=3",
+        "hashes": [
+          "#main",
+          "#calculator",
+          "#materials",
+          "#recipe",
+          "#results"
+        ]
+      }
+    },
+    {
+      "name": "1440-dark: no new console, page, request or HTTP errors",
+      "status": "passed"
+    },
+    {
+      "name": "1440-dark: blocked nav.js retains functional fallback and calculator",
+      "status": "passed",
+      "detail": {
+        "blockedRequests": 7,
+        "fallbackBounds": {
+          "x": 0,
+          "y": -45,
+          "width": 168,
+          "height": 44
+        }
+      }
+    },
+    {
+      "name": "1440-dark: no unexpected errors with module blocked",
+      "status": "passed"
+    }
+  ],
+  "scenarios": [
+    {
+      "label": "360-light",
+      "viewport": {
+        "width": 360,
+        "height": 844
+      },
+      "colorScheme": "light",
+      "baselineGeometry": {
+        "viewport": 360,
+        "documentWidth": 360,
+        "bodyWidth": 360,
+        "nav": null,
+        "header": {
+          "left": 0,
+          "top": 0,
+          "right": 360,
+          "bottom": 99,
+          "width": 360,
+          "height": 99
+        },
+        "hero": {
+          "left": 16,
+          "top": 113,
+          "right": 344,
+          "bottom": 1070.1875,
+          "width": 328,
+          "height": 957.1875
+        },
+        "controls": [],
+        "overlaps": [],
+        "navExpected": false
+      },
+      "baselineErrors": [],
+      "closedGeometry": {
+        "viewport": 360,
+        "documentWidth": 360,
+        "bodyWidth": 360,
+        "nav": {
+          "left": 0,
+          "top": 0,
+          "right": 360,
+          "bottom": 98,
+          "width": 360,
+          "height": 98
+        },
+        "header": {
+          "left": 0,
+          "top": 98,
+          "right": 360,
+          "bottom": 197,
+          "width": 360,
+          "height": 99
+        },
+        "hero": {
+          "left": 16,
+          "top": 211,
+          "right": 344,
+          "bottom": 1168.1875,
+          "width": 328,
+          "height": 957.1875
+        },
+        "controls": [
+          {
+            "text": "กลับ RO Tools Portal",
+            "left": 9,
+            "top": 9,
+            "right": 160.671875,
+            "bottom": 53,
+            "width": 151.671875,
+            "height": 44
+          },
+          {
+            "text": "เครื่องมืออื่น",
+            "left": 253,
+            "top": 9,
+            "right": 351,
+            "bottom": 53,
+            "width": 98,
+            "height": 44
+          }
+        ],
+        "overlaps": [],
+        "navExpected": true
+      },
+      "closedTextContrast": [
+        {
+          "text": "กลับ RO Tools Portal",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 10.974833225023998
+        },
+        {
+          "text": "Reform Workshop",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 10.974833225023998
+        },
+        {
+          "text": "เครื่องมืออื่น",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(255, 255, 255)",
+          "contrast": 12.114774365113187
+        }
+      ],
+      "openGeometry": {
+        "viewport": 360,
+        "documentWidth": 360,
+        "bodyWidth": 360,
+        "nav": {
+          "left": 0,
+          "top": 0,
+          "right": 360,
+          "bottom": 349,
+          "width": 360,
+          "height": 349
+        },
+        "header": {
+          "left": 0,
+          "top": 349,
+          "right": 360,
+          "bottom": 448,
+          "width": 360,
+          "height": 99
+        },
+        "hero": {
+          "left": 16,
+          "top": 462,
+          "right": 344,
+          "bottom": 1419.1875,
+          "width": 328,
+          "height": 957.1875
+        },
+        "controls": [
+          {
+            "text": "กลับ RO Tools Portal",
+            "left": 9,
+            "top": 9,
+            "right": 160.671875,
+            "bottom": 53,
+            "width": 151.671875,
+            "height": 44
+          },
+          {
+            "text": "เครื่องมืออื่น",
+            "left": 253,
+            "top": 9,
+            "right": 351,
+            "bottom": 53,
+            "width": 98,
+            "height": 44
+          },
+          {
+            "text": "แผนที่เก็บเลเวล",
+            "left": 9,
+            "top": 110,
+            "right": 351,
+            "bottom": 154,
+            "width": 342,
+            "height": 44
+          },
+          {
+            "text": "Reform Workshop",
+            "left": 9,
+            "top": 154,
+            "right": 351,
+            "bottom": 198,
+            "width": 342,
+            "height": 44
+          },
+          {
+            "text": "Dim Glacier Planner",
+            "left": 9,
+            "top": 198,
+            "right": 351,
+            "bottom": 242,
+            "width": 342,
+            "height": 44
+          },
+          {
+            "text": "Sessrumnir Ocean Week",
+            "left": 9,
+            "top": 242,
+            "right": 351,
+            "bottom": 286,
+            "width": 342,
+            "height": 44
+          }
+        ],
+        "overlaps": [],
+        "navExpected": true
+      },
+      "openTextContrast": [
+        {
+          "text": "กลับ RO Tools Portal",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 10.974833225023998
+        },
+        {
+          "text": "Reform Workshop",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 10.974833225023998
+        },
+        {
+          "text": "เครื่องมืออื่น",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(255, 255, 255)",
+          "contrast": 12.114774365113187
+        },
+        {
+          "text": "แผนที่เก็บเลเวล",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 10.974833225023998
+        },
+        {
+          "text": "Reform Workshop",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(222, 233, 215)",
+          "contrast": 9.658788710926542
+        },
+        {
+          "text": "Dim Glacier Planner",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 10.974833225023998
+        },
+        {
+          "text": "Sessrumnir Ocean Week",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 10.974833225023998
+        },
+        {
+          "text": "Grade & Refine Workshop — อยู่ในแผน",
+          "foreground": "rgb(82, 96, 79)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 6.049316092843054
+        }
+      ],
+      "errorComparison": {
+        "events": [],
+        "newErrors": []
+      },
+      "fallbackGeometry": {
+        "viewport": 360,
+        "documentWidth": 360,
+        "bodyWidth": 360,
+        "nav": null,
+        "header": {
+          "left": 0,
+          "top": 44,
+          "right": 360,
+          "bottom": 143,
+          "width": 360,
+          "height": 99
+        },
+        "hero": {
+          "left": 16,
+          "top": 157,
+          "right": 344,
+          "bottom": 1114.1875,
+          "width": 328,
+          "height": 957.1875
+        },
+        "controls": [],
+        "overlaps": [],
+        "navExpected": false
+      },
+      "fallbackErrorComparison": {
+        "events": [
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          }
+        ],
+        "newErrors": []
+      }
+    },
+    {
+      "label": "360-dark",
+      "viewport": {
+        "width": 360,
+        "height": 844
+      },
+      "colorScheme": "dark",
+      "baselineGeometry": {
+        "viewport": 360,
+        "documentWidth": 360,
+        "bodyWidth": 360,
+        "nav": null,
+        "header": {
+          "left": 0,
+          "top": 0,
+          "right": 360,
+          "bottom": 99,
+          "width": 360,
+          "height": 99
+        },
+        "hero": {
+          "left": 16,
+          "top": 113,
+          "right": 344,
+          "bottom": 1072.1875,
+          "width": 328,
+          "height": 959.1875
+        },
+        "controls": [],
+        "overlaps": [],
+        "navExpected": false
+      },
+      "baselineErrors": [],
+      "closedGeometry": {
+        "viewport": 360,
+        "documentWidth": 360,
+        "bodyWidth": 360,
+        "nav": {
+          "left": 0,
+          "top": 0,
+          "right": 360,
+          "bottom": 98,
+          "width": 360,
+          "height": 98
+        },
+        "header": {
+          "left": 0,
+          "top": 98,
+          "right": 360,
+          "bottom": 197,
+          "width": 360,
+          "height": 99
+        },
+        "hero": {
+          "left": 16,
+          "top": 211,
+          "right": 344,
+          "bottom": 1170.1875,
+          "width": 328,
+          "height": 959.1875
+        },
+        "controls": [
+          {
+            "text": "กลับ RO Tools Portal",
+            "left": 9,
+            "top": 9,
+            "right": 160.671875,
+            "bottom": 53,
+            "width": 151.671875,
+            "height": 44
+          },
+          {
+            "text": "เครื่องมืออื่น",
+            "left": 253,
+            "top": 9,
+            "right": 351,
+            "bottom": 53,
+            "width": 98,
+            "height": 44
+          }
+        ],
+        "overlaps": [],
+        "navExpected": true
+      },
+      "closedTextContrast": [
+        {
+          "text": "กลับ RO Tools Portal",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 14.542724646587752
+        },
+        {
+          "text": "Reform Workshop",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 14.542724646587752
+        },
+        {
+          "text": "เครื่องมืออื่น",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(27, 38, 32)",
+          "contrast": 13.70759482724283
+        }
+      ],
+      "openGeometry": {
+        "viewport": 360,
+        "documentWidth": 360,
+        "bodyWidth": 360,
+        "nav": {
+          "left": 0,
+          "top": 0,
+          "right": 360,
+          "bottom": 349,
+          "width": 360,
+          "height": 349
+        },
+        "header": {
+          "left": 0,
+          "top": 349,
+          "right": 360,
+          "bottom": 448,
+          "width": 360,
+          "height": 99
+        },
+        "hero": {
+          "left": 16,
+          "top": 462,
+          "right": 344,
+          "bottom": 1421.1875,
+          "width": 328,
+          "height": 959.1875
+        },
+        "controls": [
+          {
+            "text": "กลับ RO Tools Portal",
+            "left": 9,
+            "top": 9,
+            "right": 160.671875,
+            "bottom": 53,
+            "width": 151.671875,
+            "height": 44
+          },
+          {
+            "text": "เครื่องมืออื่น",
+            "left": 253,
+            "top": 9,
+            "right": 351,
+            "bottom": 53,
+            "width": 98,
+            "height": 44
+          },
+          {
+            "text": "แผนที่เก็บเลเวล",
+            "left": 9,
+            "top": 110,
+            "right": 351,
+            "bottom": 154,
+            "width": 342,
+            "height": 44
+          },
+          {
+            "text": "Reform Workshop",
+            "left": 9,
+            "top": 154,
+            "right": 351,
+            "bottom": 198,
+            "width": 342,
+            "height": 44
+          },
+          {
+            "text": "Dim Glacier Planner",
+            "left": 9,
+            "top": 198,
+            "right": 351,
+            "bottom": 242,
+            "width": 342,
+            "height": 44
+          },
+          {
+            "text": "Sessrumnir Ocean Week",
+            "left": 9,
+            "top": 242,
+            "right": 351,
+            "bottom": 286,
+            "width": 342,
+            "height": 44
+          }
+        ],
+        "overlaps": [],
+        "navExpected": true
+      },
+      "openTextContrast": [
+        {
+          "text": "กลับ RO Tools Portal",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 14.542724646587752
+        },
+        {
+          "text": "Reform Workshop",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 14.542724646587752
+        },
+        {
+          "text": "เครื่องมืออื่น",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(27, 38, 32)",
+          "contrast": 13.70759482724283
+        },
+        {
+          "text": "แผนที่เก็บเลเวล",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 14.542724646587752
+        },
+        {
+          "text": "Reform Workshop",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(35, 52, 42)",
+          "contrast": 11.54860112721001
+        },
+        {
+          "text": "Dim Glacier Planner",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 14.542724646587752
+        },
+        {
+          "text": "Sessrumnir Ocean Week",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 14.542724646587752
+        },
+        {
+          "text": "Grade & Refine Workshop — อยู่ในแผน",
+          "foreground": "rgb(179, 193, 182)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 8.852348690739447
+        }
+      ],
+      "errorComparison": {
+        "events": [],
+        "newErrors": []
+      },
+      "fallbackGeometry": {
+        "viewport": 360,
+        "documentWidth": 360,
+        "bodyWidth": 360,
+        "nav": null,
+        "header": {
+          "left": 0,
+          "top": 44,
+          "right": 360,
+          "bottom": 143,
+          "width": 360,
+          "height": 99
+        },
+        "hero": {
+          "left": 16,
+          "top": 157,
+          "right": 344,
+          "bottom": 1116.1875,
+          "width": 328,
+          "height": 959.1875
+        },
+        "controls": [],
+        "overlaps": [],
+        "navExpected": false
+      },
+      "fallbackErrorComparison": {
+        "events": [
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          }
+        ],
+        "newErrors": []
+      }
+    },
+    {
+      "label": "390-light",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "colorScheme": "light",
+      "baselineGeometry": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390,
+        "nav": null,
+        "header": {
+          "left": 0,
+          "top": 0,
+          "right": 390,
+          "bottom": 99,
+          "width": 390,
+          "height": 99
+        },
+        "hero": {
+          "left": 16,
+          "top": 113,
+          "right": 374,
+          "bottom": 993.515625,
+          "width": 358,
+          "height": 880.515625
+        },
+        "controls": [],
+        "overlaps": [],
+        "navExpected": false
+      },
+      "baselineErrors": [],
+      "closedGeometry": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390,
+        "nav": {
+          "left": 0,
+          "top": 0,
+          "right": 390,
+          "bottom": 98,
+          "width": 390,
+          "height": 98
+        },
+        "header": {
+          "left": 0,
+          "top": 98,
+          "right": 390,
+          "bottom": 197,
+          "width": 390,
+          "height": 99
+        },
+        "hero": {
+          "left": 16,
+          "top": 211,
+          "right": 374,
+          "bottom": 1091.515625,
+          "width": 358,
+          "height": 880.515625
+        },
+        "controls": [
+          {
+            "text": "กลับ RO Tools Portal",
+            "left": 9,
+            "top": 9,
+            "right": 160.671875,
+            "bottom": 53,
+            "width": 151.671875,
+            "height": 44
+          },
+          {
+            "text": "เครื่องมืออื่น",
+            "left": 283,
+            "top": 9,
+            "right": 381,
+            "bottom": 53,
+            "width": 98,
+            "height": 44
+          }
+        ],
+        "overlaps": [],
+        "navExpected": true
+      },
+      "closedTextContrast": [
+        {
+          "text": "กลับ RO Tools Portal",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 10.974833225023998
+        },
+        {
+          "text": "Reform Workshop",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 10.974833225023998
+        },
+        {
+          "text": "เครื่องมืออื่น",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(255, 255, 255)",
+          "contrast": 12.114774365113187
+        }
+      ],
+      "openGeometry": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390,
+        "nav": {
+          "left": 0,
+          "top": 0,
+          "right": 390,
+          "bottom": 349,
+          "width": 390,
+          "height": 349
+        },
+        "header": {
+          "left": 0,
+          "top": 349,
+          "right": 390,
+          "bottom": 448,
+          "width": 390,
+          "height": 99
+        },
+        "hero": {
+          "left": 16,
+          "top": 462,
+          "right": 374,
+          "bottom": 1342.515625,
+          "width": 358,
+          "height": 880.515625
+        },
+        "controls": [
+          {
+            "text": "กลับ RO Tools Portal",
+            "left": 9,
+            "top": 9,
+            "right": 160.671875,
+            "bottom": 53,
+            "width": 151.671875,
+            "height": 44
+          },
+          {
+            "text": "เครื่องมืออื่น",
+            "left": 283,
+            "top": 9,
+            "right": 381,
+            "bottom": 53,
+            "width": 98,
+            "height": 44
+          },
+          {
+            "text": "แผนที่เก็บเลเวล",
+            "left": 9,
+            "top": 110,
+            "right": 381,
+            "bottom": 154,
+            "width": 372,
+            "height": 44
+          },
+          {
+            "text": "Reform Workshop",
+            "left": 9,
+            "top": 154,
+            "right": 381,
+            "bottom": 198,
+            "width": 372,
+            "height": 44
+          },
+          {
+            "text": "Dim Glacier Planner",
+            "left": 9,
+            "top": 198,
+            "right": 381,
+            "bottom": 242,
+            "width": 372,
+            "height": 44
+          },
+          {
+            "text": "Sessrumnir Ocean Week",
+            "left": 9,
+            "top": 242,
+            "right": 381,
+            "bottom": 286,
+            "width": 372,
+            "height": 44
+          }
+        ],
+        "overlaps": [],
+        "navExpected": true
+      },
+      "openTextContrast": [
+        {
+          "text": "กลับ RO Tools Portal",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 10.974833225023998
+        },
+        {
+          "text": "Reform Workshop",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 10.974833225023998
+        },
+        {
+          "text": "เครื่องมืออื่น",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(255, 255, 255)",
+          "contrast": 12.114774365113187
+        },
+        {
+          "text": "แผนที่เก็บเลเวล",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 10.974833225023998
+        },
+        {
+          "text": "Reform Workshop",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(222, 233, 215)",
+          "contrast": 9.658788710926542
+        },
+        {
+          "text": "Dim Glacier Planner",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 10.974833225023998
+        },
+        {
+          "text": "Sessrumnir Ocean Week",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 10.974833225023998
+        },
+        {
+          "text": "Grade & Refine Workshop — อยู่ในแผน",
+          "foreground": "rgb(82, 96, 79)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 6.049316092843054
+        }
+      ],
+      "errorComparison": {
+        "events": [],
+        "newErrors": []
+      },
+      "fallbackGeometry": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390,
+        "nav": null,
+        "header": {
+          "left": 0,
+          "top": 44,
+          "right": 390,
+          "bottom": 143,
+          "width": 390,
+          "height": 99
+        },
+        "hero": {
+          "left": 16,
+          "top": 157,
+          "right": 374,
+          "bottom": 1037.515625,
+          "width": 358,
+          "height": 880.515625
+        },
+        "controls": [],
+        "overlaps": [],
+        "navExpected": false
+      },
+      "fallbackErrorComparison": {
+        "events": [
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          }
+        ],
+        "newErrors": []
+      }
+    },
+    {
+      "label": "390-dark",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "colorScheme": "dark",
+      "baselineGeometry": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390,
+        "nav": null,
+        "header": {
+          "left": 0,
+          "top": 0,
+          "right": 390,
+          "bottom": 99,
+          "width": 390,
+          "height": 99
+        },
+        "hero": {
+          "left": 16,
+          "top": 113,
+          "right": 374,
+          "bottom": 1018.453125,
+          "width": 358,
+          "height": 905.453125
+        },
+        "controls": [],
+        "overlaps": [],
+        "navExpected": false
+      },
+      "baselineErrors": [],
+      "closedGeometry": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390,
+        "nav": {
+          "left": 0,
+          "top": 0,
+          "right": 390,
+          "bottom": 98,
+          "width": 390,
+          "height": 98
+        },
+        "header": {
+          "left": 0,
+          "top": 98,
+          "right": 390,
+          "bottom": 197,
+          "width": 390,
+          "height": 99
+        },
+        "hero": {
+          "left": 16,
+          "top": 211,
+          "right": 374,
+          "bottom": 1116.453125,
+          "width": 358,
+          "height": 905.453125
+        },
+        "controls": [
+          {
+            "text": "กลับ RO Tools Portal",
+            "left": 9,
+            "top": 9,
+            "right": 160.671875,
+            "bottom": 53,
+            "width": 151.671875,
+            "height": 44
+          },
+          {
+            "text": "เครื่องมืออื่น",
+            "left": 283,
+            "top": 9,
+            "right": 381,
+            "bottom": 53,
+            "width": 98,
+            "height": 44
+          }
+        ],
+        "overlaps": [],
+        "navExpected": true
+      },
+      "closedTextContrast": [
+        {
+          "text": "กลับ RO Tools Portal",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 14.542724646587752
+        },
+        {
+          "text": "Reform Workshop",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 14.542724646587752
+        },
+        {
+          "text": "เครื่องมืออื่น",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(27, 38, 32)",
+          "contrast": 13.70759482724283
+        }
+      ],
+      "openGeometry": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390,
+        "nav": {
+          "left": 0,
+          "top": 0,
+          "right": 390,
+          "bottom": 349,
+          "width": 390,
+          "height": 349
+        },
+        "header": {
+          "left": 0,
+          "top": 349,
+          "right": 390,
+          "bottom": 448,
+          "width": 390,
+          "height": 99
+        },
+        "hero": {
+          "left": 16,
+          "top": 462,
+          "right": 374,
+          "bottom": 1367.453125,
+          "width": 358,
+          "height": 905.453125
+        },
+        "controls": [
+          {
+            "text": "กลับ RO Tools Portal",
+            "left": 9,
+            "top": 9,
+            "right": 160.671875,
+            "bottom": 53,
+            "width": 151.671875,
+            "height": 44
+          },
+          {
+            "text": "เครื่องมืออื่น",
+            "left": 283,
+            "top": 9,
+            "right": 381,
+            "bottom": 53,
+            "width": 98,
+            "height": 44
+          },
+          {
+            "text": "แผนที่เก็บเลเวล",
+            "left": 9,
+            "top": 110,
+            "right": 381,
+            "bottom": 154,
+            "width": 372,
+            "height": 44
+          },
+          {
+            "text": "Reform Workshop",
+            "left": 9,
+            "top": 154,
+            "right": 381,
+            "bottom": 198,
+            "width": 372,
+            "height": 44
+          },
+          {
+            "text": "Dim Glacier Planner",
+            "left": 9,
+            "top": 198,
+            "right": 381,
+            "bottom": 242,
+            "width": 372,
+            "height": 44
+          },
+          {
+            "text": "Sessrumnir Ocean Week",
+            "left": 9,
+            "top": 242,
+            "right": 381,
+            "bottom": 286,
+            "width": 372,
+            "height": 44
+          }
+        ],
+        "overlaps": [],
+        "navExpected": true
+      },
+      "openTextContrast": [
+        {
+          "text": "กลับ RO Tools Portal",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 14.542724646587752
+        },
+        {
+          "text": "Reform Workshop",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 14.542724646587752
+        },
+        {
+          "text": "เครื่องมืออื่น",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(27, 38, 32)",
+          "contrast": 13.70759482724283
+        },
+        {
+          "text": "แผนที่เก็บเลเวล",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 14.542724646587752
+        },
+        {
+          "text": "Reform Workshop",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(35, 52, 42)",
+          "contrast": 11.54860112721001
+        },
+        {
+          "text": "Dim Glacier Planner",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 14.542724646587752
+        },
+        {
+          "text": "Sessrumnir Ocean Week",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 14.542724646587752
+        },
+        {
+          "text": "Grade & Refine Workshop — อยู่ในแผน",
+          "foreground": "rgb(179, 193, 182)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 8.852348690739447
+        }
+      ],
+      "errorComparison": {
+        "events": [],
+        "newErrors": []
+      },
+      "fallbackGeometry": {
+        "viewport": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390,
+        "nav": null,
+        "header": {
+          "left": 0,
+          "top": 44,
+          "right": 390,
+          "bottom": 143,
+          "width": 390,
+          "height": 99
+        },
+        "hero": {
+          "left": 16,
+          "top": 157,
+          "right": 374,
+          "bottom": 1062.453125,
+          "width": 358,
+          "height": 905.453125
+        },
+        "controls": [],
+        "overlaps": [],
+        "navExpected": false
+      },
+      "fallbackErrorComparison": {
+        "events": [
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          }
+        ],
+        "newErrors": []
+      }
+    },
+    {
+      "label": "768-light",
+      "viewport": {
+        "width": 768,
+        "height": 1000
+      },
+      "colorScheme": "light",
+      "baselineGeometry": {
+        "viewport": 768,
+        "documentWidth": 768,
+        "bodyWidth": 768,
+        "nav": null,
+        "header": {
+          "left": 0,
+          "top": 0,
+          "right": 768,
+          "bottom": 65,
+          "width": 768,
+          "height": 65
+        },
+        "hero": {
+          "left": 28,
+          "top": 85,
+          "right": 740,
+          "bottom": 891.875,
+          "width": 712,
+          "height": 806.875
+        },
+        "controls": [],
+        "overlaps": [],
+        "navExpected": false
+      },
+      "baselineErrors": [],
+      "closedGeometry": {
+        "viewport": 768,
+        "documentWidth": 768,
+        "bodyWidth": 768,
+        "nav": {
+          "left": 0,
+          "top": 0,
+          "right": 768,
+          "bottom": 68,
+          "width": 768,
+          "height": 68
+        },
+        "header": {
+          "left": 0,
+          "top": 68,
+          "right": 768,
+          "bottom": 133,
+          "width": 768,
+          "height": 65
+        },
+        "hero": {
+          "left": 28,
+          "top": 153,
+          "right": 740,
+          "bottom": 959.875,
+          "width": 712,
+          "height": 806.875
+        },
+        "controls": [
+          {
+            "text": "กลับ RO Tools Portal",
+            "left": 15,
+            "top": 11,
+            "right": 166.671875,
+            "bottom": 55,
+            "width": 151.671875,
+            "height": 44
+          },
+          {
+            "text": "เครื่องมืออื่น",
+            "left": 655,
+            "top": 11,
+            "right": 753,
+            "bottom": 55,
+            "width": 98,
+            "height": 44
+          }
+        ],
+        "overlaps": [],
+        "navExpected": true
+      },
+      "closedTextContrast": [
+        {
+          "text": "กลับ RO Tools Portal",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 10.974833225023998
+        },
+        {
+          "text": "Reform Workshop",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 10.974833225023998
+        },
+        {
+          "text": "เครื่องมืออื่น",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(255, 255, 255)",
+          "contrast": 12.114774365113187
+        }
+      ],
+      "openGeometry": {
+        "viewport": 768,
+        "documentWidth": 768,
+        "bodyWidth": 768,
+        "nav": {
+          "left": 0,
+          "top": 0,
+          "right": 768,
+          "bottom": 193,
+          "width": 768,
+          "height": 193
+        },
+        "header": {
+          "left": 0,
+          "top": 193,
+          "right": 768,
+          "bottom": 258,
+          "width": 768,
+          "height": 65
+        },
+        "hero": {
+          "left": 28,
+          "top": 278,
+          "right": 740,
+          "bottom": 1084.875,
+          "width": 712,
+          "height": 806.875
+        },
+        "controls": [
+          {
+            "text": "กลับ RO Tools Portal",
+            "left": 15,
+            "top": 11,
+            "right": 166.671875,
+            "bottom": 55,
+            "width": 151.671875,
+            "height": 44
+          },
+          {
+            "text": "เครื่องมืออื่น",
+            "left": 655,
+            "top": 11,
+            "right": 753,
+            "bottom": 55,
+            "width": 98,
+            "height": 44
+          },
+          {
+            "text": "แผนที่เก็บเลเวล",
+            "left": 15,
+            "top": 78,
+            "right": 163,
+            "bottom": 122,
+            "width": 148,
+            "height": 44
+          },
+          {
+            "text": "Reform Workshop",
+            "left": 169,
+            "top": 78,
+            "right": 344.09375,
+            "bottom": 122,
+            "width": 175.09375,
+            "height": 44
+          },
+          {
+            "text": "Dim Glacier Planner",
+            "left": 350.09375,
+            "top": 78,
+            "right": 529.359375,
+            "bottom": 122,
+            "width": 179.265625,
+            "height": 44
+          },
+          {
+            "text": "Sessrumnir Ocean Week",
+            "left": 535.359375,
+            "top": 78,
+            "right": 744.71875,
+            "bottom": 122,
+            "width": 209.359375,
+            "height": 44
+          }
+        ],
+        "overlaps": [],
+        "navExpected": true
+      },
+      "openTextContrast": [
+        {
+          "text": "กลับ RO Tools Portal",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 10.974833225023998
+        },
+        {
+          "text": "Reform Workshop",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 10.974833225023998
+        },
+        {
+          "text": "เครื่องมืออื่น",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(255, 255, 255)",
+          "contrast": 12.114774365113187
+        },
+        {
+          "text": "แผนที่เก็บเลเวล",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 10.974833225023998
+        },
+        {
+          "text": "Reform Workshop",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(222, 233, 215)",
+          "contrast": 9.658788710926542
+        },
+        {
+          "text": "Dim Glacier Planner",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 10.974833225023998
+        },
+        {
+          "text": "Sessrumnir Ocean Week",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 10.974833225023998
+        },
+        {
+          "text": "Grade & Refine Workshop — อยู่ในแผน",
+          "foreground": "rgb(82, 96, 79)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 6.049316092843054
+        }
+      ],
+      "errorComparison": {
+        "events": [],
+        "newErrors": []
+      },
+      "fallbackGeometry": {
+        "viewport": 768,
+        "documentWidth": 768,
+        "bodyWidth": 768,
+        "nav": null,
+        "header": {
+          "left": 0,
+          "top": 44,
+          "right": 768,
+          "bottom": 109,
+          "width": 768,
+          "height": 65
+        },
+        "hero": {
+          "left": 28,
+          "top": 129,
+          "right": 740,
+          "bottom": 935.875,
+          "width": 712,
+          "height": 806.875
+        },
+        "controls": [],
+        "overlaps": [],
+        "navExpected": false
+      },
+      "fallbackErrorComparison": {
+        "events": [
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          }
+        ],
+        "newErrors": []
+      }
+    },
+    {
+      "label": "768-dark",
+      "viewport": {
+        "width": 768,
+        "height": 1000
+      },
+      "colorScheme": "dark",
+      "baselineGeometry": {
+        "viewport": 768,
+        "documentWidth": 768,
+        "bodyWidth": 768,
+        "nav": null,
+        "header": {
+          "left": 0,
+          "top": 0,
+          "right": 768,
+          "bottom": 65,
+          "width": 768,
+          "height": 65
+        },
+        "hero": {
+          "left": 28,
+          "top": 85,
+          "right": 740,
+          "bottom": 893.875,
+          "width": 712,
+          "height": 808.875
+        },
+        "controls": [],
+        "overlaps": [],
+        "navExpected": false
+      },
+      "baselineErrors": [],
+      "closedGeometry": {
+        "viewport": 768,
+        "documentWidth": 768,
+        "bodyWidth": 768,
+        "nav": {
+          "left": 0,
+          "top": 0,
+          "right": 768,
+          "bottom": 68,
+          "width": 768,
+          "height": 68
+        },
+        "header": {
+          "left": 0,
+          "top": 68,
+          "right": 768,
+          "bottom": 133,
+          "width": 768,
+          "height": 65
+        },
+        "hero": {
+          "left": 28,
+          "top": 153,
+          "right": 740,
+          "bottom": 961.875,
+          "width": 712,
+          "height": 808.875
+        },
+        "controls": [
+          {
+            "text": "กลับ RO Tools Portal",
+            "left": 15,
+            "top": 11,
+            "right": 166.671875,
+            "bottom": 55,
+            "width": 151.671875,
+            "height": 44
+          },
+          {
+            "text": "เครื่องมืออื่น",
+            "left": 655,
+            "top": 11,
+            "right": 753,
+            "bottom": 55,
+            "width": 98,
+            "height": 44
+          }
+        ],
+        "overlaps": [],
+        "navExpected": true
+      },
+      "closedTextContrast": [
+        {
+          "text": "กลับ RO Tools Portal",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 14.542724646587752
+        },
+        {
+          "text": "Reform Workshop",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 14.542724646587752
+        },
+        {
+          "text": "เครื่องมืออื่น",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(27, 38, 32)",
+          "contrast": 13.70759482724283
+        }
+      ],
+      "openGeometry": {
+        "viewport": 768,
+        "documentWidth": 768,
+        "bodyWidth": 768,
+        "nav": {
+          "left": 0,
+          "top": 0,
+          "right": 768,
+          "bottom": 193,
+          "width": 768,
+          "height": 193
+        },
+        "header": {
+          "left": 0,
+          "top": 193,
+          "right": 768,
+          "bottom": 258,
+          "width": 768,
+          "height": 65
+        },
+        "hero": {
+          "left": 28,
+          "top": 278,
+          "right": 740,
+          "bottom": 1086.875,
+          "width": 712,
+          "height": 808.875
+        },
+        "controls": [
+          {
+            "text": "กลับ RO Tools Portal",
+            "left": 15,
+            "top": 11,
+            "right": 166.671875,
+            "bottom": 55,
+            "width": 151.671875,
+            "height": 44
+          },
+          {
+            "text": "เครื่องมืออื่น",
+            "left": 655,
+            "top": 11,
+            "right": 753,
+            "bottom": 55,
+            "width": 98,
+            "height": 44
+          },
+          {
+            "text": "แผนที่เก็บเลเวล",
+            "left": 15,
+            "top": 78,
+            "right": 163,
+            "bottom": 122,
+            "width": 148,
+            "height": 44
+          },
+          {
+            "text": "Reform Workshop",
+            "left": 169,
+            "top": 78,
+            "right": 344.09375,
+            "bottom": 122,
+            "width": 175.09375,
+            "height": 44
+          },
+          {
+            "text": "Dim Glacier Planner",
+            "left": 350.09375,
+            "top": 78,
+            "right": 529.359375,
+            "bottom": 122,
+            "width": 179.265625,
+            "height": 44
+          },
+          {
+            "text": "Sessrumnir Ocean Week",
+            "left": 535.359375,
+            "top": 78,
+            "right": 744.71875,
+            "bottom": 122,
+            "width": 209.359375,
+            "height": 44
+          }
+        ],
+        "overlaps": [],
+        "navExpected": true
+      },
+      "openTextContrast": [
+        {
+          "text": "กลับ RO Tools Portal",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 14.542724646587752
+        },
+        {
+          "text": "Reform Workshop",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 14.542724646587752
+        },
+        {
+          "text": "เครื่องมืออื่น",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(27, 38, 32)",
+          "contrast": 13.70759482724283
+        },
+        {
+          "text": "แผนที่เก็บเลเวล",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 14.542724646587752
+        },
+        {
+          "text": "Reform Workshop",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(35, 52, 42)",
+          "contrast": 11.54860112721001
+        },
+        {
+          "text": "Dim Glacier Planner",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 14.542724646587752
+        },
+        {
+          "text": "Sessrumnir Ocean Week",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 14.542724646587752
+        },
+        {
+          "text": "Grade & Refine Workshop — อยู่ในแผน",
+          "foreground": "rgb(179, 193, 182)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 8.852348690739447
+        }
+      ],
+      "errorComparison": {
+        "events": [],
+        "newErrors": []
+      },
+      "fallbackGeometry": {
+        "viewport": 768,
+        "documentWidth": 768,
+        "bodyWidth": 768,
+        "nav": null,
+        "header": {
+          "left": 0,
+          "top": 44,
+          "right": 768,
+          "bottom": 109,
+          "width": 768,
+          "height": 65
+        },
+        "hero": {
+          "left": 28,
+          "top": 129,
+          "right": 740,
+          "bottom": 937.875,
+          "width": 712,
+          "height": 808.875
+        },
+        "controls": [],
+        "overlaps": [],
+        "navExpected": false
+      },
+      "fallbackErrorComparison": {
+        "events": [
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          }
+        ],
+        "newErrors": []
+      }
+    },
+    {
+      "label": "1440-light",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "colorScheme": "light",
+      "baselineGeometry": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440,
+        "nav": null,
+        "header": {
+          "left": 0,
+          "top": 0,
+          "right": 1440,
+          "bottom": 65,
+          "width": 1440,
+          "height": 65
+        },
+        "hero": {
+          "left": 88,
+          "top": 85,
+          "right": 1352,
+          "bottom": 622.078125,
+          "width": 1264,
+          "height": 537.078125
+        },
+        "controls": [],
+        "overlaps": [],
+        "navExpected": false
+      },
+      "baselineErrors": [],
+      "closedGeometry": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440,
+        "nav": {
+          "left": 0,
+          "top": 0,
+          "right": 1440,
+          "bottom": 68,
+          "width": 1440,
+          "height": 68
+        },
+        "header": {
+          "left": 0,
+          "top": 68,
+          "right": 1440,
+          "bottom": 133,
+          "width": 1440,
+          "height": 65
+        },
+        "hero": {
+          "left": 88,
+          "top": 153,
+          "right": 1352,
+          "bottom": 690.078125,
+          "width": 1264,
+          "height": 537.078125
+        },
+        "controls": [
+          {
+            "text": "กลับ RO Tools Portal",
+            "left": 15,
+            "top": 11,
+            "right": 166.671875,
+            "bottom": 55,
+            "width": 151.671875,
+            "height": 44
+          },
+          {
+            "text": "เครื่องมืออื่น",
+            "left": 1327,
+            "top": 11,
+            "right": 1425,
+            "bottom": 55,
+            "width": 98,
+            "height": 44
+          }
+        ],
+        "overlaps": [],
+        "navExpected": true
+      },
+      "closedTextContrast": [
+        {
+          "text": "กลับ RO Tools Portal",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 10.974833225023998
+        },
+        {
+          "text": "Reform Workshop",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 10.974833225023998
+        },
+        {
+          "text": "เครื่องมืออื่น",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(255, 255, 255)",
+          "contrast": 12.114774365113187
+        }
+      ],
+      "openGeometry": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440,
+        "nav": {
+          "left": 0,
+          "top": 0,
+          "right": 1440,
+          "bottom": 143,
+          "width": 1440,
+          "height": 143
+        },
+        "header": {
+          "left": 0,
+          "top": 143,
+          "right": 1440,
+          "bottom": 208,
+          "width": 1440,
+          "height": 65
+        },
+        "hero": {
+          "left": 88,
+          "top": 228,
+          "right": 1352,
+          "bottom": 765.078125,
+          "width": 1264,
+          "height": 537.078125
+        },
+        "controls": [
+          {
+            "text": "กลับ RO Tools Portal",
+            "left": 15,
+            "top": 11,
+            "right": 166.671875,
+            "bottom": 55,
+            "width": 151.671875,
+            "height": 44
+          },
+          {
+            "text": "เครื่องมืออื่น",
+            "left": 1327,
+            "top": 11,
+            "right": 1425,
+            "bottom": 55,
+            "width": 98,
+            "height": 44
+          },
+          {
+            "text": "แผนที่เก็บเลเวล",
+            "left": 15,
+            "top": 78,
+            "right": 163,
+            "bottom": 122,
+            "width": 148,
+            "height": 44
+          },
+          {
+            "text": "Reform Workshop",
+            "left": 169,
+            "top": 78,
+            "right": 344.09375,
+            "bottom": 122,
+            "width": 175.09375,
+            "height": 44
+          },
+          {
+            "text": "Dim Glacier Planner",
+            "left": 350.09375,
+            "top": 78,
+            "right": 529.359375,
+            "bottom": 122,
+            "width": 179.265625,
+            "height": 44
+          },
+          {
+            "text": "Sessrumnir Ocean Week",
+            "left": 535.359375,
+            "top": 78,
+            "right": 744.71875,
+            "bottom": 122,
+            "width": 209.359375,
+            "height": 44
+          }
+        ],
+        "overlaps": [],
+        "navExpected": true
+      },
+      "openTextContrast": [
+        {
+          "text": "กลับ RO Tools Portal",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 10.974833225023998
+        },
+        {
+          "text": "Reform Workshop",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 10.974833225023998
+        },
+        {
+          "text": "เครื่องมืออื่น",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(255, 255, 255)",
+          "contrast": 12.114774365113187
+        },
+        {
+          "text": "แผนที่เก็บเลเวล",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 10.974833225023998
+        },
+        {
+          "text": "Reform Workshop",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(222, 233, 215)",
+          "contrast": 9.658788710926542
+        },
+        {
+          "text": "Dim Glacier Planner",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 10.974833225023998
+        },
+        {
+          "text": "Sessrumnir Ocean Week",
+          "foreground": "rgb(35, 59, 44)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 10.974833225023998
+        },
+        {
+          "text": "Grade & Refine Workshop — อยู่ในแผน",
+          "foreground": "rgb(82, 96, 79)",
+          "background": "rgb(241, 245, 237)",
+          "contrast": 6.049316092843054
+        }
+      ],
+      "errorComparison": {
+        "events": [],
+        "newErrors": []
+      },
+      "fallbackGeometry": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440,
+        "nav": null,
+        "header": {
+          "left": 0,
+          "top": 44,
+          "right": 1440,
+          "bottom": 109,
+          "width": 1440,
+          "height": 65
+        },
+        "hero": {
+          "left": 88,
+          "top": 129,
+          "right": 1352,
+          "bottom": 666.078125,
+          "width": 1264,
+          "height": 537.078125
+        },
+        "controls": [],
+        "overlaps": [],
+        "navExpected": false
+      },
+      "fallbackErrorComparison": {
+        "events": [
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          }
+        ],
+        "newErrors": []
+      }
+    },
+    {
+      "label": "1440-dark",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "colorScheme": "dark",
+      "baselineGeometry": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440,
+        "nav": null,
+        "header": {
+          "left": 0,
+          "top": 0,
+          "right": 1440,
+          "bottom": 65,
+          "width": 1440,
+          "height": 65
+        },
+        "hero": {
+          "left": 88,
+          "top": 85,
+          "right": 1352,
+          "bottom": 624.078125,
+          "width": 1264,
+          "height": 539.078125
+        },
+        "controls": [],
+        "overlaps": [],
+        "navExpected": false
+      },
+      "baselineErrors": [],
+      "closedGeometry": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440,
+        "nav": {
+          "left": 0,
+          "top": 0,
+          "right": 1440,
+          "bottom": 68,
+          "width": 1440,
+          "height": 68
+        },
+        "header": {
+          "left": 0,
+          "top": 68,
+          "right": 1440,
+          "bottom": 133,
+          "width": 1440,
+          "height": 65
+        },
+        "hero": {
+          "left": 88,
+          "top": 153,
+          "right": 1352,
+          "bottom": 692.078125,
+          "width": 1264,
+          "height": 539.078125
+        },
+        "controls": [
+          {
+            "text": "กลับ RO Tools Portal",
+            "left": 15,
+            "top": 11,
+            "right": 166.671875,
+            "bottom": 55,
+            "width": 151.671875,
+            "height": 44
+          },
+          {
+            "text": "เครื่องมืออื่น",
+            "left": 1327,
+            "top": 11,
+            "right": 1425,
+            "bottom": 55,
+            "width": 98,
+            "height": 44
+          }
+        ],
+        "overlaps": [],
+        "navExpected": true
+      },
+      "closedTextContrast": [
+        {
+          "text": "กลับ RO Tools Portal",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 14.542724646587752
+        },
+        {
+          "text": "Reform Workshop",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 14.542724646587752
+        },
+        {
+          "text": "เครื่องมืออื่น",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(27, 38, 32)",
+          "contrast": 13.70759482724283
+        }
+      ],
+      "openGeometry": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440,
+        "nav": {
+          "left": 0,
+          "top": 0,
+          "right": 1440,
+          "bottom": 143,
+          "width": 1440,
+          "height": 143
+        },
+        "header": {
+          "left": 0,
+          "top": 143,
+          "right": 1440,
+          "bottom": 208,
+          "width": 1440,
+          "height": 65
+        },
+        "hero": {
+          "left": 88,
+          "top": 228,
+          "right": 1352,
+          "bottom": 767.078125,
+          "width": 1264,
+          "height": 539.078125
+        },
+        "controls": [
+          {
+            "text": "กลับ RO Tools Portal",
+            "left": 15,
+            "top": 11,
+            "right": 166.671875,
+            "bottom": 55,
+            "width": 151.671875,
+            "height": 44
+          },
+          {
+            "text": "เครื่องมืออื่น",
+            "left": 1327,
+            "top": 11,
+            "right": 1425,
+            "bottom": 55,
+            "width": 98,
+            "height": 44
+          },
+          {
+            "text": "แผนที่เก็บเลเวล",
+            "left": 15,
+            "top": 78,
+            "right": 163,
+            "bottom": 122,
+            "width": 148,
+            "height": 44
+          },
+          {
+            "text": "Reform Workshop",
+            "left": 169,
+            "top": 78,
+            "right": 344.09375,
+            "bottom": 122,
+            "width": 175.09375,
+            "height": 44
+          },
+          {
+            "text": "Dim Glacier Planner",
+            "left": 350.09375,
+            "top": 78,
+            "right": 529.359375,
+            "bottom": 122,
+            "width": 179.265625,
+            "height": 44
+          },
+          {
+            "text": "Sessrumnir Ocean Week",
+            "left": 535.359375,
+            "top": 78,
+            "right": 744.71875,
+            "bottom": 122,
+            "width": 209.359375,
+            "height": 44
+          }
+        ],
+        "overlaps": [],
+        "navExpected": true
+      },
+      "openTextContrast": [
+        {
+          "text": "กลับ RO Tools Portal",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 14.542724646587752
+        },
+        {
+          "text": "Reform Workshop",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 14.542724646587752
+        },
+        {
+          "text": "เครื่องมืออื่น",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(27, 38, 32)",
+          "contrast": 13.70759482724283
+        },
+        {
+          "text": "แผนที่เก็บเลเวล",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 14.542724646587752
+        },
+        {
+          "text": "Reform Workshop",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(35, 52, 42)",
+          "contrast": 11.54860112721001
+        },
+        {
+          "text": "Dim Glacier Planner",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 14.542724646587752
+        },
+        {
+          "text": "Sessrumnir Ocean Week",
+          "foreground": "rgb(236, 242, 232)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 14.542724646587752
+        },
+        {
+          "text": "Grade & Refine Workshop — อยู่ในแผน",
+          "foreground": "rgb(179, 193, 182)",
+          "background": "rgb(22, 33, 27)",
+          "contrast": 8.852348690739447
+        }
+      ],
+      "errorComparison": {
+        "events": [],
+        "newErrors": []
+      },
+      "fallbackGeometry": {
+        "viewport": 1440,
+        "documentWidth": 1440,
+        "bodyWidth": 1440,
+        "nav": null,
+        "header": {
+          "left": 0,
+          "top": 44,
+          "right": 1440,
+          "bottom": 109,
+          "width": 1440,
+          "height": 65
+        },
+        "hero": {
+          "left": 88,
+          "top": 129,
+          "right": 1352,
+          "bottom": 668.078125,
+          "width": 1264,
+          "height": 539.078125
+        },
+        "controls": [],
+        "overlaps": [],
+        "navExpected": false
+      },
+      "fallbackErrorComparison": {
+        "events": [
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "requestfailed",
+            "text": "net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          },
+          {
+            "kind": "console",
+            "text": "Failed to load resource: net::ERR_FAILED",
+            "url": "http://127.0.0.1:4173/assets/ro-suite/1.2.0/nav.js",
+            "explanation": "Expected failure: this scenario deliberately aborts the exact nav.js request"
+          }
+        ],
+        "newErrors": []
+      }
+    }
+  ],
+  "screenshots": [
+    "390-light-closed.png",
+    "390-light-open.png",
+    "390-light-blocked-module.png",
+    "390-dark-closed.png",
+    "390-dark-open.png",
+    "390-dark-blocked-module.png",
+    "1440-light-closed.png",
+    "1440-light-open.png",
+    "1440-light-blocked-module.png",
+    "1440-dark-closed.png",
+    "1440-dark-open.png",
+    "1440-dark-blocked-module.png"
+  ],
+  "scopeNotes": [
+    "The app has no import/export or query-based state-sharing feature.",
+    "Only exact Google Fonts network failures and the deliberately blocked nav module are explained separately; unknown errors are compared with the pre-integration page.",
+    "Portal activation is intercepted with a local test response; tests do not leave the calculator for a live external site."
+  ],
+  "baseCommit": "4bc1653fec1901a4121b86342f1ad0cc4ef55313",
+  "commit": "7e98c442e0232fbdccc5e5b614dac9d6bb94a2fc",
+  "playwrightVersion": "1.55.1",
+  "browserVersion": "140.0.7339.186",
+  "finishedAt": "2026-09-30T18:42:08.849Z"
+}
