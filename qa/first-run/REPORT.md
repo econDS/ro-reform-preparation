@@ -14,6 +14,7 @@ Existing result/shopping-before-price layout and collapsed comparisons were alre
 - Historical whole-page invariant checks now first reverse only `changes.json` before checking their historical hashes. This keeps approved presentation edits explicit and preserves original business/data byte checks
 
 ## Evidence
+The final geometry collector uses `Element.checkVisibility()` and excludes descendants of closed native details. Counts are rendered controls anywhere in the page, not a claim that all are in the first viewport; minimum required inputs are documented separately.
 Before/after390/1440 screenshots are lossless WebP conversions of actual Chromium viewport captures. All widths/themes and source-linked outputs are in local JSON and final-head CI artifacts. No human usability study or conversion claim.
 
 ## Limitations and findings
