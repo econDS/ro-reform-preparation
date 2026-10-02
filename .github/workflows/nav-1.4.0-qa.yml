@@ -1,4 +1,4 @@
-name: RO Suite nav 1.4 preservation QA
+name: RO Suite nav 1.4.1 preservation QA
 on:
   pull_request:
     branches: [main]
@@ -63,6 +63,6 @@ jobs:
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: nav140-${{ github.event.pull_request.head.sha }}
+          name: nav141-${{ github.event.pull_request.head.sha }}
           path: qa-artifacts/
           retention-days: 30

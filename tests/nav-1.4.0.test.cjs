@@ -7,15 +7,16 @@ const crypto = require('node:crypto');
 const {execFileSync} = require('node:child_process');
 const root = path.resolve(__dirname, '..');
 const baseline = require('../qa/nav-1.4.0/production-baseline.json');
-const release = path.join(root, 'assets/ro-suite/1.4.0');
+const release = path.join(root, 'assets/ro-suite/1.4.1');
 const hash = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
 const read = file => fs.readFileSync(path.join(root, file));
-test('nav 1.4 files are identical to the immutable Portal release', () => {
+test('nav 1.4.1 files are identical to the immutable Portal release', () => {
   const expected = require('../qa/nav-1.4.0/release-hashes.json');
   for (const [file, digest] of Object.entries(expected)) assert.equal(hash(fs.readFileSync(path.join(release, file))), digest, file);
   const lock = JSON.parse(fs.readFileSync(path.join(release, 'nav.lock.json')));
-  assert.equal(lock.bundleVersion, '1.4.0');
-  assert.equal(lock.sourceCommit, '24ca1068c8f6868b38d6224e661f818fec9897f9');
+  assert.equal(lock.bundleVersion, '1.4.1');
+  for (const [file, digest] of Object.entries(require('../qa/nav-1.4.0/frozen-1.4.0-hashes.json'))) assert.equal(hash(read('assets/ro-suite/1.4.0/' + file)), digest, 'previous immutable release: ' + file);
+  assert.equal(lock.sourceCommit, 'ac62659a26539d802111d255edb92b09ec68382b');
   for (const [file, data] of Object.entries(lock.files)) assert.equal(expected[file], data.sha256, file);
   assert.deepEqual(JSON.parse(read('assets/ro-suite/1.3.0/catalog.snapshot.json')), JSON.parse(fs.readFileSync(path.join(release, 'catalog.snapshot.json'))), 'destinations and tool identities are unchanged');
 });
@@ -26,7 +27,7 @@ test('every existing production file including first-run UI and old releases is 
   }
   const html = read('index.html').toString();
   assert.equal((html.match(/<ro-suite-nav\b/g) || []).length, 1);
-  assert.equal((html.match(/type="module" src=".\/assets\/ro-suite\/1\.4\.0\/nav\.js"/g) || []).length, 1);
+  assert.equal((html.match(/type="module" src=".\/assets\/ro-suite\/1\.4\.1\/nav\.js"/g) || []).length, 1);
   assert.doesNotMatch(html, /<ro-suite-nav[^>]*(?:theme|catalog-url)=/);
   assert.match(html, /ro-suite-nav > nav[^}]*min-height:\s*52px/);
   assert.match(html, /ro-suite-nav > nav > a[^}]*min-height:\s*44px/);
