@@ -14,7 +14,7 @@ Production change: only index.html module reference plus three additive release 
 
 QA: npm test (77 passed locally). Browser tooling unavailable locally (missing Chromium executable); existing read-only PR workflow is adapted for this branch, with pinned Playwright 1.55.1 outside production dependencies. Browser script runs at the real public subpath via a QA-only server; four widths, both system themes, live theme changes, keyboard, geometry/contrast, module fallback, optional catalog failure fixture, full calculation baseline and changed market price persistence. Actual head-specific result and screenshots are in workflow artifacts, report.json includes exact commit and individual outcomes. Until CI succeeds browser results are pending.
 
-Files: index.html; assets/ro-suite/1.3.0/{nav.js,catalog.snapshot.json,nav.lock.json}; tests/ro-suite-nav.{test,browser}.cjs; scripts/serve-nav-qa.cjs; .github/workflows/ro-suite-nav-qa.yml; docs/qa/ro-suite-nav-1.3.0/{REPORT.md,before.json,before-tests.log}.
+Files: index.html; assets/ro-suite/1.3.0/{nav.js,catalog.snapshot.json,nav.lock.json}; tests/ro-suite-nav.{test,browser}.cjs; scripts/serve-nav-qa.cjs; .github/workflows/ro-suite-nav-qa.yml; docs/qa/ro-suite-nav-1.3.0/{REPORT.md,before.json,before-tests.txt}.
 
 Limitations: real devices, WebKit/Firefox, installed browsers and post-merge Pages not tested. External Google Fonts network failures classified separately; optional catalog failure is deliberate and isolated, production uses bundled snapshot. No business changes or unrelated bug fixes.
 

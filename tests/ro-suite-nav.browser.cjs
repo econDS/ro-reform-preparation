@@ -328,12 +328,12 @@ async function main() {
             assert.equal(await page.evaluate(() => localStorage.getItem('reform-workshop.v1')), originalState);
             for (const fixtureCase of fixture.cases) await applyCase(page, fixtureCase, fixture.storageKeys);
             const beforePrice = await page.locator('#total').textContent();
-            await page.locator('[data-price="shadow"]').fill('123456');
+            await page.locator('[data-price="shadowOre"]').fill('123456');
             const customState = await page.evaluate(() => JSON.parse(localStorage.getItem('reform-workshop.v1')));
-            assert.equal(customState.prices.shadow,123456);
+            assert.equal(customState.prices.shadowOre,123456);
             assert.notEqual(await page.locator('#total').textContent(),beforePrice);
             await page.reload({waitUntil:'networkidle'});
-            assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem('reform-workshop.v1')).prices.shadow),123456);
+            assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem('reform-workshop.v1')).prices.shadowOre),123456);
             await applyCase(page, fixture.cases.at(-1), fixture.storageKeys);
             assert.equal(page.url(), original, 'Calculation inputs preserve query and hash');
             await page.locator('#quickstart-toggle').click();
