@@ -9,9 +9,9 @@ const crypto = require('node:crypto');
 const {execFileSync} = require('node:child_process');
 const root = path.resolve(__dirname, '..');
 const outputDir = path.resolve(process.env.RO_QA_OUTPUT || path.join(root, 'artifacts/ro-suite-nav'));
-const baseURL = process.env.RO_QA_URL || 'http://127.0.0.1:4173/';
+const baseURL = process.env.RO_QA_URL || 'http://127.0.0.1:4173/ro-reform-preparation/';
 const portalURL = 'https://econds.github.io/ro_tools_portal/';
-const navPath = '/assets/ro-suite/1.2.0/nav.js';
+const navPath = '/ro-reform-preparation/assets/ro-suite/1.3.0/nav.js';
 const query = '?qa=preserve%20query&count=3';
 const storageKey = 'reform-workshop.v1';
 const report = {
@@ -199,7 +199,7 @@ async function applyCase(page, fixtureCase, storageKeys) {
 
 async function main() {
   const fixture = JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures/ro-suite-nav-baseline.json'), 'utf8'));
-  report.baseCommit = fixture.baseCommit;
+  report.baseCommit = '9d577c00b8fd13fd8687fbb936657ae035473917';
   report.commit = process.env.RO_QA_COMMIT || execFileSync('git', ['rev-parse', 'HEAD'], {cwd: root, encoding: 'utf8'}).trim();
   const sourcesValid = await check('App, calculator, and CSS match the frozen baseline byte-for-byte', () => {
     for (const [file, expected] of Object.entries(fixture.preservedSourceSha256)) {
@@ -207,7 +207,7 @@ async function main() {
     }
   });
   if (!sourcesValid) throw new Error('Baseline source identity failed; console baseline would not be trustworthy');
-  const baselineHTML = execFileSync('git', ['show', `${fixture.baseCommit}:index.html`], {cwd: root, encoding: 'utf8'});
+  const baselineHTML = execFileSync('git', ['show', `${report.baseCommit}:index.html`], {cwd: root, encoding: 'utf8'});
   const {chromium} = require('playwright');
   report.playwrightVersion = require('playwright/package.json').version;
   const browser = await chromium.launch();
@@ -291,6 +291,9 @@ async function main() {
             assert.equal(await current.count(), 1);
             assert.equal((await current.textContent()).trim(), 'Reform Workshop');
             assert.equal(await current.getAttribute('href'), fixture.publicUrl);
+            assert.equal(await nav.getByRole('link', {name:'Best Status',exact:true}).getAttribute('href'),'https://econds.github.io/ro-best-status/');
+            assert.equal(await nav.getByRole('link', {name:'Grade & Refine',exact:true}).count(),0);
+            assert.equal(await nav.locator('#tools a').count(),5);
             if ([390, 1440].includes(width)) await screenshot(page, `${label}-open`);
             scenario.openGeometry = await geometry(page);
             scenario.openTextContrast = await textContrast(page);
@@ -324,6 +327,15 @@ async function main() {
             assert.equal(page.url(), original);
             assert.equal(await page.evaluate(() => localStorage.getItem('reform-workshop.v1')), originalState);
             for (const fixtureCase of fixture.cases) await applyCase(page, fixtureCase, fixture.storageKeys);
+            const beforePrice = await page.locator('#total').textContent();
+            await page.locator('[data-price="shadowOre"]').fill('123456');
+            const customState = await page.evaluate(() => JSON.parse(localStorage.getItem('reform-workshop.v1')));
+            assert.equal(customState.prices.shadowOre,123456);
+            await page.waitForFunction(previous => document.querySelector('#total').textContent !== previous, beforePrice);
+            assert.equal(await page.locator('#total').textContent(),new Intl.NumberFormat('en-US').format(await page.evaluate(input => window.Reform.calculate(input).total,customState)));
+            await page.reload({waitUntil:'networkidle'});
+            assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem('reform-workshop.v1')).prices.shadowOre),123456);
+            await applyCase(page, fixture.cases.at(-1), fixture.storageKeys);
             assert.equal(page.url(), original, 'Calculation inputs preserve query and hash');
             await page.locator('#quickstart-toggle').click();
             assert.deepEqual(await page.evaluate(() => Object.keys(localStorage).sort()), fixture.storageKeys, 'No suite navigation storage keys are added');
@@ -389,6 +401,24 @@ async function main() {
         await fallbackContext.close();
       }
     }
+  await check('Optional catalog failure uses all bundled tools without changing application state', async () => {
+      const context = await browser.newContext();
+      const page = await context.newPage();
+      const catalogURL = 'https://econds.github.io/ro_tools_portal/catalog/v1/tools.json';
+      let requests = 0;
+      await page.route(catalogURL, route => { requests++; return route.abort('failed'); });
+      await page.goto(baseURL + query + '#calculator', {waitUntil:'networkidle'});
+      await settled(page);
+      const before = await page.evaluate(() => ({url:location.href, state:localStorage.getItem('reform-workshop.v1'), total:document.querySelector('#total').textContent}));
+      await page.locator('ro-suite-nav').evaluate((host,url) => host.setAttribute('catalog-url',url),catalogURL);
+      await page.locator('ro-suite-nav button').click();
+      await page.waitForTimeout(1700);
+      assert.equal(requests,1);
+      assert.equal(await page.locator('ro-suite-nav #tools a').count(),5);
+      assert.equal(await page.locator('ro-suite-nav').getByRole('link',{name:'Best Status',exact:true}).getAttribute('href'),'https://econds.github.io/ro-best-status/');
+      assert.deepEqual(await page.evaluate(() => ({url:location.href, state:localStorage.getItem('reform-workshop.v1'), total:document.querySelector('#total').textContent})), before);
+      await context.close();
+    });
   } finally { await browser.close(); }
 }
 
