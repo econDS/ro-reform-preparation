@@ -1,0 +1,38 @@
+[
+  [
+    "ใช้ยังไง · 3 ขั้น",
+    "เริ่มตรงนี้ · 3 ขั้น"
+  ],
+  [
+    "<b>ดูว่าอุปกรณ์ใช้หินอะไร</b><p>ค้นชื่ออุปกรณ์ใน <a href=\"https://ro.gnjoy.in.th/item-gradereform/\" target=\"_blank\" rel=\"noopener noreferrer\">ตาราง Reform ของ RO GGT ↗</a> จดประเภทหิน ระดับ และจำนวน</p>",
+    "<b>01 เลือกหินเป้าหมาย</b><p>ประเภท · ระดับ · จำนวน ตาม <a href=\"https://ro.gnjoy.in.th/item-gradereform/\" target=\"_blank\" rel=\"noopener noreferrer\">ตาราง RO GGT ↗</a></p>"
+  ],
+  [
+    "<b>ใส่ลงในช่อง 01 และ 02</b><p>เลือก Weapon / Armor / Accessory ระดับ และจำนวน แล้วใส่ของที่มีในกระเป๋า ถ้าไม่มีก็ปล่อยเป็น 0</p>",
+    "<b>02 ใส่ของที่มี</b><p>ไม่มีของสะสม ปล่อยเป็น 0 ได้ · วัตถุดิบ Reform เพิ่มเติมไม่บังคับ</p>"
+  ],
+  [
+    "<b>เช็กราคา แล้วอ่านผล</b><p>แก้ราคาใน <a href=\"#materials\">ตารางราคา 03</a> ให้ตรงตลาด ยอดเงินจะขึ้นด้านขวาทันที แล้วทำตาม <a href=\"#recipe\">ขั้นตอนแลก 04</a></p>",
+    "<b>03 ตรวจราคา → ดูผล</b><p>ดูงบและของที่ต้องซื้อได้ทันที แล้วตรวจ <a href=\"#materials\">ราคา 03</a> ก่อนทำตาม <a href=\"#recipe\">ขั้นตอนแลก 04</a></p>"
+  ],
+  [
+    "      <div class=\"hero-meta\">",
+    "      <a class=\"first-run-start\" href=\"#main\">เริ่มเลือกหินเป้าหมาย ↓</a>\r\n      <div class=\"hero-meta\">"
+  ],
+  [
+    "        <div class=\"target-fields\">",
+    "        <p class=\"field-hint first-run-cue\">เริ่มจากประเภท ระดับ และจำนวนหินก่อน · ผลอัปเดตทันที ใช้ราคาที่บันทึกไว้ ซึ่งไม่ใช่ราคาสด</p>\r\n        <div class=\"target-fields\">"
+  ],
+  [
+    "        <p class=\"field-hint\" id=\"route-hint\">หักของที่มีออกก่อน แล้วเทียบทุกทางทีละเม็ด เลือกทางที่จ่ายเพิ่มน้อยที่สุด</p>",
+    "        <p class=\"field-hint\" id=\"route-hint\">หักของที่มีออกก่อน แล้วเทียบทุกทางทีละเม็ด เลือกทางที่จ่ายเพิ่มน้อยที่สุด</p>\r\n        <a class=\"first-run-result\" href=\"#results\">ดูเงินที่ต้องเตรียมและของที่ต้องซื้อ ↓</a>"
+  ],
+  [
+    "</head>",
+    "  <style>\r\n    /* First-run links only. Existing form, theme, and result layout remain intact. */\r\n    .first-run-start, .first-run-result { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 14px; border-radius: 10px; font-weight: 700; text-decoration: underline; }\r\n    .first-run-start { margin-top: 16px; color: #173b2d; background: #d7f0b0; }\r\n    .first-run-result { margin-top: 8px; color: inherit; border: 1px solid currentColor; }\r\n    .first-run-start:focus-visible, .first-run-result:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }\r\n  </style>\r\n</head>"
+  ],
+  [
+    "    /* First-run links only. Existing form, theme, and result layout remain intact. */",
+    "    /* Compact existing quickstart; preserve its toggle and saved preference. */\r\n    .hero-inner { padding: 24px; gap: 24px; }\r\n    .hero-meta { margin-top: 12px; }\r\n    .quickstart { padding: 14px; }\r\n    .quickstart-steps { margin-top: 10px; gap: 6px; }\r\n    .quickstart-steps li { padding: 8px 10px; gap: 8px; }\r\n    .quickstart-steps p { line-height: 1.5; }\r\n    /* First-run links only. Existing form, theme, and result layout remain intact. */"
+  ]
+]

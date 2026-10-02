@@ -1,0 +1,33 @@
+{
+  "first": "#quantity",
+  "result": "#results",
+  "cue": ".first-run-start",
+  "ready": "#total",
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "cases": [
+    {
+      "name": "default",
+      "fields": {}
+    },
+    {
+      "name": "ten-medium",
+      "fields": {
+        "quantity": 10,
+        "grade": 1
+      }
+    },
+    {
+      "name": "five-high-with-reform",
+      "fields": {
+        "quantity": 5,
+        "grade": 2,
+        "reform-shadow": 6,
+        "reform-zelunium": 4
+      }
+    }
+  ],
+  "repo": "ro-reform-preparation"
+}

@@ -13,6 +13,20 @@
   </style>
   <script defer src="calculator.js"></script>
   <script defer src="app.js"></script>
+  <style>
+    /* Compact existing quickstart; preserve its toggle and saved preference. */
+    .hero-inner { padding: 24px; gap: 24px; }
+    .hero-meta { margin-top: 12px; }
+    .quickstart { padding: 14px; }
+    .quickstart-steps { margin-top: 10px; gap: 6px; }
+    .quickstart-steps li { padding: 8px 10px; gap: 8px; }
+    .quickstart-steps p { line-height: 1.5; }
+    /* First-run links only. Existing form, theme, and result layout remain intact. */
+    .first-run-start, .first-run-result { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 14px; border-radius: 10px; font-weight: 700; text-decoration: underline; }
+    .first-run-start { margin-top: 16px; color: #173b2d; background: #d7f0b0; }
+    .first-run-result { margin-top: 8px; color: inherit; border: 1px solid currentColor; }
+    .first-run-start:focus-visible, .first-run-result:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }
+  </style>
 </head>
 <body>
 <a class="skip" href="#main">ข้ามไปเครื่องคำนวณ</a>
@@ -39,15 +53,16 @@
       <div class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>เตรียมหินสำหรับ Reform · RO GGT</div>
       <h1>คำนวณให้พร้อม<br>แล้วค่อย <span class="accent">Reform</span></h1>
       <p>บอกว่าจะ Reform อะไร ใส่ของที่มี แล้วเว็บจะบอกว่าต้องเตรียมเงินเท่าไร ซื้ออะไร และแลกกับ NPC ตามลำดับไหน</p>
+      <a class="first-run-start" href="#main">เริ่มเลือกหินเป้าหมาย ↓</a>
       <div class="hero-meta"><span>◉ เก็บข้อมูลบนเครื่องคุณเท่านั้น</span><a href="https://irowiki.org/wiki/Item_Reform#Materials" target="_blank" rel="noreferrer">สูตรจาก iRO Wiki ↗</a></div>
     </div>
     <section class="quickstart" id="quickstart" aria-labelledby="quickstart-title">
-    <div class="quickstart-head"><h2 id="quickstart-title">ใช้ยังไง · 3 ขั้น</h2><button type="button" class="text-button quickstart-toggle" id="quickstart-toggle" aria-expanded="true" aria-controls="quickstart-body">ซ่อน</button></div>
+    <div class="quickstart-head"><h2 id="quickstart-title">เริ่มตรงนี้ · 3 ขั้น</h2><button type="button" class="text-button quickstart-toggle" id="quickstart-toggle" aria-expanded="true" aria-controls="quickstart-body">ซ่อน</button></div>
     <div id="quickstart-body">
       <ol class="quickstart-steps">
-        <li><span class="qs-no">1</span><div><b>ดูว่าอุปกรณ์ใช้หินอะไร</b><p>ค้นชื่ออุปกรณ์ใน <a href="https://ro.gnjoy.in.th/item-gradereform/" target="_blank" rel="noopener noreferrer">ตาราง Reform ของ RO GGT ↗</a> จดประเภทหิน ระดับ และจำนวน</p></div></li>
-        <li><span class="qs-no">2</span><div><b>ใส่ลงในช่อง 01 และ 02</b><p>เลือก Weapon / Armor / Accessory ระดับ และจำนวน แล้วใส่ของที่มีในกระเป๋า ถ้าไม่มีก็ปล่อยเป็น 0</p></div></li>
-        <li><span class="qs-no">3</span><div><b>เช็กราคา แล้วอ่านผล</b><p>แก้ราคาใน <a href="#materials">ตารางราคา 03</a> ให้ตรงตลาด ยอดเงินจะขึ้นด้านขวาทันที แล้วทำตาม <a href="#recipe">ขั้นตอนแลก 04</a></p></div></li>
+        <li><span class="qs-no">1</span><div><b>01 เลือกหินเป้าหมาย</b><p>ประเภท · ระดับ · จำนวน ตาม <a href="https://ro.gnjoy.in.th/item-gradereform/" target="_blank" rel="noopener noreferrer">ตาราง RO GGT ↗</a></p></div></li>
+        <li><span class="qs-no">2</span><div><b>02 ใส่ของที่มี</b><p>ไม่มีของสะสม ปล่อยเป็น 0 ได้ · วัตถุดิบ Reform เพิ่มเติมไม่บังคับ</p></div></li>
+        <li><span class="qs-no">3</span><div><b>03 ตรวจราคา → ดูผล</b><p>ดูงบและของที่ต้องซื้อได้ทันที แล้วตรวจ <a href="#materials">ราคา 03</a> ก่อนทำตาม <a href="#recipe">ขั้นตอนแลก 04</a></p></div></li>
       </ol>
       <details class="glossary"><summary>ไม่รู้จักชื่อของ? ดูคำศัพท์ <span aria-hidden="true">＋</span></summary><dl>
         <div><dt>Enhancement Stone</dt><dd>หินที่สูตร Reform ใช้ มี 4 ระดับ Low → Medium → High → Supreme แลกขึ้นระดับได้ทีละ 3 เม็ด</dd></div>
@@ -72,9 +87,11 @@
           <button type="button" data-type="armor"><img class="item-icon" src="assets/items/1000437.png" width="24" height="24" alt="">Armor</button>
           <button type="button" data-type="accessory"><img class="item-icon" src="assets/items/1000441.png" width="24" height="24" alt="">Accessory</button>
         </div>
+        <p class="field-hint first-run-cue">เริ่มจากประเภท ระดับ และจำนวนหินก่อน · ผลอัปเดตทันที ใช้ราคาที่บันทึกไว้ ซึ่งไม่ใช่ราคาสด</p>
         <div class="target-fields"><label>ระดับหิน<select id="grade"><option value="0">Low Grade</option><option value="1">Medium Grade</option><option value="2">High Grade</option><option value="3">Supreme Grade</option></select></label><label>จำนวนที่ต้องการ<div class="input-unit"><input id="quantity" type="number" min="0" max="10000" step="1" inputmode="numeric" value="100"><span>เม็ด</span></div></label></div>
         <div class="reform-extras"><div class="field-label" id="reform-label">วัตถุดิบอื่นในสูตร Reform <small>ไม่บังคับ</small></div><p class="section-description">สูตรส่วนใหญ่ใช้ Shadowdecon หรือ Zelunium ตรง ๆ นอกเหนือจากหิน · ใส่ตามแถวในตาราง RO GGT · ไม่มีก็เว้นเป็น 0</p><div class="reform-fields" role="group" aria-labelledby="reform-label"><label>Shadowdecon<input id="reform-shadow" type="number" min="0" max="1000000" step="1" inputmode="numeric" data-reform="shadow" value="0"></label><label>Zelunium<input id="reform-zelunium" type="number" min="0" max="1000000" step="1" inputmode="numeric" data-reform="zelunium" value="0"></label></div></div><label class="route-label">วิธีเตรียมหิน<select id="mode"><option value="auto">จ่ายเพิ่มน้อยที่สุด · เปรียบเทียบซื้อและแลก</option><option value="shadow">ผ่าน Shadowdecon · ไม่ใช้ Enhancement Ore</option></select></label>
         <p class="field-hint" id="route-hint">หักของที่มีออกก่อน แล้วเทียบทุกทางทีละเม็ด เลือกทางที่จ่ายเพิ่มน้อยที่สุด</p>
+        <a class="first-run-result" href="#results">ดูเงินที่ต้องเตรียมและของที่ต้องซื้อ ↓</a>
       </section>
       <section class="panel inventory-panel">
         <div class="section-heading"><h2><span class="step-no">02</span> ของที่มีอยู่แล้ว</h2><span class="section-actions"><button type="button" class="text-button" id="undo-inventory" hidden>↩ เลิกทำ</button><button type="button" class="text-button" id="clear-inventory">ล้างจำนวนที่แสดง</button></span></div>

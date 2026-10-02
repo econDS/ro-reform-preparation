@@ -71,8 +71,13 @@ function explained(event, blockedModule) {
 }
 function eventKey(event) { return JSON.stringify([event.kind, event.text, event.url]); }
 function compareErrors(events, baseline, blockedModule) {
+  const cancelledLocalImage = event => {
+    if(event.kind !== 'requestfailed' || event.text !== 'net::ERR_ABORTED') return false;
+    const url=new URL(event.url);if(url.origin!==new URL(baseURL).origin || !url.pathname.startsWith('/ro-reform-preparation/assets/items/'))return false;
+    return fs.existsSync(path.join(root,decodeURIComponent(url.pathname.slice('/ro-reform-preparation/'.length))));
+  };
   const inherited = new Set(baseline.map(eventKey));
-  const classified = events.map(event => ({...event, explanation: explained(event, blockedModule) ||
+  const classified = events.map(event => ({...event, explanation: (cancelledLocalImage(event) ? 'Browser cancelled an existing local item image during input rerender or document navigation; asset remains present. Raw event retained.' : null) || explained(event, blockedModule) ||
     (inherited.has(eventKey(event)) ? 'Also observed on the original, pre-integration page' : null)}));
   return {events: classified, newErrors: classified.filter(event => !event.explanation)};
 }

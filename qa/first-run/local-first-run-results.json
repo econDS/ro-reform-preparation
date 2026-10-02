@@ -1,0 +1,512 @@
+{
+  "baseCommit": "65adf653de32864182c33d1792d8346365375767",
+  "headCommit": "local-candidate",
+  "indexSHA256": "5d897b78b063231a1f73046065e9294731e04f41cd7cf612469dc0171f01c131",
+  "repo": "ro-reform-preparation",
+  "checks": [
+    {
+      "width": 360,
+      "colorScheme": "light",
+      "status": "PASS",
+      "checks": "first cue, original or lower overflow, unique IDs, native labels, minimum path, view-only state/output invariants"
+    },
+    {
+      "width": 360,
+      "colorScheme": "dark",
+      "status": "PASS",
+      "checks": "first cue, original or lower overflow, unique IDs, native labels, minimum path, view-only state/output invariants"
+    },
+    {
+      "width": 390,
+      "colorScheme": "light",
+      "status": "PASS",
+      "checks": "first cue, original or lower overflow, unique IDs, native labels, minimum path, view-only state/output invariants"
+    },
+    {
+      "width": 390,
+      "colorScheme": "dark",
+      "status": "PASS",
+      "checks": "first cue, original or lower overflow, unique IDs, native labels, minimum path, view-only state/output invariants"
+    },
+    {
+      "width": 768,
+      "colorScheme": "light",
+      "status": "PASS",
+      "checks": "first cue, original or lower overflow, unique IDs, native labels, minimum path, view-only state/output invariants"
+    },
+    {
+      "width": 768,
+      "colorScheme": "dark",
+      "status": "PASS",
+      "checks": "first cue, original or lower overflow, unique IDs, native labels, minimum path, view-only state/output invariants"
+    },
+    {
+      "width": 1440,
+      "colorScheme": "light",
+      "status": "PASS",
+      "checks": "first cue, original or lower overflow, unique IDs, native labels, minimum path, view-only state/output invariants"
+    },
+    {
+      "width": 1440,
+      "colorScheme": "dark",
+      "status": "PASS",
+      "checks": "first cue, original or lower overflow, unique IDs, native labels, minimum path, view-only state/output invariants"
+    }
+  ],
+  "geometry": [
+    {
+      "kind": "before",
+      "width": 360,
+      "colorScheme": "light",
+      "firstInput": {
+        "y": 1563.015625,
+        "height": 46,
+        "width": 117.390625
+      },
+      "result": {
+        "y": 2039.5,
+        "height": 712.828125,
+        "width": 328
+      },
+      "cue": null,
+      "overflow": 0,
+      "visibleInputs": 37,
+      "openDetails": 0
+    },
+    {
+      "kind": "before",
+      "width": 360,
+      "colorScheme": "dark",
+      "firstInput": {
+        "y": 1565.015625,
+        "height": 46,
+        "width": 117.390625
+      },
+      "result": {
+        "y": 2041.5,
+        "height": 712.828125,
+        "width": 328
+      },
+      "cue": null,
+      "overflow": 0,
+      "visibleInputs": 37,
+      "openDetails": 0
+    },
+    {
+      "kind": "before",
+      "width": 390,
+      "colorScheme": "light",
+      "firstInput": {
+        "y": 1509.28125,
+        "height": 46,
+        "width": 130.4375
+      },
+      "result": {
+        "y": 1985.765625,
+        "height": 672.53125,
+        "width": 358
+      },
+      "cue": null,
+      "overflow": 0,
+      "visibleInputs": 37,
+      "openDetails": 0
+    },
+    {
+      "kind": "before",
+      "width": 390,
+      "colorScheme": "dark",
+      "firstInput": {
+        "y": 1511.28125,
+        "height": 46,
+        "width": 130.4375
+      },
+      "result": {
+        "y": 1987.765625,
+        "height": 672.53125,
+        "width": 358
+      },
+      "cue": null,
+      "overflow": 0,
+      "visibleInputs": 37,
+      "openDetails": 0
+    },
+    {
+      "kind": "before",
+      "width": 768,
+      "colorScheme": "light",
+      "firstInput": {
+        "y": 1321.90625,
+        "height": 46,
+        "width": 279.125
+      },
+      "result": {
+        "y": 1737.265625,
+        "height": 527.46875,
+        "width": 712
+      },
+      "cue": null,
+      "overflow": 0,
+      "visibleInputs": 37,
+      "openDetails": 0
+    },
+    {
+      "kind": "before",
+      "width": 768,
+      "colorScheme": "dark",
+      "firstInput": {
+        "y": 1323.90625,
+        "height": 46,
+        "width": 279.125
+      },
+      "result": {
+        "y": 1739.265625,
+        "height": 527.46875,
+        "width": 712
+      },
+      "cue": null,
+      "overflow": 0,
+      "visibleInputs": 37,
+      "openDetails": 0
+    },
+    {
+      "kind": "before",
+      "width": 1440,
+      "colorScheme": "light",
+      "firstInput": {
+        "y": 1052.109375,
+        "height": 46,
+        "width": 239.125
+      },
+      "result": {
+        "y": 695.140625,
+        "height": 550.46875,
+        "width": 620
+      },
+      "cue": null,
+      "overflow": 0,
+      "visibleInputs": 37,
+      "openDetails": 0
+    },
+    {
+      "kind": "before",
+      "width": 1440,
+      "colorScheme": "dark",
+      "firstInput": {
+        "y": 1054.109375,
+        "height": 46,
+        "width": 239.125
+      },
+      "result": {
+        "y": 697.140625,
+        "height": 550.46875,
+        "width": 620
+      },
+      "cue": null,
+      "overflow": 0,
+      "visibleInputs": 37,
+      "openDetails": 0
+    },
+    {
+      "kind": "after",
+      "width": 360,
+      "colorScheme": "light",
+      "firstInput": {
+        "y": 1507.484375,
+        "height": 46,
+        "width": 117.390625
+      },
+      "result": {
+        "y": 2039.5625,
+        "height": 712.828125,
+        "width": 328
+      },
+      "cue": {
+        "y": 476.6875,
+        "height": 45.59375,
+        "width": 173.171875
+      },
+      "overflow": 0,
+      "visibleInputs": 37,
+      "openDetails": 0
+    },
+    {
+      "kind": "after",
+      "width": 360,
+      "colorScheme": "dark",
+      "firstInput": {
+        "y": 1509.484375,
+        "height": 46,
+        "width": 117.390625
+      },
+      "result": {
+        "y": 2041.5625,
+        "height": 712.828125,
+        "width": 328
+      },
+      "cue": {
+        "y": 477.6875,
+        "height": 45.59375,
+        "width": 173.171875
+      },
+      "overflow": 0,
+      "visibleInputs": 37,
+      "openDetails": 0
+    },
+    {
+      "kind": "after",
+      "width": 390,
+      "colorScheme": "light",
+      "firstInput": {
+        "y": 1456.4375,
+        "height": 46,
+        "width": 130.4375
+      },
+      "result": {
+        "y": 1988.515625,
+        "height": 672.53125,
+        "width": 358
+      },
+      "cue": {
+        "y": 476.6875,
+        "height": 45.59375,
+        "width": 173.171875
+      },
+      "overflow": 0,
+      "visibleInputs": 37,
+      "openDetails": 0
+    },
+    {
+      "kind": "after",
+      "width": 390,
+      "colorScheme": "dark",
+      "firstInput": {
+        "y": 1458.4375,
+        "height": 46,
+        "width": 130.4375
+      },
+      "result": {
+        "y": 1990.515625,
+        "height": 672.53125,
+        "width": 358
+      },
+      "cue": {
+        "y": 477.6875,
+        "height": 45.59375,
+        "width": 173.171875
+      },
+      "overflow": 0,
+      "visibleInputs": 37,
+      "openDetails": 0
+    },
+    {
+      "kind": "after",
+      "width": 768,
+      "colorScheme": "light",
+      "firstInput": {
+        "y": 1253.75,
+        "height": 46,
+        "width": 279.125
+      },
+      "result": {
+        "y": 1724.703125,
+        "height": 527.46875,
+        "width": 712
+      },
+      "cue": {
+        "y": 400,
+        "height": 45.59375,
+        "width": 173.171875
+      },
+      "overflow": 0,
+      "visibleInputs": 37,
+      "openDetails": 0
+    },
+    {
+      "kind": "after",
+      "width": 768,
+      "colorScheme": "dark",
+      "firstInput": {
+        "y": 1255.75,
+        "height": 46,
+        "width": 279.125
+      },
+      "result": {
+        "y": 1726.703125,
+        "height": 527.46875,
+        "width": 712
+      },
+      "cue": {
+        "y": 401,
+        "height": 45.59375,
+        "width": 173.171875
+      },
+      "overflow": 0,
+      "visibleInputs": 37,
+      "openDetails": 0
+    },
+    {
+      "kind": "after",
+      "width": 1440,
+      "colorScheme": "light",
+      "firstInput": {
+        "y": 960.546875,
+        "height": 46,
+        "width": 239.125
+      },
+      "result": {
+        "y": 582.328125,
+        "height": 550.46875,
+        "width": 620
+      },
+      "cue": {
+        "y": 451.9375,
+        "height": 45.59375,
+        "width": 173.171875
+      },
+      "overflow": 0,
+      "visibleInputs": 37,
+      "openDetails": 0
+    },
+    {
+      "kind": "after",
+      "width": 1440,
+      "colorScheme": "dark",
+      "firstInput": {
+        "y": 962.546875,
+        "height": 46,
+        "width": 239.125
+      },
+      "result": {
+        "y": 584.328125,
+        "height": 550.46875,
+        "width": 620
+      },
+      "cue": {
+        "y": 452.9375,
+        "height": 45.59375,
+        "width": 173.171875
+      },
+      "overflow": 0,
+      "visibleInputs": 37,
+      "openDetails": 0
+    }
+  ],
+  "cases": {
+    "before": [
+      {
+        "name": "default",
+        "input": {},
+        "output": {
+          "total": "114,473,000",
+          "material-cost": "94,473,000 z",
+          "npc-cost": "20,000,000 z",
+          "shopping-list": "Accessory Enhancement Stone (Low Grade)34,990 z / เม็ด2,700 เม็ด94,473,000 z",
+          "recipe-steps": "1แลก Low Stone → Medium Stone Low Stone 2,700→Medium Stone 900Ore Researcher · ข้อ 2 แลกเปลี่ยนแร่ระดับสูง (Gemstone Exchange)9,000,000 z900 ชุด × 10,000 z2แลก Medium Stone → High Stone Medium Stone 900→High Stone 300Ore Researcher · ข้อ 2 แลกเปลี่ยนแร่ระดับสูง (Gemstone Exchange)6,000,000 z300 ชุด × 20,000 z3แลก High Stone → Supreme Stone High Stone 300→Supreme Stone 100Ore Researcher · ข้อ 2 แลกเปลี่ยนแร่ระดับสูง (Gemstone Exchange)5,000,000 z100 ชุด × 50,000 z",
+          "target-name": "Accessory Enhancement Stone (Supreme Grade) × 100"
+        }
+      },
+      {
+        "name": "ten-medium",
+        "input": {
+          "quantity": 10,
+          "grade": 1
+        },
+        "output": {
+          "total": "1,149,700",
+          "material-cost": "1,049,700 z",
+          "npc-cost": "100,000 z",
+          "shopping-list": "Accessory Enhancement Stone (Low Grade)34,990 z / เม็ด30 เม็ด1,049,700 z",
+          "recipe-steps": "1แลก Low Stone → Medium Stone Low Stone 30→Medium Stone 10Ore Researcher · ข้อ 2 แลกเปลี่ยนแร่ระดับสูง (Gemstone Exchange)100,000 z10 ชุด × 10,000 z",
+          "target-name": "Accessory Enhancement Stone (Medium Grade) × 10"
+        }
+      },
+      {
+        "name": "five-high-with-reform",
+        "input": {
+          "quantity": 5,
+          "grade": 2,
+          "reform-shadow": 6,
+          "reform-zelunium": 4
+        },
+        "output": {
+          "total": "1,948,530",
+          "material-cost": "1,698,530 z",
+          "npc-cost": "250,000 z",
+          "shopping-list": "Accessory Enhancement Stone (Low Grade)34,990 z / เม็ด45 เม็ด1,574,550 zShadowdecon19,000 z / ก้อน6 ก้อน114,000 zZelunium2,495 z / ก้อน4 ก้อน9,980 z",
+          "recipe-steps": "1แลก Low Stone → Medium Stone Low Stone 45→Medium Stone 15Ore Researcher · ข้อ 2 แลกเปลี่ยนแร่ระดับสูง (Gemstone Exchange)150,000 z15 ชุด × 10,000 z2แลก Medium Stone → High Stone Medium Stone 15→High Stone 5Ore Researcher · ข้อ 2 แลกเปลี่ยนแร่ระดับสูง (Gemstone Exchange)100,000 z5 ชุด × 20,000 z",
+          "target-name": "Accessory Enhancement Stone (High Grade) × 5"
+        }
+      }
+    ],
+    "after": [
+      {
+        "name": "default",
+        "input": {},
+        "output": {
+          "total": "114,473,000",
+          "material-cost": "94,473,000 z",
+          "npc-cost": "20,000,000 z",
+          "shopping-list": "Accessory Enhancement Stone (Low Grade)34,990 z / เม็ด2,700 เม็ด94,473,000 z",
+          "recipe-steps": "1แลก Low Stone → Medium Stone Low Stone 2,700→Medium Stone 900Ore Researcher · ข้อ 2 แลกเปลี่ยนแร่ระดับสูง (Gemstone Exchange)9,000,000 z900 ชุด × 10,000 z2แลก Medium Stone → High Stone Medium Stone 900→High Stone 300Ore Researcher · ข้อ 2 แลกเปลี่ยนแร่ระดับสูง (Gemstone Exchange)6,000,000 z300 ชุด × 20,000 z3แลก High Stone → Supreme Stone High Stone 300→Supreme Stone 100Ore Researcher · ข้อ 2 แลกเปลี่ยนแร่ระดับสูง (Gemstone Exchange)5,000,000 z100 ชุด × 50,000 z",
+          "target-name": "Accessory Enhancement Stone (Supreme Grade) × 100"
+        }
+      },
+      {
+        "name": "ten-medium",
+        "input": {
+          "quantity": 10,
+          "grade": 1
+        },
+        "output": {
+          "total": "1,149,700",
+          "material-cost": "1,049,700 z",
+          "npc-cost": "100,000 z",
+          "shopping-list": "Accessory Enhancement Stone (Low Grade)34,990 z / เม็ด30 เม็ด1,049,700 z",
+          "recipe-steps": "1แลก Low Stone → Medium Stone Low Stone 30→Medium Stone 10Ore Researcher · ข้อ 2 แลกเปลี่ยนแร่ระดับสูง (Gemstone Exchange)100,000 z10 ชุด × 10,000 z",
+          "target-name": "Accessory Enhancement Stone (Medium Grade) × 10"
+        }
+      },
+      {
+        "name": "five-high-with-reform",
+        "input": {
+          "quantity": 5,
+          "grade": 2,
+          "reform-shadow": 6,
+          "reform-zelunium": 4
+        },
+        "output": {
+          "total": "1,948,530",
+          "material-cost": "1,698,530 z",
+          "npc-cost": "250,000 z",
+          "shopping-list": "Accessory Enhancement Stone (Low Grade)34,990 z / เม็ด45 เม็ด1,574,550 zShadowdecon19,000 z / ก้อน6 ก้อน114,000 zZelunium2,495 z / ก้อน4 ก้อน9,980 z",
+          "recipe-steps": "1แลก Low Stone → Medium Stone Low Stone 45→Medium Stone 15Ore Researcher · ข้อ 2 แลกเปลี่ยนแร่ระดับสูง (Gemstone Exchange)150,000 z15 ชุด × 10,000 z2แลก Medium Stone → High Stone Medium Stone 15→High Stone 5Ore Researcher · ข้อ 2 แลกเปลี่ยนแร่ระดับสูง (Gemstone Exchange)100,000 z5 ชุด × 20,000 z",
+          "target-name": "Accessory Enhancement Stone (High Grade) × 5"
+        }
+      }
+    ]
+  },
+  "screenshots": [
+    "before-360-light.png",
+    "before-360-dark.png",
+    "before-390-light.png",
+    "before-390-dark.png",
+    "before-768-light.png",
+    "before-768-dark.png",
+    "before-1440-light.png",
+    "before-1440-dark.png",
+    "after-360-light.png",
+    "after-360-dark.png",
+    "after-390-light.png",
+    "after-390-dark.png",
+    "after-768-light.png",
+    "after-768-dark.png",
+    "after-1440-light.png",
+    "after-1440-dark.png"
+  ],
+  "limitations": [
+    "Chromium emulation, not physical devices or WebKit/Firefox",
+    "No user study or usability score",
+    "View changes do not claim game-data verification"
+  ],
+  "status": "PASS"
+}

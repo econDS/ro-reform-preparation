@@ -1,0 +1,20 @@
+{
+  "baseCommit": "65adf653de32864182c33d1792d8346365375767",
+  "indexSha256": "ffd8d2b2132754641d227ec70fa364b251764285a8817e5b4977ad06ca6f032f",
+  "minimumInputs": 3,
+  "existingOrder": [
+    "target",
+    "inventory",
+    "result/shopping",
+    "prices",
+    "NPC steps"
+  ],
+  "advancedAlreadyCollapsed": [
+    "route comparison",
+    "glossary",
+    "NPC detail"
+  ],
+  "storage": "reform-workshop.v1",
+  "share": "anchors only; no serialized query",
+  "importExport": "absent"
+}
