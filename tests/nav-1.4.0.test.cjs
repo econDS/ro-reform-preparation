@@ -30,6 +30,8 @@ test('every existing production file including first-run UI and old releases is 
   assert.doesNotMatch(html, /<ro-suite-nav[^>]*(?:theme|catalog-url)=/);
   assert.match(html, /ro-suite-nav > nav[^}]*min-height:\s*52px/);
   assert.match(html, /ro-suite-nav > nav > a[^}]*min-height:\s*44px/);
+  assert.match(html, /ro-suite-nav > nav > a[^}]*min-width:\s*44px/);
+  assert.match(html, /ro-suite-nav > nav > a[^}]*padding:\s*8px 0[;}]/, 'fallback text starts on the same content edge');
 });
 test('exact latest-main calculation, saved settings and serialization fixtures remain unchanged', () => {
   const script = baseline.repository.endsWith('/ro-leveling-map') ? 'tests/capture-leveling-baseline.cjs' : 'scripts/capture-ro-suite-baseline.cjs';
