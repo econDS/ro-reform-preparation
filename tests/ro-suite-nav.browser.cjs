@@ -331,7 +331,8 @@ async function main() {
             await page.locator('[data-price="shadowOre"]').fill('123456');
             const customState = await page.evaluate(() => JSON.parse(localStorage.getItem('reform-workshop.v1')));
             assert.equal(customState.prices.shadowOre,123456);
-            assert.notEqual(await page.locator('#total').textContent(),beforePrice);
+            await page.waitForFunction(previous => document.querySelector('#total').textContent !== previous, beforePrice);
+            assert.equal(await page.locator('#total').textContent(),new Intl.NumberFormat('en-US').format(await page.evaluate(input => window.Reform.calculate(input).total,customState)));
             await page.reload({waitUntil:'networkidle'});
             assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem('reform-workshop.v1')).prices.shadowOre),123456);
             await applyCase(page, fixture.cases.at(-1), fixture.storageKeys);
