@@ -30,7 +30,7 @@ test('nav is local, immediately after skip link, and preserves original header',
   assert.equal((html.match(/<ro-suite-nav\b/g)||[]).length,1);
   const fallbackStyle = '  <style>\r\n    ro-suite-nav > nav > a { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 12px; }\r\n  </style>\r\n';
   assert.ok(html.includes(fallbackStyle), 'Only the light-DOM fallback gets a 44px touch target');
-  const original = html.replace(/<ro-suite-nav[^]*?<\/ro-suite-nav>\r?\n<script type="module" src="\.\/assets\/ro-suite\/1\.3\.0\/nav\.js"><\/script>\r?\n/,'').replace(fallbackStyle,'');
+  const original = require('../qa/first-run/normalize.cjs')(html).replace(/<ro-suite-nav[^]*?<\/ro-suite-nav>\r?\n<script type="module" src="\.\/assets\/ro-suite\/1\.3\.0\/nav\.js"><\/script>\r?\n/,'').replace(fallbackStyle,'');
   assert.equal(sha256(original),'3a62cb06d545fd805d7f90e980d82e322cb19cfd996fad3c229860e96e1c43b2');
   assert.doesNotMatch(html,/<ro-suite-nav[^>]*\b(?:catalog-url|theme)=/);
   assert.doesNotMatch(html,/<script[^>]*src="(?:https?:|\/\/)[^"]*nav\.js/);

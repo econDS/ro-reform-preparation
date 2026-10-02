@@ -1,0 +1,70 @@
+name: First-run UX regression QA
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+permissions:
+  contents: read
+concurrency:
+  group: first-run-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  first-run-qa:
+    if: github.head_ref == 'ux/first-run-reform' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22.14.0'
+      - name: Immutable before source and failure-safe evidence
+        run: |
+          mkdir -p qa-artifacts "$RUNNER_TEMP/first-run-base"
+          git rev-parse HEAD > qa-artifacts/source-commit.txt
+          git diff --name-status 65adf653de32864182c33d1792d8346365375767 HEAD > qa-artifacts/changed-files.txt
+          git archive 65adf653de32864182c33d1792d8346365375767 | tar -x -C "$RUNNER_TEMP/first-run-base"
+          printf '%s\n' '{"status":"not-run"}' > qa-artifacts/report.json
+      - name: All existing and new source tests
+        run: |
+          node --test tests/*.test.* 2>&1 | tee qa-artifacts/source-tests.log
+      - name: Install pinned QA-only Chromium
+        id: browser
+        if: always()
+        run: |
+          npm install --prefix "$RUNNER_TEMP/first-run-tools" --no-save --package-lock=false --ignore-scripts playwright@1.55.1
+          node "$RUNNER_TEMP/first-run-tools/node_modules/playwright/cli.js" install --with-deps chromium
+      - name: Actual browser regression plus first-run before and after
+        if: always() && steps.browser.outcome == 'success'
+        env:
+          NODE_PATH: ${{ runner.temp }}/first-run-tools/node_modules
+          BASE_ROOT: ${{ runner.temp }}/first-run-base
+          BASE_SHA: 65adf653de32864182c33d1792d8346365375767
+          SOURCE_SHA: ${{ github.event.pull_request.head.sha }}
+          RO_QA_COMMIT: ${{ github.event.pull_request.head.sha }}
+          QA_OUTPUT: ${{ github.workspace }}/qa-artifacts/regression
+          RO_QA_OUTPUT: ${{ github.workspace }}/qa-artifacts/regression
+          PRICE_METADATA_QA: '1'
+        run: |
+          mkdir -p "$RUNNER_TEMP/first-run-web"
+          ln -s "$GITHUB_WORKSPACE" "$RUNNER_TEMP/first-run-web/ro-reform-preparation"
+          python -m http.server 4173 --bind 127.0.0.1 --directory "$RUNNER_TEMP/first-run-web" > qa-artifacts/server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 50); do if curl --fail --silent http://127.0.0.1:4173/ro-reform-preparation/ > /dev/null; then break; fi; sleep .2; done
+          node tests/ro-suite-nav.browser.cjs 2>&1 | tee qa-artifacts/browser-regression.log
+          QA_OUTPUT="$GITHUB_WORKSPACE/qa-artifacts/first-run" node tests/first-run.browser.cjs 2>&1 | tee qa-artifacts/first-run.log
+      - name: Upload real logs reports screenshots and format samples
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: first-run-${{ github.event.pull_request.head.sha }}
+          path: qa-artifacts/
+          retention-days: 30
