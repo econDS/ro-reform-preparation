@@ -1,0 +1,28 @@
+{
+  "bundleVersion": "1.3.0",
+  "sourceCommit": "4e8a56397e64b41cfb05c86a4df811ddc10e8003",
+  "sourceNote": "All sourceHashes match files at sourceCommit. Rebuilds verify this immutable release without changing it.",
+  "sourceHashes": {
+    "src/urls.ts": "8483a6702aefec53ecb741353f37a9133f44b759c9535dfbc11fe59ed1bece82",
+    "src/tool-icons.ts": "20cdb346cae96f7c615ed603ed78786a0c3cb7b33f99eb783ce208ec6c80487f",
+    "scripts/nav-version.mjs": "b358549876c1b8ff89232e684917fa989c7db2027575ce808e6cfdcad57ac0ec",
+    "scripts/generate-nav-snapshot.mjs": "db81dca38216856d01189d8555796ad26f4088a1fac65aec6d830ceb0b841aea",
+    "integrations/nav/src/snapshot.json": "a198338ddcb7857094ef950fb1315c532840cf53ac8e7a69b331d8cb4a87dd5d",
+    "integrations/nav/src/catalog.ts": "a38cf6407f4b747edba938c930a55e570657bbcbee56f15703ffe5a39c29f179",
+    "integrations/nav/src/nav.ts": "945daf492bda7eb4ab5388c68e845d73131e9dfc4489dde4c3f4e0e6ca51fa75",
+    "vite.nav.config.ts": "042eb9ecd94a2afa96879c477d39a105872814f9229b8b03e1d929a758247097",
+    "scripts/package-nav.mjs": "398d08ec16a6d82c69090b13c3e8c6e3cc4c26b82a9277ecdf9c77831f9a4e50",
+    "data/tools.registry.v1.json": "31793b139e2bf02303643f7f78472f7c5406d7134a157c1d9e0c876d809364e5",
+    "package.json": "5bfd7edc6dda4864ea5c1013deddf122e629313d326b8b88270954dad3bc6c6f",
+    "package-lock.json": "5ce472bb2d3bc453cb9aae9fa94fddb949f0acf673c4a1d152667417cd9ae46a"
+  },
+  "catalogVersion": "0.2.0",
+  "files": {
+    "nav.js": {
+      "sha256": "e0a75bce3f8ba21d73aff8aa28af1c624d977f1e8e3de483c6dd40785b3b84d2"
+    },
+    "catalog.snapshot.json": {
+      "sha256": "a198338ddcb7857094ef950fb1315c532840cf53ac8e7a69b331d8cb4a87dd5d"
+    }
+  }
+}

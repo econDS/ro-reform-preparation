@@ -16,7 +16,7 @@ jobs:
   navigation-qa:
     # This temporary integration check cannot run for other feature branches,
     # push events, deployments, or manually dispatched events.
-    if: github.head_ref == 'feat/ro-suite-nav' && github.event.pull_request.head.repo.full_name == github.repository
+    if: github.head_ref == 'chore/ro-suite-nav-1.3.0' && github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     defaults:
@@ -50,11 +50,11 @@ jobs:
           RO_QA_OUTPUT: ${{ github.workspace }}/artifacts/ro-suite-nav
           RO_QA_COMMIT: ${{ github.event.pull_request.head.sha }}
         run: |
-          npm start > artifacts/ro-suite-nav/server.log 2>&1 &
+          node scripts/serve-nav-qa.cjs > artifacts/ro-suite-nav/server.log 2>&1 &
           SERVER_PID=$!
           trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
           for attempt in $(seq 1 50); do
-            if curl --fail --silent http://127.0.0.1:4173/ > /dev/null; then break; fi
+            if curl --fail --silent http://127.0.0.1:4173/ro-reform-preparation/ > /dev/null; then break; fi
             sleep 0.2
           done
           node tests/ro-suite-nav.browser.cjs 2>&1 | tee artifacts/ro-suite-nav/browser-tests.log
