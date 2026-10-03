@@ -11,7 +11,8 @@ const root = path.resolve(__dirname, '..');
 const outputDir = path.resolve(process.env.RO_QA_OUTPUT || path.join(root, 'artifacts/ro-suite-nav'));
 const baseURL = process.env.RO_QA_URL || 'http://127.0.0.1:4173/ro-reform-preparation/';
 const portalURL = 'https://econds.github.io/ro_tools_portal/';
-const navPath = '/ro-reform-preparation/assets/ro-suite/1.4.1/nav.js';
+const navScript = fs.readFileSync(path.join(root, 'index.html'), 'utf8').match(/<script type="module" src="([^"]+\/nav\.js)"/)[1];
+const navPath = new URL(navScript, baseURL).pathname;
 const query = '?qa=preserve%20query&count=3';
 const storageKey = 'reform-workshop.v1';
 const report = {

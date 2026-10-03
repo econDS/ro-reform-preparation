@@ -13,11 +13,12 @@ test('theme rollout preserves all existing production bytes after two exact inte
     assert.equal(hash(bytes), digest, file);
   }
 });
-test('nav 1.5.0 is the immutable Portal release with unchanged catalog and eight host semantic tokens', () => {
-  const dir = 'assets/ro-suite/1.5.0/';
+test('nav 1.5.1 is the immutable Portal release with unchanged catalog and eight host semantic tokens', () => {
+  for (const [file, digest] of Object.entries(require('../qa/nav-theme/frozen-1.5.0-hashes.json'))) assert.equal(hash(read('assets/ro-suite/1.5.0/' + file)), digest, 'frozen 1.5.0: ' + file);
+  const dir = 'assets/ro-suite/1.5.1/';
   const lock = JSON.parse(read(dir + 'nav.lock.json'));
-  assert.equal(lock.bundleVersion, '1.5.0');
-  assert.equal(lock.sourceCommit, 'fb68cf770762bd53f4cb6fd0f69e82669f4286ae');
+  assert.equal(lock.bundleVersion, '1.5.1');
+  assert.equal(lock.sourceCommit, '44b090748afc1dbf13eb5d4b78d2a0102d9d9e9c');
   for (const [file, digest] of Object.entries(require('../qa/nav-theme/release-hashes.json'))) assert.equal(hash(read(dir + file)), digest, file);
   for (const [file, data] of Object.entries(lock.files)) assert.equal(hash(read(dir + file)), data.sha256, file);
   assert.deepEqual(JSON.parse(read(dir + 'catalog.snapshot.json')), JSON.parse(read('assets/ro-suite/1.4.1/catalog.snapshot.json')));
@@ -28,5 +29,5 @@ test('nav 1.5.0 is the immutable Portal release with unchanged catalog and eight
   assert.doesNotMatch(css, /::part|::shadow|!important|\.bar|#tools|(?:max-width|min-height|padding)\s*:/);
   assert.match(css, /font-family: var\(--ro-suite-font-family\)/);
   assert.match(css, /outline: 2px solid var\(--ro-suite-focus\)/);
-  assert.match(read('index.html').toString(), /assets\/ro-suite\/1\.5\.0\/nav\.js/);
+  assert.match(read('index.html').toString(), /assets\/ro-suite\/1\.5\.1\/nav\.js/);
 });
