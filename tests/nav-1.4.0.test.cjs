@@ -25,7 +25,7 @@ test('every existing production file including first-run UI and old releases is 
     const bytes = file === 'index.html' ? require('../qa/nav-1.4.0/normalize.cjs')(read(file).toString()) : read(file);
     assert.equal(hash(bytes), digest, file);
   }
-  const html = read('index.html').toString();
+  const html = require('../qa/nav-theme/normalize.cjs')(read('index.html').toString());
   assert.equal((html.match(/<ro-suite-nav\b/g) || []).length, 1);
   assert.equal((html.match(/type="module" src=".\/assets\/ro-suite\/1\.4\.1\/nav\.js"/g) || []).length, 1);
   assert.doesNotMatch(html, /<ro-suite-nav[^>]*(?:theme|catalog-url)=/);
