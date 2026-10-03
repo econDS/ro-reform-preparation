@@ -1,0 +1,10 @@
+{
+  "surface": "var(--paper)",
+  "surface-hover": "var(--paper-2)",
+  "text": "var(--ink)",
+  "muted": "var(--muted)",
+  "border": "var(--line)",
+  "accent": "var(--soft-ink)",
+  "focus": "var(--field-focus)",
+  "font-family": "var(--font)"
+}
