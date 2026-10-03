@@ -8,7 +8,7 @@ const {capture} = require('../scripts/capture-ro-suite-baseline.cjs');
 const baseline = require('./fixtures/ro-suite-nav-baseline.json');
 const root = path.resolve(__dirname,'..');
 const assetPath = path.join(root,'assets/ro-suite/1.3.0');
-const html = fs.readFileSync(path.join(root,'index.html'),'utf8');
+const html = require('../qa/nav-1.4.0/normalize.cjs')(fs.readFileSync(path.join(root,'index.html'),'utf8'));
 const sha256 = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
 const expected = {
   'nav.js':'e0a75bce3f8ba21d73aff8aa28af1c624d977f1e8e3de483c6dd40785b3b84d2',

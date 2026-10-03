@@ -1,0 +1,68 @@
+name: RO Suite nav 1.4.1 preservation QA
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+permissions:
+  contents: read
+concurrency:
+  group: nav140-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  preservation-qa:
+    if: github.head_ref == 'chore/ro-suite-nav-1.4.0' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22.14.0'
+      - name: Pin before sources and prepare failure-safe evidence
+        run: |
+          mkdir -p qa-artifacts "$RUNNER_TEMP/first-run-base" "$RUNNER_TEMP/nav140-base"
+          git rev-parse HEAD > qa-artifacts/source-commit.txt
+          git diff --name-status b49eeb427e3874d6462d922e2b07c52e1a297759 HEAD > qa-artifacts/changed-files.txt
+          git archive 65adf653de32864182c33d1792d8346365375767 | tar -x -C "$RUNNER_TEMP/first-run-base"
+          git archive b49eeb427e3874d6462d922e2b07c52e1a297759 | tar -x -C "$RUNNER_TEMP/nav140-base"
+          printf '%s\n' '{"status":"not-run"}' > qa-artifacts/report.json
+      - name: All original and new source regressions
+        run: |
+          node --test tests/*.test.cjs 2>&1 | tee qa-artifacts/node-tests.log
+      - name: Install pinned QA-only browser outside the project
+        id: browser
+        if: always()
+        run: |
+          npm install --prefix "$RUNNER_TEMP/nav140-tools" --no-save --package-lock=false --ignore-scripts playwright@1.55.1
+          node "$RUNNER_TEMP/nav140-tools/node_modules/playwright/cli.js" install --with-deps chromium
+      - name: Original browser regressions and both immutable before comparisons
+        if: always() && steps.browser.outcome == 'success'
+        env:
+          NODE_PATH: ${{ runner.temp }}/nav140-tools/node_modules
+          SOURCE_SHA: ${{ github.event.pull_request.head.sha }}
+          RO_QA_COMMIT: ${{ github.event.pull_request.head.sha }}
+          RO_QA_OUTPUT: ${{ github.workspace }}/qa-artifacts/original-regression
+        run: |
+          mkdir -p "$RUNNER_TEMP/nav140-web"
+          ln -s "$GITHUB_WORKSPACE" "$RUNNER_TEMP/nav140-web/ro-reform-preparation"
+          python -m http.server 4173 --bind 127.0.0.1 --directory "$RUNNER_TEMP/nav140-web" > qa-artifacts/server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 50); do if curl --fail --silent http://127.0.0.1:4173/ro-reform-preparation/ > /dev/null; then break; fi; sleep .2; done
+          node tests/ro-suite-nav.browser.cjs 2>&1 | tee qa-artifacts/original-browser.log
+          BASE_ROOT="$RUNNER_TEMP/first-run-base" BASE_SHA=65adf653de32864182c33d1792d8346365375767 QA_OUTPUT="$GITHUB_WORKSPACE/qa-artifacts/first-run" node tests/first-run.browser.cjs 2>&1 | tee qa-artifacts/first-run.log
+          BASE_ROOT="$RUNNER_TEMP/nav140-base" BASE_SHA=b49eeb427e3874d6462d922e2b07c52e1a297759 QA_OUTPUT="$GITHUB_WORKSPACE/qa-artifacts/latest-main" node tests/first-run.browser.cjs 2>&1 | tee qa-artifacts/latest-main.log
+      - name: Upload logs, actual screenshots and exact output comparisons
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: nav141-${{ github.event.pull_request.head.sha }}
+          path: qa-artifacts/
+          retention-days: 30

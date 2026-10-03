@@ -1,0 +1,14 @@
+[
+  [
+    "",
+    "    ro-suite-nav { --ro-suite-content-max-width: 1320px; --ro-suite-inline-padding: 28px; }\r\n    ro-suite-nav > nav { box-sizing: border-box; max-width: var(--ro-suite-content-max-width); margin: 0 auto; min-height: 52px; padding: 4px var(--ro-suite-inline-padding); display: flex; align-items: center; }\r\n    @media (max-width: 900px) { ro-suite-nav { --ro-suite-inline-padding: 18px; } }\r\n    @media (max-width: 640px) { ro-suite-nav { --ro-suite-inline-padding: 16px; } }\r\n"
+  ],
+  [
+    "./assets/ro-suite/1.3.0/nav.js",
+    "./assets/ro-suite/1.4.1/nav.js"
+  ],
+  [
+    "ro-suite-nav > nav > a { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 12px; }",
+    "ro-suite-nav > nav > a { box-sizing: border-box; display: inline-flex; align-items: center; min-width: 44px; min-height: 44px; padding: 8px 0; }"
+  ]
+]

@@ -1,0 +1,139 @@
+{
+  "method": "Actual Chromium DOM geometry; fresh browser context per width/theme; no app CSS/DOM/storage edits",
+  "browserVersion": "153.0.8010.12",
+  "baseCommit": "b49eeb427e3874d6462d922e2b07c52e1a297759",
+  "samples": [
+    {
+      "width": 320,
+      "theme": "light",
+      "closedNavHeight": 98,
+      "barEdgeDelta": {
+        "left": -7,
+        "right": 7
+      },
+      "headerGap": 0,
+      "screenshot": null
+    },
+    {
+      "width": 360,
+      "theme": "light",
+      "closedNavHeight": 98,
+      "barEdgeDelta": {
+        "left": -7,
+        "right": 7
+      },
+      "headerGap": 0,
+      "screenshot": null
+    },
+    {
+      "width": 390,
+      "theme": "light",
+      "closedNavHeight": 98,
+      "barEdgeDelta": {
+        "left": -7,
+        "right": 7
+      },
+      "headerGap": 0,
+      "screenshot": "before-reform-390-light-closed.png"
+    },
+    {
+      "width": 430,
+      "theme": "light",
+      "closedNavHeight": 98,
+      "barEdgeDelta": {
+        "left": -7,
+        "right": 7
+      },
+      "headerGap": 0,
+      "screenshot": null
+    },
+    {
+      "width": 768,
+      "theme": "light",
+      "closedNavHeight": 68,
+      "barEdgeDelta": {
+        "left": -3,
+        "right": 3
+      },
+      "headerGap": 0,
+      "screenshot": "before-reform-768-light-closed.png"
+    },
+    {
+      "width": 1440,
+      "theme": "light",
+      "closedNavHeight": 68,
+      "barEdgeDelta": {
+        "left": -73,
+        "right": 73
+      },
+      "headerGap": 0,
+      "screenshot": "before-reform-1440-light-closed.png"
+    },
+    {
+      "width": 320,
+      "theme": "dark",
+      "closedNavHeight": 98,
+      "barEdgeDelta": {
+        "left": -7,
+        "right": 7
+      },
+      "headerGap": 0,
+      "screenshot": null
+    },
+    {
+      "width": 360,
+      "theme": "dark",
+      "closedNavHeight": 98,
+      "barEdgeDelta": {
+        "left": -7,
+        "right": 7
+      },
+      "headerGap": 0,
+      "screenshot": null
+    },
+    {
+      "width": 390,
+      "theme": "dark",
+      "closedNavHeight": 98,
+      "barEdgeDelta": {
+        "left": -7,
+        "right": 7
+      },
+      "headerGap": 0,
+      "screenshot": "before-reform-390-dark-closed.png"
+    },
+    {
+      "width": 430,
+      "theme": "dark",
+      "closedNavHeight": 98,
+      "barEdgeDelta": {
+        "left": -7,
+        "right": 7
+      },
+      "headerGap": 0,
+      "screenshot": null
+    },
+    {
+      "width": 768,
+      "theme": "dark",
+      "closedNavHeight": 68,
+      "barEdgeDelta": {
+        "left": -3,
+        "right": 3
+      },
+      "headerGap": 0,
+      "screenshot": "before-reform-768-dark-closed.png"
+    },
+    {
+      "width": 1440,
+      "theme": "dark",
+      "closedNavHeight": 68,
+      "barEdgeDelta": {
+        "left": -73,
+        "right": 73
+      },
+      "headerGap": 0,
+      "screenshot": "before-reform-1440-dark-closed.png"
+    }
+  ]
+}
