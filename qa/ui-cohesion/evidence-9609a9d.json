@@ -1,0 +1,3381 @@
+{
+  "sourceCommit": "9609a9dc800216f0332bfc6d91e23d0d98604888",
+  "baseCommit": "00975def134eb9e0098f944e98b8286d8bc3bfdd",
+  "runUrl": "https://github.com/econDS/ro-reform-preparation/actions/runs/37222442585",
+  "artifactId": 11311395352,
+  "artifactZipSha256": "82378e2fff4e75f7613ac2f8fa62b5d7b652044503a2e6220c30625369555677",
+  "status": "source and historical browser suites passed; cohesion 666 passed/32 inherited Undo classifier failures; rerun pending",
+  "screenshots": [
+    {
+      "path": "screenshots/before-390-light.png",
+      "artifactPath": "first-run/before-390-light.png",
+      "sha256": "94b210a6b1295dfd67c5c746755709cf06157bb4caa4f22d562b24af36a991e0"
+    },
+    {
+      "path": "screenshots/before-390-dark.png",
+      "artifactPath": "first-run/before-390-dark.png",
+      "sha256": "f15f58ab301374255d9373cd1a983e7847a790b9f07c007fcdfb501efb5c3148"
+    },
+    {
+      "path": "screenshots/before-1440-light.png",
+      "artifactPath": "first-run/before-1440-light.png",
+      "sha256": "e668153b747587985889fcf5338fc33bd96ff27671def36776c4f69a41abbecc"
+    },
+    {
+      "path": "screenshots/before-1440-dark.png",
+      "artifactPath": "first-run/before-1440-dark.png",
+      "sha256": "21f214cd757769e8ec117dca81ef34792403b4961fd45a29e7b3dce3876623dc"
+    },
+    {
+      "path": "screenshots/after-390-light.png",
+      "artifactPath": "first-run/after-390-light.png",
+      "sha256": "7a29ee1c60cd0328935e34e324e06a70c04611971932c180da45b3b3299ff4c4"
+    },
+    {
+      "path": "screenshots/after-390-dark.png",
+      "artifactPath": "first-run/after-390-dark.png",
+      "sha256": "48d94bd3c9a67c76515757840a211aa509416222860467f63fef1f4d30b852ca"
+    },
+    {
+      "path": "screenshots/after-1440-light.png",
+      "artifactPath": "first-run/after-1440-light.png",
+      "sha256": "70732702fb9ca464b05e520f859caa35f1fc8198da04f72f86fc4522f79bfdd6"
+    },
+    {
+      "path": "screenshots/after-1440-dark.png",
+      "artifactPath": "first-run/after-1440-dark.png",
+      "sha256": "1326aea1e715481d0618bd3b769616d967cea7a3509a31ec87ee447a0ae03b0c"
+    }
+  ],
+  "geometry": [
+    {
+      "id": "before-360-light-first-visit",
+      "viewport": 360,
+      "documentWidth": 360,
+      "bodyWidth": 360,
+      "section01": {
+        "x": 16,
+        "y": 1022.21875,
+        "width": 328,
+        "height": 948.34375,
+        "right": 344,
+        "bottom": 1970.5625
+      },
+      "grade": {
+        "x": 37,
+        "y": 1462.484375,
+        "width": 152.59375,
+        "height": 46,
+        "right": 189.59375,
+        "bottom": 1508.484375
+      },
+      "quantity": {
+        "x": 205.59375,
+        "y": 1462.484375,
+        "width": 117.390625,
+        "height": 46,
+        "right": 322.984375,
+        "bottom": 1508.484375
+      },
+      "cue": {
+        "x": 40,
+        "y": 431.6875,
+        "width": 186,
+        "height": 45.59375,
+        "right": 226,
+        "bottom": 477.28125
+      },
+      "results": {
+        "x": 16,
+        "y": 1994.5625,
+        "width": 328,
+        "height": 712.828125,
+        "right": 344,
+        "bottom": 2707.390625
+      },
+      "controls": [
+        {
+          "id": "ยังไม่รู้ว่าใช้หินอะไร? เปิดตาราง Reform ของ RO GGT ↗",
+          "tag": "A",
+          "x": 54,
+          "y": 1111.21875,
+          "width": 233,
+          "height": 46.296875,
+          "right": 287,
+          "bottom": 1157.515625
+        },
+        {
+          "id": "weapon",
+          "tag": "BUTTON",
+          "x": 37,
+          "y": 1277.203125,
+          "width": 88.65625,
+          "height": 88.390625,
+          "right": 125.65625,
+          "bottom": 1365.59375
+        },
+        {
+          "id": "armor",
+          "tag": "BUTTON",
+          "x": 135.65625,
+          "y": 1277.203125,
+          "width": 88.671875,
+          "height": 88.390625,
+          "right": 224.328125,
+          "bottom": 1365.59375
+        },
+        {
+          "id": "accessory",
+          "tag": "BUTTON",
+          "x": 234.328125,
+          "y": 1277.203125,
+          "width": 88.65625,
+          "height": 88.390625,
+          "right": 322.984375,
+          "bottom": 1365.59375
+        },
+        {
+          "id": "grade",
+          "tag": "SELECT",
+          "x": 37,
+          "y": 1462.484375,
+          "width": 152.59375,
+          "height": 46,
+          "right": 189.59375,
+          "bottom": 1508.484375
+        },
+        {
+          "id": "quantity",
+          "tag": "INPUT",
+          "x": 205.59375,
+          "y": 1462.484375,
+          "width": 117.390625,
+          "height": 46,
+          "right": 322.984375,
+          "bottom": 1508.484375
+        },
+        {
+          "id": "reform-shadow",
+          "tag": "INPUT",
+          "x": 37,
+          "y": 1697.078125,
+          "width": 136,
+          "height": 46,
+          "right": 173,
+          "bottom": 1743.078125
+        },
+        {
+          "id": "reform-zelunium",
+          "tag": "INPUT",
+          "x": 187,
+          "y": 1697.078125,
+          "width": 136,
+          "height": 46,
+          "right": 323,
+          "bottom": 1743.078125
+        },
+        {
+          "id": "mode",
+          "tag": "SELECT",
+          "x": 37,
+          "y": 1795.46875,
+          "width": 286,
+          "height": 46,
+          "right": 323,
+          "bottom": 1841.46875
+        },
+        {
+          "id": "first-run-result",
+          "tag": "A",
+          "x": 37,
+          "y": 1901.96875,
+          "width": 282,
+          "height": 47.59375,
+          "right": 319,
+          "bottom": 1949.5625
+        }
+      ],
+      "overlaps": []
+    },
+    {
+      "id": "before-360-dark-first-visit",
+      "viewport": 360,
+      "documentWidth": 360,
+      "bodyWidth": 360,
+      "section01": {
+        "x": 16,
+        "y": 1044.46875,
+        "width": 328,
+        "height": 948.34375,
+        "right": 344,
+        "bottom": 1992.8125
+      },
+      "grade": {
+        "x": 37,
+        "y": 1484.734375,
+        "width": 152.59375,
+        "height": 46,
+        "right": 189.59375,
+        "bottom": 1530.734375
+      },
+      "quantity": {
+        "x": 205.59375,
+        "y": 1484.734375,
+        "width": 117.390625,
+        "height": 46,
+        "right": 322.984375,
+        "bottom": 1530.734375
+      },
+      "cue": {
+        "x": 41,
+        "y": 432.6875,
+        "width": 186,
+        "height": 45.59375,
+        "right": 227,
+        "bottom": 478.28125
+      },
+      "results": {
+        "x": 16,
+        "y": 2016.8125,
+        "width": 328,
+        "height": 712.828125,
+        "right": 344,
+        "bottom": 2729.640625
+      },
+      "controls": [
+        {
+          "id": "ยังไม่รู้ว่าใช้หินอะไร? เปิดตาราง Reform ของ RO GGT ↗",
+          "tag": "A",
+          "x": 54,
+          "y": 1133.46875,
+          "width": 233,
+          "height": 46.296875,
+          "right": 287,
+          "bottom": 1179.765625
+        },
+        {
+          "id": "weapon",
+          "tag": "BUTTON",
+          "x": 37,
+          "y": 1299.453125,
+          "width": 88.65625,
+          "height": 88.390625,
+          "right": 125.65625,
+          "bottom": 1387.84375
+        },
+        {
+          "id": "armor",
+          "tag": "BUTTON",
+          "x": 135.65625,
+          "y": 1299.453125,
+          "width": 88.671875,
+          "height": 88.390625,
+          "right": 224.328125,
+          "bottom": 1387.84375
+        },
+        {
+          "id": "accessory",
+          "tag": "BUTTON",
+          "x": 234.328125,
+          "y": 1299.453125,
+          "width": 88.65625,
+          "height": 88.390625,
+          "right": 322.984375,
+          "bottom": 1387.84375
+        },
+        {
+          "id": "grade",
+          "tag": "SELECT",
+          "x": 37,
+          "y": 1484.734375,
+          "width": 152.59375,
+          "height": 46,
+          "right": 189.59375,
+          "bottom": 1530.734375
+        },
+        {
+          "id": "quantity",
+          "tag": "INPUT",
+          "x": 205.59375,
+          "y": 1484.734375,
+          "width": 117.390625,
+          "height": 46,
+          "right": 322.984375,
+          "bottom": 1530.734375
+        },
+        {
+          "id": "reform-shadow",
+          "tag": "INPUT",
+          "x": 37,
+          "y": 1719.328125,
+          "width": 136,
+          "height": 46,
+          "right": 173,
+          "bottom": 1765.328125
+        },
+        {
+          "id": "reform-zelunium",
+          "tag": "INPUT",
+          "x": 187,
+          "y": 1719.328125,
+          "width": 136,
+          "height": 46,
+          "right": 323,
+          "bottom": 1765.328125
+        },
+        {
+          "id": "mode",
+          "tag": "SELECT",
+          "x": 37,
+          "y": 1817.71875,
+          "width": 286,
+          "height": 46,
+          "right": 323,
+          "bottom": 1863.71875
+        },
+        {
+          "id": "first-run-result",
+          "tag": "A",
+          "x": 37,
+          "y": 1924.21875,
+          "width": 282,
+          "height": 47.59375,
+          "right": 319,
+          "bottom": 1971.8125
+        }
+      ],
+      "overlaps": []
+    },
+    {
+      "id": "before-390-light-first-visit",
+      "viewport": 390,
+      "documentWidth": 390,
+      "bodyWidth": 390,
+      "section01": {
+        "x": 16,
+        "y": 971.171875,
+        "width": 358,
+        "height": 948.34375,
+        "right": 374,
+        "bottom": 1919.515625
+      },
+      "grade": {
+        "x": 37,
+        "y": 1411.4375,
+        "width": 169.5625,
+        "height": 46,
+        "right": 206.5625,
+        "bottom": 1457.4375
+      },
+      "quantity": {
+        "x": 222.5625,
+        "y": 1411.4375,
+        "width": 130.4375,
+        "height": 46,
+        "right": 353,
+        "bottom": 1457.4375
+      },
+      "cue": {
+        "x": 40,
+        "y": 431.6875,
+        "width": 186,
+        "height": 45.59375,
+        "right": 226,
+        "bottom": 477.28125
+      },
+      "results": {
+        "x": 16,
+        "y": 1943.515625,
+        "width": 358,
+        "height": 692.03125,
+        "right": 374,
+        "bottom": 2635.546875
+      },
+      "controls": [
+        {
+          "id": "ยังไม่รู้ว่าใช้หินอะไร? เปิดตาราง Reform ของ RO GGT ↗",
+          "tag": "A",
+          "x": 54,
+          "y": 1060.171875,
+          "width": 282,
+          "height": 46.296875,
+          "right": 336,
+          "bottom": 1106.46875
+        },
+        {
+          "id": "weapon",
+          "tag": "BUTTON",
+          "x": 37,
+          "y": 1226.15625,
+          "width": 98.65625,
+          "height": 88.390625,
+          "right": 135.65625,
+          "bottom": 1314.546875
+        },
+        {
+          "id": "armor",
+          "tag": "BUTTON",
+          "x": 145.65625,
+          "y": 1226.15625,
+          "width": 98.671875,
+          "height": 88.390625,
+          "right": 244.328125,
+          "bottom": 1314.546875
+        },
+        {
+          "id": "accessory",
+          "tag": "BUTTON",
+          "x": 254.328125,
+          "y": 1226.15625,
+          "width": 98.65625,
+          "height": 88.390625,
+          "right": 352.984375,
+          "bottom": 1314.546875
+        },
+        {
+          "id": "grade",
+          "tag": "SELECT",
+          "x": 37,
+          "y": 1411.4375,
+          "width": 169.5625,
+          "height": 46,
+          "right": 206.5625,
+          "bottom": 1457.4375
+        },
+        {
+          "id": "quantity",
+          "tag": "INPUT",
+          "x": 222.5625,
+          "y": 1411.4375,
+          "width": 130.4375,
+          "height": 46,
+          "right": 353,
+          "bottom": 1457.4375
+        },
+        {
+          "id": "reform-shadow",
+          "tag": "INPUT",
+          "x": 37,
+          "y": 1646.03125,
+          "width": 151,
+          "height": 46,
+          "right": 188,
+          "bottom": 1692.03125
+        },
+        {
+          "id": "reform-zelunium",
+          "tag": "INPUT",
+          "x": 202,
+          "y": 1646.03125,
+          "width": 151,
+          "height": 46,
+          "right": 353,
+          "bottom": 1692.03125
+        },
+        {
+          "id": "mode",
+          "tag": "SELECT",
+          "x": 37,
+          "y": 1744.421875,
+          "width": 316,
+          "height": 46,
+          "right": 353,
+          "bottom": 1790.421875
+        },
+        {
+          "id": "first-run-result",
+          "tag": "A",
+          "x": 37,
+          "y": 1850.921875,
+          "width": 282,
+          "height": 47.59375,
+          "right": 319,
+          "bottom": 1898.515625
+        }
+      ],
+      "overlaps": []
+    },
+    {
+      "id": "before-390-dark-first-visit",
+      "viewport": 390,
+      "documentWidth": 390,
+      "bodyWidth": 390,
+      "section01": {
+        "x": 16,
+        "y": 993.421875,
+        "width": 358,
+        "height": 948.34375,
+        "right": 374,
+        "bottom": 1941.765625
+      },
+      "grade": {
+        "x": 37,
+        "y": 1433.6875,
+        "width": 169.5625,
+        "height": 46,
+        "right": 206.5625,
+        "bottom": 1479.6875
+      },
+      "quantity": {
+        "x": 222.5625,
+        "y": 1433.6875,
+        "width": 130.4375,
+        "height": 46,
+        "right": 353,
+        "bottom": 1479.6875
+      },
+      "cue": {
+        "x": 41,
+        "y": 432.6875,
+        "width": 186,
+        "height": 45.59375,
+        "right": 227,
+        "bottom": 478.28125
+      },
+      "results": {
+        "x": 16,
+        "y": 1965.765625,
+        "width": 358,
+        "height": 692.03125,
+        "right": 374,
+        "bottom": 2657.796875
+      },
+      "controls": [
+        {
+          "id": "ยังไม่รู้ว่าใช้หินอะไร? เปิดตาราง Reform ของ RO GGT ↗",
+          "tag": "A",
+          "x": 54,
+          "y": 1082.421875,
+          "width": 282,
+          "height": 46.296875,
+          "right": 336,
+          "bottom": 1128.71875
+        },
+        {
+          "id": "weapon",
+          "tag": "BUTTON",
+          "x": 37,
+          "y": 1248.40625,
+          "width": 98.65625,
+          "height": 88.390625,
+          "right": 135.65625,
+          "bottom": 1336.796875
+        },
+        {
+          "id": "armor",
+          "tag": "BUTTON",
+          "x": 145.65625,
+          "y": 1248.40625,
+          "width": 98.671875,
+          "height": 88.390625,
+          "right": 244.328125,
+          "bottom": 1336.796875
+        },
+        {
+          "id": "accessory",
+          "tag": "BUTTON",
+          "x": 254.328125,
+          "y": 1248.40625,
+          "width": 98.65625,
+          "height": 88.390625,
+          "right": 352.984375,
+          "bottom": 1336.796875
+        },
+        {
+          "id": "grade",
+          "tag": "SELECT",
+          "x": 37,
+          "y": 1433.6875,
+          "width": 169.5625,
+          "height": 46,
+          "right": 206.5625,
+          "bottom": 1479.6875
+        },
+        {
+          "id": "quantity",
+          "tag": "INPUT",
+          "x": 222.5625,
+          "y": 1433.6875,
+          "width": 130.4375,
+          "height": 46,
+          "right": 353,
+          "bottom": 1479.6875
+        },
+        {
+          "id": "reform-shadow",
+          "tag": "INPUT",
+          "x": 37,
+          "y": 1668.28125,
+          "width": 151,
+          "height": 46,
+          "right": 188,
+          "bottom": 1714.28125
+        },
+        {
+          "id": "reform-zelunium",
+          "tag": "INPUT",
+          "x": 202,
+          "y": 1668.28125,
+          "width": 151,
+          "height": 46,
+          "right": 353,
+          "bottom": 1714.28125
+        },
+        {
+          "id": "mode",
+          "tag": "SELECT",
+          "x": 37,
+          "y": 1766.671875,
+          "width": 316,
+          "height": 46,
+          "right": 353,
+          "bottom": 1812.671875
+        },
+        {
+          "id": "first-run-result",
+          "tag": "A",
+          "x": 37,
+          "y": 1873.171875,
+          "width": 282,
+          "height": 47.59375,
+          "right": 319,
+          "bottom": 1920.765625
+        }
+      ],
+      "overlaps": []
+    },
+    {
+      "id": "before-768-light-first-visit",
+      "viewport": 768,
+      "documentWidth": 768,
+      "bodyWidth": 768,
+      "section01": {
+        "x": 28,
+        "y": 860.53125,
+        "width": 712,
+        "height": 848.109375,
+        "right": 740,
+        "bottom": 1708.640625
+      },
+      "grade": {
+        "x": 55,
+        "y": 1238.75,
+        "width": 362.859375,
+        "height": 46,
+        "right": 417.859375,
+        "bottom": 1284.75
+      },
+      "quantity": {
+        "x": 433.859375,
+        "y": 1238.75,
+        "width": 279.125,
+        "height": 46,
+        "right": 712.984375,
+        "bottom": 1284.75
+      },
+      "cue": {
+        "x": 52,
+        "y": 385,
+        "width": 186,
+        "height": 45.59375,
+        "right": 238,
+        "bottom": 430.59375
+      },
+      "results": {
+        "x": 28,
+        "y": 1732.640625,
+        "width": 712,
+        "height": 527.46875,
+        "right": 740,
+        "bottom": 2260.109375
+      },
+      "controls": [
+        {
+          "id": "ยังไม่รู้ว่าใช้หินอะไร? เปิดตาราง Reform ของ RO GGT ↗",
+          "tag": "A",
+          "x": 72,
+          "y": 955.53125,
+          "width": 326.3125,
+          "height": 22,
+          "right": 398.3125,
+          "bottom": 977.53125
+        },
+        {
+          "id": "weapon",
+          "tag": "BUTTON",
+          "x": 55,
+          "y": 1074.71875,
+          "width": 212.65625,
+          "height": 88.390625,
+          "right": 267.65625,
+          "bottom": 1163.109375
+        },
+        {
+          "id": "armor",
+          "tag": "BUTTON",
+          "x": 277.65625,
+          "y": 1074.71875,
+          "width": 212.671875,
+          "height": 88.390625,
+          "right": 490.328125,
+          "bottom": 1163.109375
+        },
+        {
+          "id": "accessory",
+          "tag": "BUTTON",
+          "x": 500.328125,
+          "y": 1074.71875,
+          "width": 212.671875,
+          "height": 88.390625,
+          "right": 713,
+          "bottom": 1163.109375
+        },
+        {
+          "id": "grade",
+          "tag": "SELECT",
+          "x": 55,
+          "y": 1238.75,
+          "width": 362.859375,
+          "height": 46,
+          "right": 417.859375,
+          "bottom": 1284.75
+        },
+        {
+          "id": "quantity",
+          "tag": "INPUT",
+          "x": 433.859375,
+          "y": 1238.75,
+          "width": 279.125,
+          "height": 46,
+          "right": 712.984375,
+          "bottom": 1284.75
+        },
+        {
+          "id": "reform-shadow",
+          "tag": "INPUT",
+          "x": 55,
+          "y": 1450.40625,
+          "width": 322,
+          "height": 46,
+          "right": 377,
+          "bottom": 1496.40625
+        },
+        {
+          "id": "reform-zelunium",
+          "tag": "INPUT",
+          "x": 391,
+          "y": 1450.40625,
+          "width": 322,
+          "height": 46,
+          "right": 713,
+          "bottom": 1496.40625
+        },
+        {
+          "id": "mode",
+          "tag": "SELECT",
+          "x": 55,
+          "y": 1548.796875,
+          "width": 658,
+          "height": 46,
+          "right": 713,
+          "bottom": 1594.796875
+        },
+        {
+          "id": "first-run-result",
+          "tag": "A",
+          "x": 55,
+          "y": 1634.046875,
+          "width": 282,
+          "height": 47.59375,
+          "right": 337,
+          "bottom": 1681.640625
+        }
+      ],
+      "overlaps": []
+    },
+    {
+      "id": "before-768-dark-first-visit",
+      "viewport": 768,
+      "documentWidth": 768,
+      "bodyWidth": 768,
+      "section01": {
+        "x": 28,
+        "y": 862.53125,
+        "width": 712,
+        "height": 848.109375,
+        "right": 740,
+        "bottom": 1710.640625
+      },
+      "grade": {
+        "x": 55,
+        "y": 1240.75,
+        "width": 362.859375,
+        "height": 46,
+        "right": 417.859375,
+        "bottom": 1286.75
+      },
+      "quantity": {
+        "x": 433.859375,
+        "y": 1240.75,
+        "width": 279.125,
+        "height": 46,
+        "right": 712.984375,
+        "bottom": 1286.75
+      },
+      "cue": {
+        "x": 53,
+        "y": 386,
+        "width": 186,
+        "height": 45.59375,
+        "right": 239,
+        "bottom": 431.59375
+      },
+      "results": {
+        "x": 28,
+        "y": 1734.640625,
+        "width": 712,
+        "height": 527.46875,
+        "right": 740,
+        "bottom": 2262.109375
+      },
+      "controls": [
+        {
+          "id": "ยังไม่รู้ว่าใช้หินอะไร? เปิดตาราง Reform ของ RO GGT ↗",
+          "tag": "A",
+          "x": 72,
+          "y": 957.53125,
+          "width": 326.3125,
+          "height": 22,
+          "right": 398.3125,
+          "bottom": 979.53125
+        },
+        {
+          "id": "weapon",
+          "tag": "BUTTON",
+          "x": 55,
+          "y": 1076.71875,
+          "width": 212.65625,
+          "height": 88.390625,
+          "right": 267.65625,
+          "bottom": 1165.109375
+        },
+        {
+          "id": "armor",
+          "tag": "BUTTON",
+          "x": 277.65625,
+          "y": 1076.71875,
+          "width": 212.671875,
+          "height": 88.390625,
+          "right": 490.328125,
+          "bottom": 1165.109375
+        },
+        {
+          "id": "accessory",
+          "tag": "BUTTON",
+          "x": 500.328125,
+          "y": 1076.71875,
+          "width": 212.671875,
+          "height": 88.390625,
+          "right": 713,
+          "bottom": 1165.109375
+        },
+        {
+          "id": "grade",
+          "tag": "SELECT",
+          "x": 55,
+          "y": 1240.75,
+          "width": 362.859375,
+          "height": 46,
+          "right": 417.859375,
+          "bottom": 1286.75
+        },
+        {
+          "id": "quantity",
+          "tag": "INPUT",
+          "x": 433.859375,
+          "y": 1240.75,
+          "width": 279.125,
+          "height": 46,
+          "right": 712.984375,
+          "bottom": 1286.75
+        },
+        {
+          "id": "reform-shadow",
+          "tag": "INPUT",
+          "x": 55,
+          "y": 1452.40625,
+          "width": 322,
+          "height": 46,
+          "right": 377,
+          "bottom": 1498.40625
+        },
+        {
+          "id": "reform-zelunium",
+          "tag": "INPUT",
+          "x": 391,
+          "y": 1452.40625,
+          "width": 322,
+          "height": 46,
+          "right": 713,
+          "bottom": 1498.40625
+        },
+        {
+          "id": "mode",
+          "tag": "SELECT",
+          "x": 55,
+          "y": 1550.796875,
+          "width": 658,
+          "height": 46,
+          "right": 713,
+          "bottom": 1596.796875
+        },
+        {
+          "id": "first-run-result",
+          "tag": "A",
+          "x": 55,
+          "y": 1636.046875,
+          "width": 282,
+          "height": 47.59375,
+          "right": 337,
+          "bottom": 1683.640625
+        }
+      ],
+      "overlaps": []
+    },
+    {
+      "id": "before-1440-light-first-visit",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "section01": {
+        "x": 88,
+        "y": 567.328125,
+        "width": 620,
+        "height": 848.109375,
+        "right": 708,
+        "bottom": 1415.4375
+      },
+      "grade": {
+        "x": 115,
+        "y": 945.546875,
+        "width": 310.859375,
+        "height": 46,
+        "right": 425.859375,
+        "bottom": 991.546875
+      },
+      "quantity": {
+        "x": 441.859375,
+        "y": 945.546875,
+        "width": 239.125,
+        "height": 46,
+        "right": 680.984375,
+        "bottom": 991.546875
+      },
+      "cue": {
+        "x": 112,
+        "y": 436.9375,
+        "width": 186,
+        "height": 45.59375,
+        "right": 298,
+        "bottom": 482.53125
+      },
+      "results": {
+        "x": 732,
+        "y": 567.328125,
+        "width": 620,
+        "height": 571.265625,
+        "right": 1352,
+        "bottom": 1138.59375
+      },
+      "controls": [
+        {
+          "id": "ยังไม่รู้ว่าใช้หินอะไร? เปิดตาราง Reform ของ RO GGT ↗",
+          "tag": "A",
+          "x": 132,
+          "y": 662.328125,
+          "width": 326.3125,
+          "height": 22,
+          "right": 458.3125,
+          "bottom": 684.328125
+        },
+        {
+          "id": "weapon",
+          "tag": "BUTTON",
+          "x": 115,
+          "y": 781.515625,
+          "width": 182,
+          "height": 88.390625,
+          "right": 297,
+          "bottom": 869.90625
+        },
+        {
+          "id": "armor",
+          "tag": "BUTTON",
+          "x": 307,
+          "y": 781.515625,
+          "width": 182,
+          "height": 88.390625,
+          "right": 489,
+          "bottom": 869.90625
+        },
+        {
+          "id": "accessory",
+          "tag": "BUTTON",
+          "x": 499,
+          "y": 781.515625,
+          "width": 182,
+          "height": 88.390625,
+          "right": 681,
+          "bottom": 869.90625
+        },
+        {
+          "id": "grade",
+          "tag": "SELECT",
+          "x": 115,
+          "y": 945.546875,
+          "width": 310.859375,
+          "height": 46,
+          "right": 425.859375,
+          "bottom": 991.546875
+        },
+        {
+          "id": "quantity",
+          "tag": "INPUT",
+          "x": 441.859375,
+          "y": 945.546875,
+          "width": 239.125,
+          "height": 46,
+          "right": 680.984375,
+          "bottom": 991.546875
+        },
+        {
+          "id": "reform-shadow",
+          "tag": "INPUT",
+          "x": 115,
+          "y": 1157.203125,
+          "width": 276,
+          "height": 46,
+          "right": 391,
+          "bottom": 1203.203125
+        },
+        {
+          "id": "reform-zelunium",
+          "tag": "INPUT",
+          "x": 405,
+          "y": 1157.203125,
+          "width": 276,
+          "height": 46,
+          "right": 681,
+          "bottom": 1203.203125
+        },
+        {
+          "id": "mode",
+          "tag": "SELECT",
+          "x": 115,
+          "y": 1255.59375,
+          "width": 566,
+          "height": 46,
+          "right": 681,
+          "bottom": 1301.59375
+        },
+        {
+          "id": "first-run-result",
+          "tag": "A",
+          "x": 115,
+          "y": 1340.84375,
+          "width": 282,
+          "height": 47.59375,
+          "right": 397,
+          "bottom": 1388.4375
+        }
+      ],
+      "overlaps": []
+    },
+    {
+      "id": "before-1440-dark-first-visit",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "section01": {
+        "x": 88,
+        "y": 569.328125,
+        "width": 620,
+        "height": 848.109375,
+        "right": 708,
+        "bottom": 1417.4375
+      },
+      "grade": {
+        "x": 115,
+        "y": 947.546875,
+        "width": 310.859375,
+        "height": 46,
+        "right": 425.859375,
+        "bottom": 993.546875
+      },
+      "quantity": {
+        "x": 441.859375,
+        "y": 947.546875,
+        "width": 239.125,
+        "height": 46,
+        "right": 680.984375,
+        "bottom": 993.546875
+      },
+      "cue": {
+        "x": 113,
+        "y": 437.9375,
+        "width": 186,
+        "height": 45.59375,
+        "right": 299,
+        "bottom": 483.53125
+      },
+      "results": {
+        "x": 732,
+        "y": 569.328125,
+        "width": 620,
+        "height": 571.265625,
+        "right": 1352,
+        "bottom": 1140.59375
+      },
+      "controls": [
+        {
+          "id": "ยังไม่รู้ว่าใช้หินอะไร? เปิดตาราง Reform ของ RO GGT ↗",
+          "tag": "A",
+          "x": 132,
+          "y": 664.328125,
+          "width": 326.3125,
+          "height": 22,
+          "right": 458.3125,
+          "bottom": 686.328125
+        },
+        {
+          "id": "weapon",
+          "tag": "BUTTON",
+          "x": 115,
+          "y": 783.515625,
+          "width": 182,
+          "height": 88.390625,
+          "right": 297,
+          "bottom": 871.90625
+        },
+        {
+          "id": "armor",
+          "tag": "BUTTON",
+          "x": 307,
+          "y": 783.515625,
+          "width": 182,
+          "height": 88.390625,
+          "right": 489,
+          "bottom": 871.90625
+        },
+        {
+          "id": "accessory",
+          "tag": "BUTTON",
+          "x": 499,
+          "y": 783.515625,
+          "width": 182,
+          "height": 88.390625,
+          "right": 681,
+          "bottom": 871.90625
+        },
+        {
+          "id": "grade",
+          "tag": "SELECT",
+          "x": 115,
+          "y": 947.546875,
+          "width": 310.859375,
+          "height": 46,
+          "right": 425.859375,
+          "bottom": 993.546875
+        },
+        {
+          "id": "quantity",
+          "tag": "INPUT",
+          "x": 441.859375,
+          "y": 947.546875,
+          "width": 239.125,
+          "height": 46,
+          "right": 680.984375,
+          "bottom": 993.546875
+        },
+        {
+          "id": "reform-shadow",
+          "tag": "INPUT",
+          "x": 115,
+          "y": 1159.203125,
+          "width": 276,
+          "height": 46,
+          "right": 391,
+          "bottom": 1205.203125
+        },
+        {
+          "id": "reform-zelunium",
+          "tag": "INPUT",
+          "x": 405,
+          "y": 1159.203125,
+          "width": 276,
+          "height": 46,
+          "right": 681,
+          "bottom": 1205.203125
+        },
+        {
+          "id": "mode",
+          "tag": "SELECT",
+          "x": 115,
+          "y": 1257.59375,
+          "width": 566,
+          "height": 46,
+          "right": 681,
+          "bottom": 1303.59375
+        },
+        {
+          "id": "first-run-result",
+          "tag": "A",
+          "x": 115,
+          "y": 1342.84375,
+          "width": 282,
+          "height": 47.59375,
+          "right": 397,
+          "bottom": 1390.4375
+        }
+      ],
+      "overlaps": []
+    },
+    {
+      "id": "after-360-light-first-visit",
+      "viewport": 360,
+      "documentWidth": 360,
+      "bodyWidth": 360,
+      "section01": {
+        "x": 16,
+        "y": 850.25,
+        "width": 328,
+        "height": 843.625,
+        "right": 344,
+        "bottom": 1693.875
+      },
+      "grade": {
+        "x": 37,
+        "y": 1144.921875,
+        "width": 152.59375,
+        "height": 48,
+        "right": 189.59375,
+        "bottom": 1192.921875
+      },
+      "quantity": {
+        "x": 205.59375,
+        "y": 1144.921875,
+        "width": 117.390625,
+        "height": 48,
+        "right": 322.984375,
+        "bottom": 1192.921875
+      },
+      "cue": {
+        "x": 34,
+        "y": 407.890625,
+        "width": 184,
+        "height": 44,
+        "right": 218,
+        "bottom": 451.890625
+      },
+      "results": {
+        "x": 16,
+        "y": 1717.875,
+        "width": 328,
+        "height": 685.65625,
+        "right": 344,
+        "bottom": 2403.53125
+      },
+      "controls": [
+        {
+          "id": "weapon",
+          "tag": "BUTTON",
+          "x": 37,
+          "y": 1006.140625,
+          "width": 88.65625,
+          "height": 88.390625,
+          "right": 125.65625,
+          "bottom": 1094.53125
+        },
+        {
+          "id": "armor",
+          "tag": "BUTTON",
+          "x": 135.65625,
+          "y": 1006.140625,
+          "width": 88.671875,
+          "height": 88.390625,
+          "right": 224.328125,
+          "bottom": 1094.53125
+        },
+        {
+          "id": "accessory",
+          "tag": "BUTTON",
+          "x": 234.328125,
+          "y": 1006.140625,
+          "width": 88.65625,
+          "height": 88.390625,
+          "right": 322.984375,
+          "bottom": 1094.53125
+        },
+        {
+          "id": "grade",
+          "tag": "SELECT",
+          "x": 37,
+          "y": 1144.921875,
+          "width": 152.59375,
+          "height": 48,
+          "right": 189.59375,
+          "bottom": 1192.921875
+        },
+        {
+          "id": "quantity",
+          "tag": "INPUT",
+          "x": 205.59375,
+          "y": 1144.921875,
+          "width": 117.390625,
+          "height": 48,
+          "right": 322.984375,
+          "bottom": 1192.921875
+        },
+        {
+          "id": "ตาราง Reform ของ RO GGT ↗",
+          "tag": "A",
+          "x": 37,
+          "y": 1229.015625,
+          "width": 173.90625,
+          "height": 22,
+          "right": 210.90625,
+          "bottom": 1251.015625
+        },
+        {
+          "id": "reform-shadow",
+          "tag": "INPUT",
+          "x": 54,
+          "y": 1413.703125,
+          "width": 120,
+          "height": 40,
+          "right": 174,
+          "bottom": 1453.703125
+        },
+        {
+          "id": "reform-zelunium",
+          "tag": "INPUT",
+          "x": 186,
+          "y": 1413.703125,
+          "width": 120,
+          "height": 40,
+          "right": 306,
+          "bottom": 1453.703125
+        },
+        {
+          "id": "mode",
+          "tag": "SELECT",
+          "x": 54,
+          "y": 1515.5,
+          "width": 252,
+          "height": 40,
+          "right": 306,
+          "bottom": 1555.5
+        },
+        {
+          "id": "first-run-result",
+          "tag": "A",
+          "x": 37,
+          "y": 1628.875,
+          "width": 216,
+          "height": 44,
+          "right": 253,
+          "bottom": 1672.875
+        }
+      ],
+      "overlaps": []
+    },
+    {
+      "id": "after-360-dark-first-visit",
+      "viewport": 360,
+      "documentWidth": 360,
+      "bodyWidth": 360,
+      "section01": {
+        "x": 16,
+        "y": 852.25,
+        "width": 328,
+        "height": 843.625,
+        "right": 344,
+        "bottom": 1695.875
+      },
+      "grade": {
+        "x": 37,
+        "y": 1146.921875,
+        "width": 152.59375,
+        "height": 48,
+        "right": 189.59375,
+        "bottom": 1194.921875
+      },
+      "quantity": {
+        "x": 205.59375,
+        "y": 1146.921875,
+        "width": 117.390625,
+        "height": 48,
+        "right": 322.984375,
+        "bottom": 1194.921875
+      },
+      "cue": {
+        "x": 35,
+        "y": 408.890625,
+        "width": 184,
+        "height": 44,
+        "right": 219,
+        "bottom": 452.890625
+      },
+      "results": {
+        "x": 16,
+        "y": 1719.875,
+        "width": 328,
+        "height": 685.65625,
+        "right": 344,
+        "bottom": 2405.53125
+      },
+      "controls": [
+        {
+          "id": "weapon",
+          "tag": "BUTTON",
+          "x": 37,
+          "y": 1008.140625,
+          "width": 88.65625,
+          "height": 88.390625,
+          "right": 125.65625,
+          "bottom": 1096.53125
+        },
+        {
+          "id": "armor",
+          "tag": "BUTTON",
+          "x": 135.65625,
+          "y": 1008.140625,
+          "width": 88.671875,
+          "height": 88.390625,
+          "right": 224.328125,
+          "bottom": 1096.53125
+        },
+        {
+          "id": "accessory",
+          "tag": "BUTTON",
+          "x": 234.328125,
+          "y": 1008.140625,
+          "width": 88.65625,
+          "height": 88.390625,
+          "right": 322.984375,
+          "bottom": 1096.53125
+        },
+        {
+          "id": "grade",
+          "tag": "SELECT",
+          "x": 37,
+          "y": 1146.921875,
+          "width": 152.59375,
+          "height": 48,
+          "right": 189.59375,
+          "bottom": 1194.921875
+        },
+        {
+          "id": "quantity",
+          "tag": "INPUT",
+          "x": 205.59375,
+          "y": 1146.921875,
+          "width": 117.390625,
+          "height": 48,
+          "right": 322.984375,
+          "bottom": 1194.921875
+        },
+        {
+          "id": "ตาราง Reform ของ RO GGT ↗",
+          "tag": "A",
+          "x": 37,
+          "y": 1231.015625,
+          "width": 173.90625,
+          "height": 22,
+          "right": 210.90625,
+          "bottom": 1253.015625
+        },
+        {
+          "id": "reform-shadow",
+          "tag": "INPUT",
+          "x": 54,
+          "y": 1415.703125,
+          "width": 120,
+          "height": 40,
+          "right": 174,
+          "bottom": 1455.703125
+        },
+        {
+          "id": "reform-zelunium",
+          "tag": "INPUT",
+          "x": 186,
+          "y": 1415.703125,
+          "width": 120,
+          "height": 40,
+          "right": 306,
+          "bottom": 1455.703125
+        },
+        {
+          "id": "mode",
+          "tag": "SELECT",
+          "x": 54,
+          "y": 1517.5,
+          "width": 252,
+          "height": 40,
+          "right": 306,
+          "bottom": 1557.5
+        },
+        {
+          "id": "first-run-result",
+          "tag": "A",
+          "x": 37,
+          "y": 1630.875,
+          "width": 216,
+          "height": 44,
+          "right": 253,
+          "bottom": 1674.875
+        }
+      ],
+      "overlaps": []
+    },
+    {
+      "id": "after-390-light-first-visit",
+      "viewport": 390,
+      "documentWidth": 390,
+      "bodyWidth": 390,
+      "section01": {
+        "x": 16,
+        "y": 821.453125,
+        "width": 358,
+        "height": 843.625,
+        "right": 374,
+        "bottom": 1665.078125
+      },
+      "grade": {
+        "x": 37,
+        "y": 1116.125,
+        "width": 169.5625,
+        "height": 48,
+        "right": 206.5625,
+        "bottom": 1164.125
+      },
+      "quantity": {
+        "x": 222.5625,
+        "y": 1116.125,
+        "width": 130.4375,
+        "height": 48,
+        "right": 353,
+        "bottom": 1164.125
+      },
+      "cue": {
+        "x": 34,
+        "y": 407.890625,
+        "width": 184,
+        "height": 44,
+        "right": 218,
+        "bottom": 451.890625
+      },
+      "results": {
+        "x": 16,
+        "y": 1689.078125,
+        "width": 358,
+        "height": 665.65625,
+        "right": 374,
+        "bottom": 2354.734375
+      },
+      "controls": [
+        {
+          "id": "weapon",
+          "tag": "BUTTON",
+          "x": 37,
+          "y": 977.34375,
+          "width": 98.65625,
+          "height": 88.390625,
+          "right": 135.65625,
+          "bottom": 1065.734375
+        },
+        {
+          "id": "armor",
+          "tag": "BUTTON",
+          "x": 145.65625,
+          "y": 977.34375,
+          "width": 98.671875,
+          "height": 88.390625,
+          "right": 244.328125,
+          "bottom": 1065.734375
+        },
+        {
+          "id": "accessory",
+          "tag": "BUTTON",
+          "x": 254.328125,
+          "y": 977.34375,
+          "width": 98.65625,
+          "height": 88.390625,
+          "right": 352.984375,
+          "bottom": 1065.734375
+        },
+        {
+          "id": "grade",
+          "tag": "SELECT",
+          "x": 37,
+          "y": 1116.125,
+          "width": 169.5625,
+          "height": 48,
+          "right": 206.5625,
+          "bottom": 1164.125
+        },
+        {
+          "id": "quantity",
+          "tag": "INPUT",
+          "x": 222.5625,
+          "y": 1116.125,
+          "width": 130.4375,
+          "height": 48,
+          "right": 353,
+          "bottom": 1164.125
+        },
+        {
+          "id": "ตาราง Reform ของ RO GGT ↗",
+          "tag": "A",
+          "x": 37,
+          "y": 1200.21875,
+          "width": 173.90625,
+          "height": 22,
+          "right": 210.90625,
+          "bottom": 1222.21875
+        },
+        {
+          "id": "reform-shadow",
+          "tag": "INPUT",
+          "x": 54,
+          "y": 1384.90625,
+          "width": 135,
+          "height": 40,
+          "right": 189,
+          "bottom": 1424.90625
+        },
+        {
+          "id": "reform-zelunium",
+          "tag": "INPUT",
+          "x": 201,
+          "y": 1384.90625,
+          "width": 135,
+          "height": 40,
+          "right": 336,
+          "bottom": 1424.90625
+        },
+        {
+          "id": "mode",
+          "tag": "SELECT",
+          "x": 54,
+          "y": 1486.703125,
+          "width": 282,
+          "height": 40,
+          "right": 336,
+          "bottom": 1526.703125
+        },
+        {
+          "id": "first-run-result",
+          "tag": "A",
+          "x": 37,
+          "y": 1600.078125,
+          "width": 216,
+          "height": 44,
+          "right": 253,
+          "bottom": 1644.078125
+        }
+      ],
+      "overlaps": []
+    },
+    {
+      "id": "after-390-dark-first-visit",
+      "viewport": 390,
+      "documentWidth": 390,
+      "bodyWidth": 390,
+      "section01": {
+        "x": 16,
+        "y": 823.453125,
+        "width": 358,
+        "height": 843.625,
+        "right": 374,
+        "bottom": 1667.078125
+      },
+      "grade": {
+        "x": 37,
+        "y": 1118.125,
+        "width": 169.5625,
+        "height": 48,
+        "right": 206.5625,
+        "bottom": 1166.125
+      },
+      "quantity": {
+        "x": 222.5625,
+        "y": 1118.125,
+        "width": 130.4375,
+        "height": 48,
+        "right": 353,
+        "bottom": 1166.125
+      },
+      "cue": {
+        "x": 35,
+        "y": 408.890625,
+        "width": 184,
+        "height": 44,
+        "right": 219,
+        "bottom": 452.890625
+      },
+      "results": {
+        "x": 16,
+        "y": 1691.078125,
+        "width": 358,
+        "height": 665.65625,
+        "right": 374,
+        "bottom": 2356.734375
+      },
+      "controls": [
+        {
+          "id": "weapon",
+          "tag": "BUTTON",
+          "x": 37,
+          "y": 979.34375,
+          "width": 98.65625,
+          "height": 88.390625,
+          "right": 135.65625,
+          "bottom": 1067.734375
+        },
+        {
+          "id": "armor",
+          "tag": "BUTTON",
+          "x": 145.65625,
+          "y": 979.34375,
+          "width": 98.671875,
+          "height": 88.390625,
+          "right": 244.328125,
+          "bottom": 1067.734375
+        },
+        {
+          "id": "accessory",
+          "tag": "BUTTON",
+          "x": 254.328125,
+          "y": 979.34375,
+          "width": 98.65625,
+          "height": 88.390625,
+          "right": 352.984375,
+          "bottom": 1067.734375
+        },
+        {
+          "id": "grade",
+          "tag": "SELECT",
+          "x": 37,
+          "y": 1118.125,
+          "width": 169.5625,
+          "height": 48,
+          "right": 206.5625,
+          "bottom": 1166.125
+        },
+        {
+          "id": "quantity",
+          "tag": "INPUT",
+          "x": 222.5625,
+          "y": 1118.125,
+          "width": 130.4375,
+          "height": 48,
+          "right": 353,
+          "bottom": 1166.125
+        },
+        {
+          "id": "ตาราง Reform ของ RO GGT ↗",
+          "tag": "A",
+          "x": 37,
+          "y": 1202.21875,
+          "width": 173.90625,
+          "height": 22,
+          "right": 210.90625,
+          "bottom": 1224.21875
+        },
+        {
+          "id": "reform-shadow",
+          "tag": "INPUT",
+          "x": 54,
+          "y": 1386.90625,
+          "width": 135,
+          "height": 40,
+          "right": 189,
+          "bottom": 1426.90625
+        },
+        {
+          "id": "reform-zelunium",
+          "tag": "INPUT",
+          "x": 201,
+          "y": 1386.90625,
+          "width": 135,
+          "height": 40,
+          "right": 336,
+          "bottom": 1426.90625
+        },
+        {
+          "id": "mode",
+          "tag": "SELECT",
+          "x": 54,
+          "y": 1488.703125,
+          "width": 282,
+          "height": 40,
+          "right": 336,
+          "bottom": 1528.703125
+        },
+        {
+          "id": "first-run-result",
+          "tag": "A",
+          "x": 37,
+          "y": 1602.078125,
+          "width": 216,
+          "height": 44,
+          "right": 253,
+          "bottom": 1646.078125
+        }
+      ],
+      "overlaps": []
+    },
+    {
+      "id": "after-768-light-first-visit",
+      "viewport": 768,
+      "documentWidth": 768,
+      "bodyWidth": 768,
+      "section01": {
+        "x": 28,
+        "y": 791.765625,
+        "width": 712,
+        "height": 753.09375,
+        "right": 740,
+        "bottom": 1544.859375
+      },
+      "grade": {
+        "x": 55,
+        "y": 1071.1875,
+        "width": 362.859375,
+        "height": 48,
+        "right": 417.859375,
+        "bottom": 1119.1875
+      },
+      "quantity": {
+        "x": 433.859375,
+        "y": 1071.1875,
+        "width": 279.125,
+        "height": 48,
+        "right": 712.984375,
+        "bottom": 1119.1875
+      },
+      "cue": {
+        "x": 56,
+        "y": 391,
+        "width": 184,
+        "height": 44,
+        "right": 240,
+        "bottom": 435
+      },
+      "results": {
+        "x": 28,
+        "y": 1568.859375,
+        "width": 712,
+        "height": 504.28125,
+        "right": 740,
+        "bottom": 2073.140625
+      },
+      "controls": [
+        {
+          "id": "weapon",
+          "tag": "BUTTON",
+          "x": 55,
+          "y": 932.40625,
+          "width": 212.65625,
+          "height": 88.390625,
+          "right": 267.65625,
+          "bottom": 1020.796875
+        },
+        {
+          "id": "armor",
+          "tag": "BUTTON",
+          "x": 277.65625,
+          "y": 932.40625,
+          "width": 212.671875,
+          "height": 88.390625,
+          "right": 490.328125,
+          "bottom": 1020.796875
+        },
+        {
+          "id": "accessory",
+          "tag": "BUTTON",
+          "x": 500.328125,
+          "y": 932.40625,
+          "width": 212.671875,
+          "height": 88.390625,
+          "right": 713,
+          "bottom": 1020.796875
+        },
+        {
+          "id": "grade",
+          "tag": "SELECT",
+          "x": 55,
+          "y": 1071.1875,
+          "width": 362.859375,
+          "height": 48,
+          "right": 417.859375,
+          "bottom": 1119.1875
+        },
+        {
+          "id": "quantity",
+          "tag": "INPUT",
+          "x": 433.859375,
+          "y": 1071.1875,
+          "width": 279.125,
+          "height": 48,
+          "right": 712.984375,
+          "bottom": 1119.1875
+        },
+        {
+          "id": "ตาราง Reform ของ RO GGT ↗",
+          "tag": "A",
+          "x": 253,
+          "y": 1133.1875,
+          "width": 173.90625,
+          "height": 22,
+          "right": 426.90625,
+          "bottom": 1155.1875
+        },
+        {
+          "id": "reform-shadow",
+          "tag": "INPUT",
+          "x": 72,
+          "y": 1277.875,
+          "width": 306,
+          "height": 40,
+          "right": 378,
+          "bottom": 1317.875
+        },
+        {
+          "id": "reform-zelunium",
+          "tag": "INPUT",
+          "x": 390,
+          "y": 1277.875,
+          "width": 306,
+          "height": 40,
+          "right": 696,
+          "bottom": 1317.875
+        },
+        {
+          "id": "mode",
+          "tag": "SELECT",
+          "x": 72,
+          "y": 1379.671875,
+          "width": 624,
+          "height": 40,
+          "right": 696,
+          "bottom": 1419.671875
+        },
+        {
+          "id": "first-run-result",
+          "tag": "A",
+          "x": 55,
+          "y": 1473.859375,
+          "width": 216,
+          "height": 44,
+          "right": 271,
+          "bottom": 1517.859375
+        }
+      ],
+      "overlaps": []
+    },
+    {
+      "id": "after-768-dark-first-visit",
+      "viewport": 768,
+      "documentWidth": 768,
+      "bodyWidth": 768,
+      "section01": {
+        "x": 28,
+        "y": 793.765625,
+        "width": 712,
+        "height": 753.09375,
+        "right": 740,
+        "bottom": 1546.859375
+      },
+      "grade": {
+        "x": 55,
+        "y": 1073.1875,
+        "width": 362.859375,
+        "height": 48,
+        "right": 417.859375,
+        "bottom": 1121.1875
+      },
+      "quantity": {
+        "x": 433.859375,
+        "y": 1073.1875,
+        "width": 279.125,
+        "height": 48,
+        "right": 712.984375,
+        "bottom": 1121.1875
+      },
+      "cue": {
+        "x": 57,
+        "y": 392,
+        "width": 184,
+        "height": 44,
+        "right": 241,
+        "bottom": 436
+      },
+      "results": {
+        "x": 28,
+        "y": 1570.859375,
+        "width": 712,
+        "height": 504.28125,
+        "right": 740,
+        "bottom": 2075.140625
+      },
+      "controls": [
+        {
+          "id": "weapon",
+          "tag": "BUTTON",
+          "x": 55,
+          "y": 934.40625,
+          "width": 212.65625,
+          "height": 88.390625,
+          "right": 267.65625,
+          "bottom": 1022.796875
+        },
+        {
+          "id": "armor",
+          "tag": "BUTTON",
+          "x": 277.65625,
+          "y": 934.40625,
+          "width": 212.671875,
+          "height": 88.390625,
+          "right": 490.328125,
+          "bottom": 1022.796875
+        },
+        {
+          "id": "accessory",
+          "tag": "BUTTON",
+          "x": 500.328125,
+          "y": 934.40625,
+          "width": 212.671875,
+          "height": 88.390625,
+          "right": 713,
+          "bottom": 1022.796875
+        },
+        {
+          "id": "grade",
+          "tag": "SELECT",
+          "x": 55,
+          "y": 1073.1875,
+          "width": 362.859375,
+          "height": 48,
+          "right": 417.859375,
+          "bottom": 1121.1875
+        },
+        {
+          "id": "quantity",
+          "tag": "INPUT",
+          "x": 433.859375,
+          "y": 1073.1875,
+          "width": 279.125,
+          "height": 48,
+          "right": 712.984375,
+          "bottom": 1121.1875
+        },
+        {
+          "id": "ตาราง Reform ของ RO GGT ↗",
+          "tag": "A",
+          "x": 253,
+          "y": 1135.1875,
+          "width": 173.90625,
+          "height": 22,
+          "right": 426.90625,
+          "bottom": 1157.1875
+        },
+        {
+          "id": "reform-shadow",
+          "tag": "INPUT",
+          "x": 72,
+          "y": 1279.875,
+          "width": 306,
+          "height": 40,
+          "right": 378,
+          "bottom": 1319.875
+        },
+        {
+          "id": "reform-zelunium",
+          "tag": "INPUT",
+          "x": 390,
+          "y": 1279.875,
+          "width": 306,
+          "height": 40,
+          "right": 696,
+          "bottom": 1319.875
+        },
+        {
+          "id": "mode",
+          "tag": "SELECT",
+          "x": 72,
+          "y": 1381.671875,
+          "width": 624,
+          "height": 40,
+          "right": 696,
+          "bottom": 1421.671875
+        },
+        {
+          "id": "first-run-result",
+          "tag": "A",
+          "x": 55,
+          "y": 1475.859375,
+          "width": 216,
+          "height": 44,
+          "right": 271,
+          "bottom": 1519.859375
+        }
+      ],
+      "overlaps": []
+    },
+    {
+      "id": "after-1440-light-first-visit",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "section01": {
+        "x": 88,
+        "y": 575.734375,
+        "width": 620,
+        "height": 773.09375,
+        "right": 708,
+        "bottom": 1348.828125
+      },
+      "grade": {
+        "x": 115,
+        "y": 855.15625,
+        "width": 310.859375,
+        "height": 48,
+        "right": 425.859375,
+        "bottom": 903.15625
+      },
+      "quantity": {
+        "x": 441.859375,
+        "y": 855.15625,
+        "width": 239.125,
+        "height": 48,
+        "right": 680.984375,
+        "bottom": 903.15625
+      },
+      "cue": {
+        "x": 120,
+        "y": 442.9375,
+        "width": 184,
+        "height": 44,
+        "right": 304,
+        "bottom": 486.9375
+      },
+      "results": {
+        "x": 732,
+        "y": 575.734375,
+        "width": 620,
+        "height": 547.28125,
+        "right": 1352,
+        "bottom": 1123.015625
+      },
+      "controls": [
+        {
+          "id": "weapon",
+          "tag": "BUTTON",
+          "x": 115,
+          "y": 716.375,
+          "width": 182,
+          "height": 88.390625,
+          "right": 297,
+          "bottom": 804.765625
+        },
+        {
+          "id": "armor",
+          "tag": "BUTTON",
+          "x": 307,
+          "y": 716.375,
+          "width": 182,
+          "height": 88.390625,
+          "right": 489,
+          "bottom": 804.765625
+        },
+        {
+          "id": "accessory",
+          "tag": "BUTTON",
+          "x": 499,
+          "y": 716.375,
+          "width": 182,
+          "height": 88.390625,
+          "right": 681,
+          "bottom": 804.765625
+        },
+        {
+          "id": "grade",
+          "tag": "SELECT",
+          "x": 115,
+          "y": 855.15625,
+          "width": 310.859375,
+          "height": 48,
+          "right": 425.859375,
+          "bottom": 903.15625
+        },
+        {
+          "id": "quantity",
+          "tag": "INPUT",
+          "x": 441.859375,
+          "y": 855.15625,
+          "width": 239.125,
+          "height": 48,
+          "right": 680.984375,
+          "bottom": 903.15625
+        },
+        {
+          "id": "ตาราง Reform ของ RO GGT ↗",
+          "tag": "A",
+          "x": 313,
+          "y": 917.15625,
+          "width": 173.90625,
+          "height": 22,
+          "right": 486.90625,
+          "bottom": 939.15625
+        },
+        {
+          "id": "reform-shadow",
+          "tag": "INPUT",
+          "x": 132,
+          "y": 1081.84375,
+          "width": 260,
+          "height": 40,
+          "right": 392,
+          "bottom": 1121.84375
+        },
+        {
+          "id": "reform-zelunium",
+          "tag": "INPUT",
+          "x": 404,
+          "y": 1081.84375,
+          "width": 260,
+          "height": 40,
+          "right": 664,
+          "bottom": 1121.84375
+        },
+        {
+          "id": "mode",
+          "tag": "SELECT",
+          "x": 132,
+          "y": 1183.640625,
+          "width": 532,
+          "height": 40,
+          "right": 664,
+          "bottom": 1223.640625
+        },
+        {
+          "id": "first-run-result",
+          "tag": "A",
+          "x": 115,
+          "y": 1277.828125,
+          "width": 216,
+          "height": 44,
+          "right": 331,
+          "bottom": 1321.828125
+        }
+      ],
+      "overlaps": []
+    },
+    {
+      "id": "after-1440-dark-first-visit",
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "bodyWidth": 1440,
+      "section01": {
+        "x": 88,
+        "y": 577.734375,
+        "width": 620,
+        "height": 773.09375,
+        "right": 708,
+        "bottom": 1350.828125
+      },
+      "grade": {
+        "x": 115,
+        "y": 857.15625,
+        "width": 310.859375,
+        "height": 48,
+        "right": 425.859375,
+        "bottom": 905.15625
+      },
+      "quantity": {
+        "x": 441.859375,
+        "y": 857.15625,
+        "width": 239.125,
+        "height": 48,
+        "right": 680.984375,
+        "bottom": 905.15625
+      },
+      "cue": {
+        "x": 121,
+        "y": 443.9375,
+        "width": 184,
+        "height": 44,
+        "right": 305,
+        "bottom": 487.9375
+      },
+      "results": {
+        "x": 732,
+        "y": 577.734375,
+        "width": 620,
+        "height": 547.28125,
+        "right": 1352,
+        "bottom": 1125.015625
+      },
+      "controls": [
+        {
+          "id": "weapon",
+          "tag": "BUTTON",
+          "x": 115,
+          "y": 718.375,
+          "width": 182,
+          "height": 88.390625,
+          "right": 297,
+          "bottom": 806.765625
+        },
+        {
+          "id": "armor",
+          "tag": "BUTTON",
+          "x": 307,
+          "y": 718.375,
+          "width": 182,
+          "height": 88.390625,
+          "right": 489,
+          "bottom": 806.765625
+        },
+        {
+          "id": "accessory",
+          "tag": "BUTTON",
+          "x": 499,
+          "y": 718.375,
+          "width": 182,
+          "height": 88.390625,
+          "right": 681,
+          "bottom": 806.765625
+        },
+        {
+          "id": "grade",
+          "tag": "SELECT",
+          "x": 115,
+          "y": 857.15625,
+          "width": 310.859375,
+          "height": 48,
+          "right": 425.859375,
+          "bottom": 905.15625
+        },
+        {
+          "id": "quantity",
+          "tag": "INPUT",
+          "x": 441.859375,
+          "y": 857.15625,
+          "width": 239.125,
+          "height": 48,
+          "right": 680.984375,
+          "bottom": 905.15625
+        },
+        {
+          "id": "ตาราง Reform ของ RO GGT ↗",
+          "tag": "A",
+          "x": 313,
+          "y": 919.15625,
+          "width": 173.90625,
+          "height": 22,
+          "right": 486.90625,
+          "bottom": 941.15625
+        },
+        {
+          "id": "reform-shadow",
+          "tag": "INPUT",
+          "x": 132,
+          "y": 1083.84375,
+          "width": 260,
+          "height": 40,
+          "right": 392,
+          "bottom": 1123.84375
+        },
+        {
+          "id": "reform-zelunium",
+          "tag": "INPUT",
+          "x": 404,
+          "y": 1083.84375,
+          "width": 260,
+          "height": 40,
+          "right": 664,
+          "bottom": 1123.84375
+        },
+        {
+          "id": "mode",
+          "tag": "SELECT",
+          "x": 132,
+          "y": 1185.640625,
+          "width": 532,
+          "height": 40,
+          "right": 664,
+          "bottom": 1225.640625
+        },
+        {
+          "id": "first-run-result",
+          "tag": "A",
+          "x": 115,
+          "y": 1279.828125,
+          "width": 216,
+          "height": 44,
+          "right": 331,
+          "bottom": 1323.828125
+        }
+      ],
+      "overlaps": []
+    }
+  ],
+  "undoObservations": [
+    {
+      "scenario": "before-360-light-first-visit",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        }
+      }
+    },
+    {
+      "scenario": "before-360-light-weapon-medium-12-with-stock",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        },
+        "cleared": {
+          "hidden": false,
+          "display": "flex",
+          "rendered": true
+        },
+        "restored": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        },
+        "reloaded": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        }
+      }
+    },
+    {
+      "scenario": "before-360-dark-first-visit",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        }
+      }
+    },
+    {
+      "scenario": "before-360-dark-weapon-medium-12-with-stock",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        },
+        "cleared": {
+          "hidden": false,
+          "display": "flex",
+          "rendered": true
+        },
+        "restored": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        },
+        "reloaded": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        }
+      }
+    },
+    {
+      "scenario": "before-390-light-first-visit",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        }
+      }
+    },
+    {
+      "scenario": "before-390-light-weapon-medium-12-with-stock",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        },
+        "cleared": {
+          "hidden": false,
+          "display": "flex",
+          "rendered": true
+        },
+        "restored": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        },
+        "reloaded": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        }
+      }
+    },
+    {
+      "scenario": "before-390-dark-first-visit",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        }
+      }
+    },
+    {
+      "scenario": "before-390-dark-weapon-medium-12-with-stock",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        },
+        "cleared": {
+          "hidden": false,
+          "display": "flex",
+          "rendered": true
+        },
+        "restored": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        },
+        "reloaded": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        }
+      }
+    },
+    {
+      "scenario": "before-768-light-first-visit",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        }
+      }
+    },
+    {
+      "scenario": "before-768-light-weapon-medium-12-with-stock",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        },
+        "cleared": {
+          "hidden": false,
+          "display": "block",
+          "rendered": true
+        },
+        "restored": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        },
+        "reloaded": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        }
+      }
+    },
+    {
+      "scenario": "before-768-dark-first-visit",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        }
+      }
+    },
+    {
+      "scenario": "before-768-dark-weapon-medium-12-with-stock",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        },
+        "cleared": {
+          "hidden": false,
+          "display": "block",
+          "rendered": true
+        },
+        "restored": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        },
+        "reloaded": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        }
+      }
+    },
+    {
+      "scenario": "before-1440-light-first-visit",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        }
+      }
+    },
+    {
+      "scenario": "before-1440-light-weapon-medium-12-with-stock",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        },
+        "cleared": {
+          "hidden": false,
+          "display": "block",
+          "rendered": true
+        },
+        "restored": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        },
+        "reloaded": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        }
+      }
+    },
+    {
+      "scenario": "before-1440-dark-first-visit",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        }
+      }
+    },
+    {
+      "scenario": "before-1440-dark-weapon-medium-12-with-stock",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        },
+        "cleared": {
+          "hidden": false,
+          "display": "block",
+          "rendered": true
+        },
+        "restored": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        },
+        "reloaded": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        }
+      }
+    },
+    {
+      "scenario": "after-360-light-first-visit",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        }
+      }
+    },
+    {
+      "scenario": "after-360-light-weapon-medium-12-with-stock",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        },
+        "cleared": {
+          "hidden": false,
+          "display": "flex",
+          "rendered": true
+        },
+        "restored": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        },
+        "reloaded": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        }
+      }
+    },
+    {
+      "scenario": "after-360-dark-first-visit",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        }
+      }
+    },
+    {
+      "scenario": "after-360-dark-weapon-medium-12-with-stock",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        },
+        "cleared": {
+          "hidden": false,
+          "display": "flex",
+          "rendered": true
+        },
+        "restored": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        },
+        "reloaded": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        }
+      }
+    },
+    {
+      "scenario": "after-390-light-first-visit",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        }
+      }
+    },
+    {
+      "scenario": "after-390-light-weapon-medium-12-with-stock",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        },
+        "cleared": {
+          "hidden": false,
+          "display": "flex",
+          "rendered": true
+        },
+        "restored": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        },
+        "reloaded": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        }
+      }
+    },
+    {
+      "scenario": "after-390-dark-first-visit",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        }
+      }
+    },
+    {
+      "scenario": "after-390-dark-weapon-medium-12-with-stock",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        },
+        "cleared": {
+          "hidden": false,
+          "display": "flex",
+          "rendered": true
+        },
+        "restored": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        },
+        "reloaded": {
+          "hidden": true,
+          "display": "flex",
+          "rendered": true
+        }
+      }
+    },
+    {
+      "scenario": "after-768-light-first-visit",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        }
+      }
+    },
+    {
+      "scenario": "after-768-light-weapon-medium-12-with-stock",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        },
+        "cleared": {
+          "hidden": false,
+          "display": "block",
+          "rendered": true
+        },
+        "restored": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        },
+        "reloaded": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        }
+      }
+    },
+    {
+      "scenario": "after-768-dark-first-visit",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        }
+      }
+    },
+    {
+      "scenario": "after-768-dark-weapon-medium-12-with-stock",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        },
+        "cleared": {
+          "hidden": false,
+          "display": "block",
+          "rendered": true
+        },
+        "restored": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        },
+        "reloaded": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        }
+      }
+    },
+    {
+      "scenario": "after-1440-light-first-visit",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        }
+      }
+    },
+    {
+      "scenario": "after-1440-light-weapon-medium-12-with-stock",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        },
+        "cleared": {
+          "hidden": false,
+          "display": "block",
+          "rendered": true
+        },
+        "restored": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        },
+        "reloaded": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        }
+      }
+    },
+    {
+      "scenario": "after-1440-dark-first-visit",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        }
+      }
+    },
+    {
+      "scenario": "after-1440-dark-weapon-medium-12-with-stock",
+      "states": {
+        "initial": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        },
+        "cleared": {
+          "hidden": false,
+          "display": "block",
+          "rendered": true
+        },
+        "restored": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        },
+        "reloaded": {
+          "hidden": true,
+          "display": "none",
+          "rendered": false
+        }
+      }
+    }
+  ],
+  "fixtures": [
+    {
+      "name": "default-accessory-supreme-100",
+      "input": {
+        "type": "accessory",
+        "grade": 3,
+        "quantity": 100,
+        "mode": "auto",
+        "prices": {
+          "shadowOre": 950,
+          "shadow": 19000,
+          "zeluniumOre": 800,
+          "zelunium": 2495,
+          "weaponOreLow": 8000,
+          "weaponOreMedium": 18890,
+          "armorOreLow": 8889,
+          "armorOreMedium": 23000,
+          "accessoryOreLow": 7800,
+          "accessoryOreMedium": 21990,
+          "weaponStone0": 33750,
+          "weaponStone1": 110000,
+          "weaponStone2": 358888,
+          "weaponStone3": 1290000,
+          "armorStone0": 39990,
+          "armorStone1": 127000,
+          "armorStone2": 409999,
+          "armorStone3": 1600000,
+          "accessoryStone0": 34990,
+          "accessoryStone1": 117500,
+          "accessoryStone2": 399000,
+          "accessoryStone3": 1500000
+        },
+        "reform": {
+          "shadow": 0,
+          "zelunium": 0
+        },
+        "inventory": {
+          "weaponStone0": 0,
+          "weaponStone1": 0,
+          "weaponStone2": 0,
+          "weaponStone3": 0,
+          "weaponOreLow": 0,
+          "weaponOreMedium": 0,
+          "armorStone0": 0,
+          "armorStone1": 0,
+          "armorStone2": 0,
+          "armorStone3": 0,
+          "armorOreLow": 0,
+          "armorOreMedium": 0,
+          "accessoryStone0": 0,
+          "accessoryStone1": 0,
+          "accessoryStone2": 0,
+          "accessoryStone3": 0,
+          "accessoryOreLow": 0,
+          "accessoryOreMedium": 0,
+          "shadowOre": 0,
+          "shadow": 0,
+          "zeluniumOre": 0,
+          "zelunium": 0
+        }
+      },
+      "output": {
+        "steps": {
+          "shadow": 0,
+          "lowOre": 0,
+          "mediumOre": 0,
+          "lowUpgrade": 900,
+          "highUpgrade": 300,
+          "supremeUpgrade": 100,
+          "combineShadow": 0,
+          "combineZelunium": 0
+        },
+        "used": {},
+        "buy": {
+          "accessoryStone0": 2700
+        },
+        "fees": 20000000,
+        "materialCost": 94473000,
+        "total": 114473000,
+        "reformCost": 0,
+        "stoneTotal": 114473000,
+        "reform": {
+          "shadow": 0,
+          "zelunium": 0,
+          "shadowOwned": 0,
+          "shadowCombined": 0,
+          "shadowBought": 0,
+          "zeluniumOwned": 0,
+          "zeluniumCombined": 0,
+          "zeluniumBought": 0
+        },
+        "missingPrices": [],
+        "shadowRequired": 0,
+        "shadowForStones": 0,
+        "shadowForReform": 0,
+        "shadowAdditional": 0,
+        "remaining": {
+          "weaponStone0": 0,
+          "weaponStone1": 0,
+          "weaponStone2": 0,
+          "weaponStone3": 0,
+          "weaponOreLow": 0,
+          "weaponOreMedium": 0,
+          "armorStone0": 0,
+          "armorStone1": 0,
+          "armorStone2": 0,
+          "armorStone3": 0,
+          "armorOreLow": 0,
+          "armorOreMedium": 0,
+          "accessoryStone0": 0,
+          "accessoryStone1": 0,
+          "accessoryStone2": 0,
+          "accessoryStone3": 0,
+          "accessoryOreLow": 0,
+          "accessoryOreMedium": 0,
+          "shadowOre": 0,
+          "shadow": 0,
+          "zeluniumOre": 0,
+          "zelunium": 0
+        }
+      }
+    },
+    {
+      "name": "weapon-medium-12-with-stock",
+      "input": {
+        "type": "weapon",
+        "grade": 1,
+        "quantity": 12,
+        "mode": "auto",
+        "prices": {
+          "shadowOre": 950,
+          "shadow": 19000,
+          "zeluniumOre": 800,
+          "zelunium": 2495,
+          "weaponOreLow": 8000,
+          "weaponOreMedium": 18890,
+          "armorOreLow": 8889,
+          "armorOreMedium": 23000,
+          "accessoryOreLow": 7800,
+          "accessoryOreMedium": 21990,
+          "weaponStone0": 33750,
+          "weaponStone1": 110000,
+          "weaponStone2": 358888,
+          "weaponStone3": 1290000,
+          "armorStone0": 39990,
+          "armorStone1": 127000,
+          "armorStone2": 409999,
+          "armorStone3": 1600000,
+          "accessoryStone0": 34990,
+          "accessoryStone1": 117500,
+          "accessoryStone2": 399000,
+          "accessoryStone3": 1500000
+        },
+        "reform": {
+          "shadow": 0,
+          "zelunium": 0
+        },
+        "inventory": {
+          "weaponStone0": 0,
+          "weaponStone1": 2,
+          "weaponStone2": 0,
+          "weaponStone3": 0,
+          "weaponOreLow": 0,
+          "weaponOreMedium": 15,
+          "armorStone0": 0,
+          "armorStone1": 0,
+          "armorStone2": 0,
+          "armorStone3": 0,
+          "armorOreLow": 0,
+          "armorOreMedium": 0,
+          "accessoryStone0": 0,
+          "accessoryStone1": 0,
+          "accessoryStone2": 0,
+          "accessoryStone3": 0,
+          "accessoryOreLow": 0,
+          "accessoryOreMedium": 0,
+          "shadowOre": 0,
+          "shadow": 4,
+          "zeluniumOre": 0,
+          "zelunium": 0
+        }
+      },
+      "output": {
+        "steps": {
+          "shadow": 4,
+          "lowOre": 0,
+          "mediumOre": 3,
+          "lowUpgrade": 2,
+          "highUpgrade": 0,
+          "supremeUpgrade": 0,
+          "combineShadow": 0,
+          "combineZelunium": 0
+        },
+        "used": {
+          "weaponStone1": 2,
+          "weaponOreMedium": 15,
+          "shadow": 4
+        },
+        "buy": {
+          "weaponStone1": 5,
+          "weaponStone0": 2
+        },
+        "fees": 160000,
+        "materialCost": 617500,
+        "total": 777500,
+        "reformCost": 0,
+        "stoneTotal": 777500,
+        "reform": {
+          "shadow": 0,
+          "zelunium": 0,
+          "shadowOwned": 0,
+          "shadowCombined": 0,
+          "shadowBought": 0,
+          "zeluniumOwned": 0,
+          "zeluniumCombined": 0,
+          "zeluniumBought": 0
+        },
+        "missingPrices": [],
+        "shadowRequired": 4,
+        "shadowForStones": 4,
+        "shadowForReform": 0,
+        "shadowAdditional": 0,
+        "remaining": {
+          "weaponStone0": 0,
+          "weaponStone1": 0,
+          "weaponStone2": 0,
+          "weaponStone3": 0,
+          "weaponOreLow": 0,
+          "weaponOreMedium": 0,
+          "armorStone0": 0,
+          "armorStone1": 0,
+          "armorStone2": 0,
+          "armorStone3": 0,
+          "armorOreLow": 0,
+          "armorOreMedium": 0,
+          "accessoryStone0": 0,
+          "accessoryStone1": 0,
+          "accessoryStone2": 0,
+          "accessoryStone3": 0,
+          "accessoryOreLow": 0,
+          "accessoryOreMedium": 0,
+          "shadowOre": 0,
+          "shadow": 0,
+          "zeluniumOre": 0,
+          "zelunium": 0
+        }
+      }
+    },
+    {
+      "name": "armor-high-5-shadow-and-reform",
+      "input": {
+        "type": "armor",
+        "grade": 2,
+        "quantity": 5,
+        "mode": "shadow",
+        "prices": {
+          "shadowOre": 950,
+          "shadow": 19000,
+          "zeluniumOre": 800,
+          "zelunium": 2495,
+          "weaponOreLow": 8000,
+          "weaponOreMedium": 18890,
+          "armorOreLow": 8889,
+          "armorOreMedium": 23000,
+          "accessoryOreLow": 7800,
+          "accessoryOreMedium": 21990,
+          "weaponStone0": 33750,
+          "weaponStone1": 110000,
+          "weaponStone2": 358888,
+          "weaponStone3": 1290000,
+          "armorStone0": 39990,
+          "armorStone1": 127000,
+          "armorStone2": 409999,
+          "armorStone3": 1600000,
+          "accessoryStone0": 34990,
+          "accessoryStone1": 117500,
+          "accessoryStone2": 399000,
+          "accessoryStone3": 1500000
+        },
+        "reform": {
+          "shadow": 6,
+          "zelunium": 4
+        },
+        "inventory": {
+          "weaponStone0": 0,
+          "weaponStone1": 0,
+          "weaponStone2": 0,
+          "weaponStone3": 0,
+          "weaponOreLow": 0,
+          "weaponOreMedium": 0,
+          "armorStone0": 3,
+          "armorStone1": 0,
+          "armorStone2": 0,
+          "armorStone3": 0,
+          "armorOreLow": 0,
+          "armorOreMedium": 0,
+          "accessoryStone0": 0,
+          "accessoryStone1": 0,
+          "accessoryStone2": 0,
+          "accessoryStone3": 0,
+          "accessoryOreLow": 0,
+          "accessoryOreMedium": 0,
+          "shadowOre": 35,
+          "shadow": 10,
+          "zeluniumOre": 40,
+          "zelunium": 0
+        }
+      },
+      "output": {
+        "steps": {
+          "shadow": 42,
+          "lowOre": 0,
+          "mediumOre": 0,
+          "lowUpgrade": 15,
+          "highUpgrade": 5,
+          "supremeUpgrade": 0,
+          "combineShadow": 2,
+          "combineZelunium": 2
+        },
+        "used": {
+          "armorStone0": 3,
+          "shadow": 10,
+          "zeluniumOre": 40,
+          "shadowOre": 35
+        },
+        "buy": {
+          "zelunium": 2,
+          "shadowOre": 5,
+          "shadow": 36
+        },
+        "fees": 1090000,
+        "materialCost": 693740,
+        "total": 1783740,
+        "reformCost": 4990,
+        "stoneTotal": 1778750,
+        "reform": {
+          "shadow": 6,
+          "zelunium": 4,
+          "shadowOwned": 6,
+          "shadowCombined": 0,
+          "shadowBought": 0,
+          "zeluniumOwned": 0,
+          "zeluniumCombined": 2,
+          "zeluniumBought": 2
+        },
+        "missingPrices": [],
+        "shadowRequired": 48,
+        "shadowForStones": 42,
+        "shadowForReform": 6,
+        "shadowAdditional": 38,
+        "remaining": {
+          "weaponStone0": 0,
+          "weaponStone1": 0,
+          "weaponStone2": 0,
+          "weaponStone3": 0,
+          "weaponOreLow": 0,
+          "weaponOreMedium": 0,
+          "armorStone0": 0,
+          "armorStone1": 0,
+          "armorStone2": 0,
+          "armorStone3": 0,
+          "armorOreLow": 0,
+          "armorOreMedium": 0,
+          "accessoryStone0": 0,
+          "accessoryStone1": 0,
+          "accessoryStone2": 0,
+          "accessoryStone3": 0,
+          "accessoryOreLow": 0,
+          "accessoryOreMedium": 0,
+          "shadowOre": 0,
+          "shadow": 0,
+          "zeluniumOre": 0,
+          "zelunium": 0
+        }
+      }
+    }
+  ],
+  "summary": {
+    "passed": 666,
+    "failed": 32,
+    "screenshots": 224,
+    "inheritedBaselineObservations": 0
+  }
+}

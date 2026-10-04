@@ -241,8 +241,8 @@ async function undoState(page, scenario, stage, expectedHidden) {
       const before = scenario.variant === 'before' ? value : observed.get(scenario.counterpart)?.undo[stage];
       // Narrow, evidence-based allowance only for the already-existing mobile
       // .text-button {display:inline-flex} override of the native hidden style.
-      const inherited = scenario.width <= 640 && value.display === 'inline-flex' &&
-        before?.hidden === true && before?.rendered === true && before?.display === 'inline-flex';
+      // Flex-item blockification can make its computed display 'flex'.
+      const inherited = require('../qa/ui-cohesion/inherited-undo.cjs')(scenario.width, value, before);
       assert(inherited, 'Newly visible hidden Undo button; not covered by the baseline defect');
       report.baselineIssues.push({scenario: scenario.id, stage, value, baseline: before,
         classification: 'inherited/out-of-scope',

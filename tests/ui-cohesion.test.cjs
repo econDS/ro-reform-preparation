@@ -68,3 +68,17 @@ test('capture transition validates live CSS and cannot hide calculation or stora
     assert.throws(() => assert.deepEqual(normalize.capture(changed), baseline));
   }
 });
+
+test('inherited Undo classification accepts only matching observed mobile defects', () => {
+  const inherited = require('../qa/ui-cohesion/inherited-undo.cjs');
+  const observed = {hidden: true, display: 'flex', rendered: true};
+  assert.equal(inherited(390, observed, observed), true);
+  assert.equal(inherited(390, {...observed, display: 'inline-flex'}, {...observed, display: 'inline-flex'}), true);
+  for (const [width, actual, before] of [
+    [768, observed, observed], [390, observed, undefined],
+    [390, observed, {...observed, rendered: false, display: 'none'}],
+    [390, observed, {...observed, display: 'inline-flex'}],
+    [390, {...observed, hidden: false}, observed],
+    [390, {...observed, display: 'block'}, {...observed, display: 'block'}],
+  ]) assert.equal(inherited(width, actual, before), false);
+});
