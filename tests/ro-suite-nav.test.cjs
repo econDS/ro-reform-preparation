@@ -41,7 +41,7 @@ test('nav is local, immediately after skip link, and preserves original header',
 });
 
 test('calculations, storage keys, application code, theme, URL and data formats match pre-edit baseline',() => {
-  assert.deepEqual(capture(),baseline);
+  assert.deepEqual(require('../qa/ui-cohesion/normalize.cjs').capture(capture()),baseline);
   const app = fs.readFileSync(path.join(root,'app.js'),'utf8');
   const nav = fs.readFileSync(path.join(assetPath,'nav.js'),'utf8');
   assert.doesNotMatch(nav,/localStorage|sessionStorage/);

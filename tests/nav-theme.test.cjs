@@ -9,7 +9,7 @@ const read = file => fs.readFileSync(path.join(root, file));
 const hash = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
 test('theme rollout preserves all existing production bytes after two exact integration reversals', () => {
   for (const [file, digest] of Object.entries(require('../qa/nav-theme/production-baseline.json').files)) {
-    const bytes = file === 'index.html' ? require('../qa/nav-theme/normalize.cjs')(read(file).toString()) : read(file);
+    const bytes = file === 'index.html' ? require('../qa/nav-theme/normalize.cjs')(read(file).toString()) : file === 'styles.css' ? require('../qa/ui-cohesion/normalize.cjs')(read(file), file) : read(file);
     assert.equal(hash(bytes), digest, file);
   }
 });

@@ -207,9 +207,11 @@ async function main() {
   const fixture = JSON.parse(fs.readFileSync(path.join(__dirname, 'fixtures/ro-suite-nav-baseline.json'), 'utf8'));
   report.baseCommit = '9d577c00b8fd13fd8687fbb936657ae035473917';
   report.commit = process.env.RO_QA_COMMIT || execFileSync('git', ['rev-parse', 'HEAD'], {cwd: root, encoding: 'utf8'}).trim();
-  const sourcesValid = await check('App, calculator, and CSS match the frozen baseline byte-for-byte', () => {
+  const baselineCSS = require('../qa/ui-cohesion/normalize.cjs')(fs.readFileSync(path.join(root, 'styles.css')), 'styles.css');
+  const sourcesValid = await check('App and calculator match frozen bytes; live CSS preserves baseline through exact reviewed UI reversal', () => {
     for (const [file, expected] of Object.entries(fixture.preservedSourceSha256)) {
-      assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(root, file))).digest('hex'), expected, file);
+      const bytes = file === 'styles.css' ? baselineCSS : fs.readFileSync(path.join(root, file));
+      assert.equal(crypto.createHash('sha256').update(bytes).digest('hex'), expected, file);
     }
   });
   if (!sourcesValid) throw new Error('Baseline source identity failed; console baseline would not be trustworthy');
@@ -227,8 +229,10 @@ async function main() {
       const baselineContext = await browser.newContext({viewport, colorScheme});
       const baselinePage = await baselineContext.newPage();
       const baselineEvents = observe(baselinePage);
-      // The original HTML loads the exact same app/CSS assets, whose hashes
-      // were checked above. Only the new suite component is absent.
+      // The original HTML loads the same app assets and strictly reconstructed
+      // pre-cohesion CSS. The candidate context always loads live CSS.
+      await baselinePage.route('**/styles.css', route => route.fulfill({status: 200, contentType: 'text/css', body: baselineCSS}));
+      // Historical baseline HTML and verified original CSS/app assets.
       await baselinePage.route(url => url.origin === new URL(baseURL).origin && url.pathname === new URL(baseURL).pathname,
         route => route.fulfill({status: 200, contentType: 'text/html; charset=utf-8', body: baselineHTML}));
       await check(`${label}: original page baseline`, async () => {

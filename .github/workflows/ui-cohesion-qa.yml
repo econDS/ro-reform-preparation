@@ -1,0 +1,163 @@
+name: Reform UI cohesion QA
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ui-cohesion-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  ui-cohesion-qa:
+    if: github.head_ref == 'claude/charming-ptolemy-ak5ywx' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+          fetch-depth: 0
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22.14.0'
+
+      - name: Prepare immutable baseline and failure-safe report
+        id: baseline
+        run: |
+          set -euo pipefail
+          mkdir -p qa-artifacts "$RUNNER_TEMP/ui-cohesion-base"
+          printf '%s\n' '{"status":"not-run","reason":"QA has not finished"}' > qa-artifacts/summary.json
+          git rev-parse HEAD > qa-artifacts/source-commit.txt
+          git diff --name-status 00975def134eb9e0098f944e98b8286d8bc3bfdd HEAD > qa-artifacts/changed-files.txt
+          git archive 00975def134eb9e0098f944e98b8286d8bc3bfdd | tar -x -C "$RUNNER_TEMP/ui-cohesion-base"
+          printf '%s\n' 00975def134eb9e0098f944e98b8286d8bc3bfdd > qa-artifacts/base-commit.txt
+
+      - name: All source and regression tests
+        id: source_tests
+        continue-on-error: true
+        if: always() && steps.baseline.outcome == 'success'
+        run: |
+          set -o pipefail
+          node --test tests/*.test.* 2>&1 | tee qa-artifacts/source-tests.log
+
+      - name: Install pinned QA-only Chromium outside the checkout
+        id: browser
+        continue-on-error: true
+        if: always() && steps.baseline.outcome == 'success'
+        run: |
+          set -euo pipefail
+          npm install --prefix "$RUNNER_TEMP/ui-cohesion-tools" --no-save --package-lock=false --ignore-scripts playwright@1.55.1 2>&1 | tee qa-artifacts/browser-install.log
+          node "$RUNNER_TEMP/ui-cohesion-tools/node_modules/playwright/cli.js" install --with-deps chromium 2>&1 | tee -a qa-artifacts/browser-install.log
+
+      - name: UI cohesion real immutable before and after
+        id: cohesion
+        continue-on-error: true
+        if: always() && steps.browser.outcome == 'success'
+        env:
+          NODE_PATH: ${{ runner.temp }}/ui-cohesion-tools/node_modules
+          BASE_ROOT: ${{ runner.temp }}/ui-cohesion-base
+          BASE_SHA: 00975def134eb9e0098f944e98b8286d8bc3bfdd
+          SOURCE_SHA: ${{ github.event.pull_request.head.sha }}
+          QA_OUTPUT: ${{ github.workspace }}/qa-artifacts/ui-cohesion
+        run: |
+          set -o pipefail
+          node tests/ui-cohesion.browser.cjs 2>&1 | tee qa-artifacts/ui-cohesion.log
+
+      - name: Existing first-run browser regression
+        id: first_run
+        continue-on-error: true
+        if: always() && steps.browser.outcome == 'success'
+        env:
+          NODE_PATH: ${{ runner.temp }}/ui-cohesion-tools/node_modules
+          BASE_ROOT: ${{ runner.temp }}/ui-cohesion-base
+          BASE_SHA: 00975def134eb9e0098f944e98b8286d8bc3bfdd
+          SOURCE_SHA: ${{ github.event.pull_request.head.sha }}
+          QA_OUTPUT: ${{ github.workspace }}/qa-artifacts/first-run
+        run: |
+          set -o pipefail
+          node tests/first-run.browser.cjs 2>&1 | tee qa-artifacts/first-run.log
+
+      - name: Existing RO suite navigation browser regression
+        id: navigation
+        continue-on-error: true
+        if: always() && steps.browser.outcome == 'success'
+        env:
+          NODE_PATH: ${{ runner.temp }}/ui-cohesion-tools/node_modules
+          RO_QA_COMMIT: ${{ github.event.pull_request.head.sha }}
+          RO_QA_OUTPUT: ${{ github.workspace }}/qa-artifacts/navigation
+          RO_QA_URL: http://127.0.0.1:4173/ro-reform-preparation/
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/ui-cohesion-web"
+          ln -s "$GITHUB_WORKSPACE" "$RUNNER_TEMP/ui-cohesion-web/ro-reform-preparation"
+          python -m http.server 4173 --bind 127.0.0.1 --directory "$RUNNER_TEMP/ui-cohesion-web" > qa-artifacts/server.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
+          ready=0
+          for attempt in $(seq 1 50); do
+            if curl --fail --silent http://127.0.0.1:4173/ro-reform-preparation/ > /dev/null; then ready=1; break; fi
+            sleep .2
+          done
+          test "$ready" = 1
+          node tests/ro-suite-nav.browser.cjs 2>&1 | tee qa-artifacts/navigation.log
+
+      - name: Aggregate every result, including failures and skipped suites
+        id: aggregate
+        if: always()
+        env:
+          BASELINE_OUTCOME: ${{ steps.baseline.outcome }}
+          SOURCE_OUTCOME: ${{ steps.source_tests.outcome }}
+          BROWSER_OUTCOME: ${{ steps.browser.outcome }}
+          COHESION_OUTCOME: ${{ steps.cohesion.outcome }}
+          FIRST_RUN_OUTCOME: ${{ steps.first_run.outcome }}
+          NAVIGATION_OUTCOME: ${{ steps.navigation.outcome }}
+          SOURCE_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          node <<'NODE'
+          const fs = require('node:fs');
+          fs.mkdirSync('qa-artifacts', {recursive: true});
+          const steps = Object.fromEntries(['BASELINE', 'SOURCE', 'BROWSER', 'COHESION', 'FIRST_RUN', 'NAVIGATION']
+            .map(name => [name.toLowerCase(), process.env[`${name}_OUTCOME`] || 'not-run']));
+          const paths = {
+            cohesion: 'qa-artifacts/ui-cohesion/report.json',
+            first_run: 'qa-artifacts/first-run/first-run-report.json',
+            navigation: 'qa-artifacts/navigation/report.json',
+          };
+          const reports = Object.fromEntries(Object.entries(paths).map(([name, file]) => {
+            try {
+              const report = JSON.parse(fs.readFileSync(file, 'utf8'));
+              return [name, {file, status: report.status, checks: report.checks?.length || 0,
+                screenshots: report.screenshots?.length || 0, error: report.error || null}];
+            } catch (error) {
+              return [name, {file, status: 'not-run-or-unreadable', error: error.message}];
+            }
+          }));
+          const ok = Object.values(steps).every(value => value === 'success') &&
+            Object.values(reports).every(report => String(report.status).toLowerCase() === 'pass' || String(report.status).toLowerCase() === 'passed');
+          const result = {status: ok ? 'PASS' : 'FAIL', sourceCommit: process.env.SOURCE_SHA,
+            baseCommit: '00975def134eb9e0098f944e98b8286d8bc3bfdd', steps, reports};
+          fs.writeFileSync('qa-artifacts/summary.json', JSON.stringify(result, null, 2) + '\n');
+          const rows = Object.entries(steps).map(([name, outcome]) => `- ${name}: ${outcome}`);
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, `UI cohesion QA: ${result.status}\n\n${rows.join('\n')}\n\nFull browser reports, actual screenshots, and individual logs are in the QA artifact.\n`);
+          console.log(JSON.stringify(result, null, 2));
+          if (!ok) process.exitCode = 1;
+          NODE
+
+      - name: Upload actual browser reports, screenshots, and all logs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: ui-cohesion-${{ github.event.pull_request.head.sha }}
+          path: qa-artifacts/
+          if-no-files-found: error
+          retention-days: 30
