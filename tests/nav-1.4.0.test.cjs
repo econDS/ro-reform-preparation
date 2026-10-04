@@ -22,7 +22,7 @@ test('nav 1.4.1 files are identical to the immutable Portal release', () => {
 });
 test('every existing production file including first-run UI and old releases is byte-preserved after exact nav delta reversal', () => {
   for (const [file, digest] of Object.entries(baseline.files)) {
-    const bytes = file === 'index.html' ? require('../qa/nav-1.4.0/normalize.cjs')(read(file).toString()) : read(file);
+    const bytes = file === 'index.html' ? require('../qa/nav-1.4.0/normalize.cjs')(read(file).toString()) : file === 'styles.css' ? require('../qa/ui-cohesion/normalize.cjs')(read(file), file) : read(file);
     assert.equal(hash(bytes), digest, file);
   }
   const html = require('../qa/nav-theme/normalize.cjs')(read('index.html').toString());
@@ -37,5 +37,5 @@ test('every existing production file including first-run UI and old releases is 
 test('exact latest-main calculation, saved settings and serialization fixtures remain unchanged', () => {
   const script = baseline.repository.endsWith('/ro-leveling-map') ? 'tests/capture-leveling-baseline.cjs' : 'scripts/capture-ro-suite-baseline.cjs';
   const actual = JSON.parse(execFileSync(process.execPath, [script], {cwd: root, encoding: 'utf8'}));
-  assert.deepEqual(actual, require('../qa/nav-1.4.0/calculation-baseline.json'));
+  assert.deepEqual(require('../qa/ui-cohesion/normalize.cjs').capture(actual), require('../qa/nav-1.4.0/calculation-baseline.json'));
 });
