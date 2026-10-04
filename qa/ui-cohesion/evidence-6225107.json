@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "sourceCommit": "6225107f10686db2a5115bf16f0987393f0ac591",
+  "baseCommit": "00975def134eb9e0098f944e98b8286d8bc3bfdd",
+  "runId": 37223875718,
+  "runUrl": "https://github.com/econDS/ro-reform-preparation/actions/runs/37223875718",
+  "verifiedFrom": [
+    "completed workflow job outcome",
+    "aggregate step outcomes and parsed report statuses in job log",
+    "artifact metadata associated with exact head"
+  ],
+  "sourceTests": {
+    "passed": 89,
+    "failed": 0
+  },
+  "cohesion": {
+    "status": "PASS",
+    "checks": 698,
+    "failed": 0,
+    "contexts": 64,
+    "inheritedUndoObservations": 32,
+    "screenshots": 224
+  },
+  "firstRun": {
+    "status": "PASS",
+    "checks": 8,
+    "screenshots": 16
+  },
+  "navigation": {
+    "status": "passed",
+    "checks": 66,
+    "screenshots": 12
+  },
+  "artifact": {
+    "id": 11311780430,
+    "sha256": "79f53794988ce668182baa4e3278bc668b582461c6a91b35ef2cbc4da09550c8"
+  },
+  "knownIssue": "At 360/390px, hidden Undo renders in both baseline and candidate due to mobile button display rule. Unfixed and explicitly inherited; matching observations do not mean visual hiding passed."
+}

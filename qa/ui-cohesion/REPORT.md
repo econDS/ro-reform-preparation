@@ -43,13 +43,28 @@ Full authoritative inputs and outputs are in `scripts/capture-ro-suite-baseline.
 
 ## Browser evidence and current status
 
+### Passing complete rerun
+
+[Run 37223875718](https://github.com/econDS/ro-reform-preparation/actions/runs/37223875718) finished **PASS** on exact head `6225107f10686db2a5115bf16f0987393f0ac591`. The aggregate uses each step's actual outcome and parsed report status; completed job logs confirm:
+
+- **89/89** source tests
+- Cohesion: **698 passing checks, zero failures**, 64 isolated contexts; includes **32 inherited-defect classifications**, not 32 successful visual-hiding assertions
+- First-run: **8** passing width/theme checks
+- Navigation: **66** passing checks including keyboard, theme switching, fallback and state preservation
+- **252** genuine screenshots: 224 cohesion, 16 first-run, 12 navigation
+- Artifact: [11311780430](https://github.com/econDS/ro-reform-preparation/actions/runs/37223875718/artifacts/11311780430), SHA-256 `79f53794988ce668182baa4e3278bc668b582461c6a91b35ef2cbc4da09550c8`
+
+The report/evidence-only commit recording this result does not change production code or tests. See the Draft PR's latest check for the subsequent exact-head confirmation. [Machine-readable run summary](evidence-6225107.json).
+
+### First-run provenance and correction
+
 First evidence run: [37222442585](https://github.com/econDS/ro-reform-preparation/actions/runs/37222442585), source `9609a9dc800216f0332bfc6d91e23d0d98604888`.
 
 - Original first-run browser regression: **PASS**, 8 width/theme checks and 16 screenshots
 - Original navigation browser regression: **PASS**, 66 checks and 12 screenshots
 - New cohesion matrix: 64 isolated contexts, **666 passing / 32 failing observations**, 224 genuine screenshots
 - All 32 failures are the same already-existing hidden-Undo rendering defect at 360/390 in both themes, reproduced on both immutable baseline and candidate in matching initial/restored/reloaded states. Clear/undo restored the exact inventory, outputs and storage correctly.
-- The harness initially expected computed `inline-flex`, but the flex parent blockifies it to computed `flex`. The classifier now accepts only matching baseline/candidate computed values in the narrow mobile defect case. Negative tests reject newly visible Undo, missing baseline, desktop occurrences, different display states and incorrect semantics. **Full exact-head rerun is pending; this initial aggregate is intentionally recorded as failed.**
+- The harness initially expected computed `inline-flex`, but the flex parent blockifies it to computed `flex`. The classifier now accepts only matching baseline/candidate computed values in the narrow mobile defect case. Negative tests reject newly visible Undo, missing baseline, desktop occurrences, different display states and incorrect semantics. The initial aggregate remains intentionally recorded as failed. The corrected full rerun below passed.
 - All first-visit width/theme measurements have zero horizontal overflow. Section 01 top at 390px is 971.17→821.45px (light), 993.42→823.45px (dark). At 1440px its top moves down about 8.41px while the primary quantity field moves up about 90.39px. Geometry is observation, not a usability score.
 
 The inherited mobile Undo visibility defect remains unfixed and explicitly out of scope. Its `hidden` property behaves correctly, but the mobile button CSS makes the button render even when unavailable. At 768/1440 it is visually hidden before clearing and after undo. This is not represented as an accessibility pass.
@@ -60,7 +75,7 @@ Local browser execution was unavailable: Playwright lacked bundled Chromium, ins
 
 ## Limitations
 
-- Final exact-head rerun is pending after the narrow inherited-defect classifier repair; initial failures remain documented
+- The 32 inherited mobile Undo observations are known accessibility/visibility defects, not evidence that visual hiding passes
 - Chromium emulation is not physical-device, WebKit or Firefox testing
 - UI regression checks do not validate current game/server data or market prices
 - No usability study or conversion claim
