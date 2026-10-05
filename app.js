@@ -241,6 +241,16 @@ function routeCard(id, amount, cheapest, body) {
   const best = cheapest === id;
   return `<div class="route-option${best?' route-best':''}"><h3>${ROUTE_LABELS[id]}${best?'<span class="route-badge">ถูกที่สุด</span>':''}</h3><strong class="route-price">${z(amount)}</strong>${body}</div>`;
 }
+let lastTotal;
+// Brief visual cue when the total moves; the text itself is already final, so this is purely cosmetic.
+function cueTotalChange(totalEl, card, total) {
+  const prev=lastTotal;lastTotal=total;
+  if(prev===undefined||prev===total||!totalEl.classList||!card.classList)return;
+  totalEl.classList.remove('roll-up','roll-down');card.classList.remove('flash');
+  void totalEl.offsetWidth;
+  if(total!=null&&prev!=null)totalEl.classList.add(total>prev?'roll-up':'roll-down');
+  card.classList.add('flash');
+}
 function renderResults() {
   const plan=R.calculate(state);
   const routes=R.routeComparison(state,plan), craft=routes.craft, market=routes.market, cheapest=routes.cheapest;
@@ -260,6 +270,7 @@ function renderResults() {
   const baseline=R.calculate(state,true);
   $('target-name').innerHTML=`<span class="target-item-icon">${icon(state.type+'Stone'+state.grade)}</span><span>${copyName(state.type+'Stone'+state.grade,fullName(state.type+'Stone'+state.grade))} × ${fmt(state.quantity)}</span>`;
   $('total').textContent=plan.total==null?'รอใส่ราคา':fmt(plan.total);
+  cueTotalChange($('total'),$('results'),plan.total);
   $('sticky-total-value').textContent=plan.total==null?'รอใส่ราคา':`${fmt(plan.total)} z`;
   $('unit-cost').textContent=plan.total==null?'ใส่ราคาวัตถุดิบที่ยังขาดในตารางด้านล่าง':state.quantity?`เฉลี่ย ${z(plan.total/state.quantity)} ต่อ 1 เม็ด`:'ใส่จำนวนหินที่ต้องการเพื่อเริ่มคำนวณ';
   $('material-cost').textContent=plan.total==null?`${z(plan.materialCost)} + รอใส่ราคา`:z(plan.materialCost);
@@ -337,6 +348,12 @@ function syncControls() {
   document.querySelectorAll('[data-type]').forEach(b=>{
     b.setAttribute('aria-pressed',String(b.dataset.type===state.type));
     b.querySelector('.item-icon').src=`assets/items/${ITEM_IDS[b.dataset.type+'Stone'+state.grade]}.png`;
+  });
+  document.querySelectorAll('.stone-ladder li').forEach(li=>{
+    const g=Number(li.dataset.grade);
+    li.querySelector('img').src=`assets/items/${ITEM_IDS[state.type+'Stone'+g]}.png`;
+    li.classList.toggle('is-target',g===state.grade);
+    li.classList.toggle('is-path',g<state.grade);
   });
   for(const key of ['grade','quantity','mode']) $(key).value=state[key];
   for(const b of R.BULK) $('reform-'+b.demand).value=state.reform[b.demand];

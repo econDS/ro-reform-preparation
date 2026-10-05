@@ -470,6 +470,23 @@ footer a{text-decoration:underline;text-underline-offset:3px}
   .route-badge{background:var(--accent);color:var(--accent-ink)}
   .recipe-order,.step-no{box-shadow:0 6px 16px -8px #c6ef7a88}
 }
+/* Reform theme: stone upgrade ladder in the hero, and a short cue when the total changes. */
+.stone-ladder{list-style:none;display:flex;align-items:center;gap:0;margin:22px 0 4px;padding:0}
+.stone-ladder li{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;min-width:64px;font-size:11.5px;font-weight:600;letter-spacing:.4px;color:#8fa89c;opacity:.55;transition:opacity .25s,color .25s}
+.stone-ladder li img{width:32px;height:32px;padding:8px;box-sizing:content-box;border-radius:14px;background:#ffffff0d;border:1px solid #ffffff1a;image-rendering:pixelated;transition:transform .25s,box-shadow .25s,background .25s}
+.stone-ladder li+li{margin-left:26px}
+.stone-ladder li+li::before{content:"›";position:absolute;left:-22px;top:20px;font-size:20px;line-height:1;color:#bfe38c;opacity:.7}
+.stone-ladder li.is-path{opacity:.85}
+.stone-ladder li.is-target{opacity:1;color:#e3ff9e}
+.stone-ladder li.is-target img{background:#c6ef7a24;border-color:#c6ef7a99;transform:translateY(-3px);box-shadow:0 0 0 4px #c6ef7a22,0 10px 24px -8px #c6ef7acc}
+.total-number #total{display:inline-block}
+.total-number #total.roll-up{animation:roll-up .3s ease-out}
+.total-number #total.roll-down{animation:roll-down .3s ease-out}
+.total-card.flash{animation:card-flash .3s ease-out}
+@keyframes roll-up{from{transform:translateY(40%);opacity:.2}to{transform:none;opacity:1}}
+@keyframes roll-down{from{transform:translateY(-40%);opacity:.2}to{transform:none;opacity:1}}
+@keyframes card-flash{from{box-shadow:0 0 0 3px #c6ef7a99,0 0 28px #c6ef7a66}to{box-shadow:var(--shadow-lg)}}
+@media(max-width:560px){.stone-ladder li{min-width:52px}.stone-ladder li+li{margin-left:18px}.stone-ladder li+li::before{left:-16px}}
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{transition:none!important;animation:none!important}
