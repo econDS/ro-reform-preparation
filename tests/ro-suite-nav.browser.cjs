@@ -399,8 +399,9 @@ async function main() {
           for (const fixtureCase of fixture.cases) await applyCase(fallbackPage, fixtureCase, fixture.storageKeys);
           assert.equal(new URL(fallbackPage.url()).search, query);
           assert.equal(new URL(fallbackPage.url()).hash, '#calculator');
-          await fallbackPage.evaluate(() => window.scrollTo({top: 0, left: 0, behavior: 'instant'}));
-          await fallbackPage.waitForFunction(() => window.scrollY === 0 && window.scrollX === 0);
+          // Hash restoration and image scroll anchoring may move the document after reload.
+          // Position the actual fallback target and keep the strict visible-bounds assertion below.
+          await fallback.scrollIntoViewIfNeeded();
           await fallbackPage.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
           const screenshotBounds = await fallback.boundingBox();
           assert.ok(screenshotBounds && screenshotBounds.x >= 0 && screenshotBounds.y >= 0 &&
