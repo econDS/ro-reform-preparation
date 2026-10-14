@@ -1,0 +1,73 @@
+'use strict';
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const crypto = require('node:crypto');
+module.exports = async ({browser, baseURL, check}) => {
+  const dir = path.resolve(__dirname,'../assets/ro-suite/2.0.0');
+  const original = fs.readFileSync(path.join(dir,'nav.js'));
+  const digest = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
+  const fallback = JSON.parse(fs.readFileSync(path.join(dir,'catalog.snapshot.json')));
+  const endpoint = 'https://econds.github.io/ro_tools_portal/catalog/v1/tools.json';
+  const tool = (id, title=id) => ({id,title,canonicalUrl:`https://econds.github.io/${id}/`,listingStatus:'listed',identity:{accent:'#2f7a4f',icon:'map'}});
+  const changed = {...fallback, tools:[tool('future-tool','Future Tool'), ...fallback.tools]};
+  await check('Unchanged child bundle discovers new tools and unknown identity, then rename/remove/reorder and 120-tool search', async () => {
+    const context = await browser.newContext({viewport:{width:390,height:844}});
+    const page = await context.newPage();
+    let requests = 0, catalog = changed;
+    await page.route(endpoint, route => {requests++; return route.fulfill({json:catalog});});
+    await page.route(url => url.href === baseURL, route => route.fulfill({contentType:'text/html',body:fs.readFileSync(path.resolve(__dirname,'../index.html'),'utf8').replace('tool-id="reform-workshop"','tool-id="future-tool"')}));
+    await page.goto(baseURL,{waitUntil:'networkidle'});
+    assert.equal(requests,1,'Automatic fetch happens while menu is closed');
+    const host = page.locator('ro-suite-nav');
+    await host.getByRole('button').click();
+    assert.equal(await host.locator('a[aria-current=page]').textContent(),'Future Tool');
+    assert.equal(await host.getByRole('link',{name:'Future Tool',exact:true}).getAttribute('href'),'https://econds.github.io/future-tool/');
+    catalog = {...fallback,tools:Array.from({length:120},(_,i)=>tool(`future-${i}`,`Future ${i}`))};
+    catalog.tools[119].title = 'Renamed final tool';
+    catalog.tools.reverse();
+    await page.reload({waitUntil:'networkidle'});
+    await host.getByRole('button').click();
+    assert.equal(await host.locator('#tools a').count(),120);
+    assert.equal(await host.locator('#tools a').first().textContent(),'Renamed final tool');
+    assert.equal(await host.getByRole('link',{name:'Future Tool',exact:true}).count(),0);
+    await host.locator('input[type=search]').fill('Renamed final');
+    assert.equal(await host.locator('#tools a:visible').count(),1);
+    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+    await page.keyboard.press('Escape');
+    assert.equal(await host.getByRole('button').getAttribute('aria-expanded'),'false');
+    assert.equal(digest(fs.readFileSync(path.join(dir,'nav.js'))),digest(original),'No child rebuild or bundle mutation');
+    await context.close();
+  });
+  const hostile = ['javascript:alert(1)','http://econds.github.io/new/','https://evil.example/new/','https://econds.github.io:443/new/','https://econds.github.io/new/?x=1','https://econds.github.io/new/#x','https://user@econds.github.io/new/','https://econds.github.io/old/../new/','https://econds.github.io/%6eew/'];
+  for (const url of hostile) await check(`Raw remote URL rejected: ${url}`,async()=>{
+    const candidate = {...fallback,tools:[{...tool('unsafe','UNSAFE'),canonicalUrl:url}]};
+    const context=await browser.newContext();const page=await context.newPage();
+    await page.route(endpoint,route=>route.fulfill({json:candidate}));
+    await page.goto(baseURL,{waitUntil:'networkidle'});
+    await page.locator('ro-suite-nav button').click();
+    assert.equal(await page.locator('ro-suite-nav #tools a').count(),5);
+    assert.equal(await page.getByRole('link',{name:'UNSAFE',exact:true}).count(),0);
+    await context.close();
+  });
+  for (const [name,body] of [['unsupported schema',JSON.stringify({...fallback,schemaVersion:999})],['duplicate IDs',JSON.stringify({...fallback,tools:[tool('same'),tool('same')]})],['oversize',' '.repeat(262145)],['malformed','{bad']]) await check(`Invalid ${name} retains fallback`,async()=>{
+    const context=await browser.newContext();const page=await context.newPage();
+    await page.route(endpoint,route=>route.fulfill({contentType:'application/json',body}));
+    await page.goto(baseURL,{waitUntil:'networkidle'});
+    await page.locator('ro-suite-nav button').click();
+    assert.equal(await page.locator('ro-suite-nav #tools a').count(),5);
+    await context.close();
+  });
+  await check('Timeout keeps immediate fallback and calculator working',async()=>{
+    const context=await browser.newContext();const page=await context.newPage();
+    await page.route(endpoint,async route=>{await new Promise(resolve=>setTimeout(resolve,2000)); await route.abort().catch(()=>{});});
+    await page.goto(baseURL,{waitUntil:'domcontentloaded'});
+    await page.locator('ro-suite-nav button').click();
+    assert.equal(await page.locator('ro-suite-nav #tools a').count(),5);
+    await page.waitForTimeout(1700);
+    assert.equal(await page.locator('ro-suite-nav #tools a').count(),5);
+    assert.ok(await page.locator('#quantity').isVisible());
+    await context.close();
+  });
+
+};
