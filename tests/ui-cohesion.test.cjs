@@ -16,7 +16,7 @@ const matches = (text, regex) => [...text.matchAll(regex)].map(match => match[0]
 test('reviewed cohesion deltas reverse live HTML and CSS to the immutable main hashes', () => {
   assert.equal(manifest.baseCommit, '00975def134eb9e0098f944e98b8286d8bc3bfdd');
   for (const [file, entry] of Object.entries(manifest.files)) {
-    assert.equal(hash(read(file)), entry.reviewedSha256, `reviewed live source: ${file}`);
+    assert.equal(hash(file === 'index.html' ? require('../qa/dynamic-nav/normalize.cjs')(read(file)) : read(file)), entry.reviewedSha256, `reviewed live source: ${file}`);
     assert.equal(hash(normalize(read(file), file)), entry.beforeSha256, `immutable baseline: ${file}`);
   }
 });
@@ -25,7 +25,7 @@ test('live light/dark palette, navigation integration and scripts are unchanged'
   assert.deepEqual(matches(css, /:root\s*\{[^}]*\}/g), matches(beforeCSS, /:root\s*\{[^}]*\}/g));
   for (const regex of [/<script\b[^>]*>[\s\S]*?<\/script>/g, /<ro-suite-nav\b[\s\S]*?<\/ro-suite-nav>/g,
     /<style>\s*ro-suite-nav[\s\S]*?<\/style>/g, /<link[^>]*host-theme\.css[^>]*>/g]) {
-    assert.deepEqual(matches(html, regex), matches(beforeHtml, regex));
+    assert.deepEqual(matches(require('../qa/dynamic-nav/normalize.cjs')(html), regex), matches(beforeHtml, regex));
   }
   const expected = require('./fixtures/ro-suite-nav-baseline.json').preservedSourceSha256;
   for (const file of ['app.js', 'calculator.js']) assert.equal(hash(read(file)), expected[file], file);

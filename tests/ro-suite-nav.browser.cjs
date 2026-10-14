@@ -10,6 +10,8 @@ const {execFileSync} = require('node:child_process');
 const root = path.resolve(__dirname, '..');
 const outputDir = path.resolve(process.env.RO_QA_OUTPUT || path.join(root, 'artifacts/ro-suite-nav'));
 const baseURL = process.env.RO_QA_URL || 'http://127.0.0.1:4173/ro-reform-preparation/';
+const catalogURL = 'https://econds.github.io/ro_tools_portal/catalog/v1/tools.json';
+const catalogBody = () => fs.readFileSync(path.join(root, 'assets/ro-suite/2.0.0/catalog.snapshot.json'), 'utf8');
 const portalURL = 'https://econds.github.io/ro_tools_portal/';
 const navScript = fs.readFileSync(path.join(root, 'index.html'), 'utf8').match(/<script type="module" src="([^"]+\/nav\.js)"/)[1];
 const navPath = new URL(navScript, baseURL).pathname;
@@ -218,15 +220,20 @@ async function main() {
   const baselineHTML = execFileSync('git', ['show', `${report.baseCommit}:index.html`], {cwd: root, encoding: 'utf8'});
   const {chromium} = require('playwright');
   report.playwrightVersion = require('playwright/package.json').version;
-  const browser = await chromium.launch();
+  const browser = await chromium.launch(process.env.RO_QA_BROWSER ? {executablePath:process.env.RO_QA_BROWSER} : {});
   report.browserVersion = browser.version();
+  const createContext = async options => {
+    const context = await browser.newContext(options);
+    await context.route(/^https:\/\/(?:fonts\.googleapis\.com|fonts\.gstatic\.com)\//, route => route.fulfill({status:200,contentType:'text/css',body:''}));
+    return context;
+  };
   try {
     for (const width of [360, 390, 768, 1440]) for (const colorScheme of ['light', 'dark']) {
       const label = `${width}-${colorScheme}`;
       const viewport = {width, height: width >= 768 ? 1000 : 844};
       const scenario = {label, viewport, colorScheme};
       report.scenarios.push(scenario);
-      const baselineContext = await browser.newContext({viewport, colorScheme});
+      const baselineContext = await createContext({viewport, colorScheme});
       const baselinePage = await baselineContext.newPage();
       const baselineEvents = observe(baselinePage);
       // The original HTML loads the same app assets and strictly reconstructed
@@ -245,8 +252,9 @@ async function main() {
       scenario.baselineErrors = baselineEvents;
       await baselineContext.close();
 
-      const context = await browser.newContext({viewport, colorScheme});
+      const context = await createContext({viewport, colorScheme});
       const page = await context.newPage();
+      await page.route(catalogURL, route => route.fulfill({status:200, contentType:'application/json', body:catalogBody()}));
       page.setDefaultTimeout(10000);
       const events = observe(page);
       try {
@@ -309,12 +317,16 @@ async function main() {
             scenario.openTextContrast = await textContrast(page);
             const links = nav.locator('#tools a');
             await page.keyboard.press('Tab');
+            assert.ok(await focused(nav.locator('input[type=search]')), 'Tab enters search');
+            await page.keyboard.press('Tab');
             assert.ok(await focused(links.first()), 'Tab enters the expanded tools');
             await page.keyboard.press('Escape');
             assert.equal(await toggle.getAttribute('aria-expanded'), 'false');
             assert.ok(await focused(toggle), 'Escape returns focus to the opener');
             await page.keyboard.press('Space');
             assert.equal(await toggle.getAttribute('aria-expanded'), 'true', 'Space opens the native button');
+            await page.keyboard.press('Tab');
+            assert.ok(await focused(nav.locator('input[type=search]')), 'Search remains keyboard reachable');
             for (const link of await links.all()) {
               await page.keyboard.press('Tab');
               assert.ok(await focused(link), 'Tool link is in ordinary Tab order');
@@ -364,7 +376,7 @@ async function main() {
         await context.close();
       }
 
-      const fallbackContext = await browser.newContext({viewport, colorScheme});
+      const fallbackContext = await createContext({viewport, colorScheme});
       const fallbackPage = await fallbackContext.newPage();
       fallbackPage.setDefaultTimeout(10000);
       const fallbackEvents = observe(fallbackPage);
@@ -411,8 +423,8 @@ async function main() {
         await fallbackContext.close();
       }
     }
-  await check('Optional catalog failure uses all bundled tools without changing application state', async () => {
-      const context = await browser.newContext();
+  await check('Automatic catalog failure uses all bundled tools without changing application state', async () => {
+      const context = await createContext();
       const page = await context.newPage();
       const catalogURL = 'https://econds.github.io/ro_tools_portal/catalog/v1/tools.json';
       let requests = 0;
@@ -420,7 +432,7 @@ async function main() {
       await page.goto(baseURL + query + '#calculator', {waitUntil:'networkidle'});
       await settled(page);
       const before = await page.evaluate(() => ({url:location.href, state:localStorage.getItem('reform-workshop.v1'), total:document.querySelector('#total').textContent}));
-      await page.locator('ro-suite-nav').evaluate((host,url) => host.setAttribute('catalog-url',url),catalogURL);
+      assert.equal(requests,1, 'Catalog fetch starts before opening the menu');
       await page.locator('ro-suite-nav button').click();
       await page.waitForTimeout(1700);
       assert.equal(requests,1);
@@ -429,6 +441,7 @@ async function main() {
       assert.deepEqual(await page.evaluate(() => ({url:location.href, state:localStorage.getItem('reform-workshop.v1'), total:document.querySelector('#total').textContent})), before);
       await context.close();
     });
+    await require('./dynamic-nav.browser.cjs')({browser:{newContext:createContext},baseURL,check});
   } finally { await browser.close(); }
 }
 

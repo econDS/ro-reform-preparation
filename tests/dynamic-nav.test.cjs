@@ -1,0 +1,30 @@
+'use strict';
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const crypto = require('node:crypto');
+const path = require('node:path');
+const root = path.resolve(__dirname, '..');
+const read = file => fs.readFileSync(path.join(root, file));
+const hash = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
+test('raw candidate installs one local v2 module and preserves stable identity and fallback', () => {
+  const html = read('index.html').toString();
+  assert.equal((html.match(/<ro-suite-nav\b/g) || []).length, 1);
+  assert.match(html, /<ro-suite-nav tool-id="reform-workshop"/);
+  assert.equal((html.match(/src="\.\/assets\/ro-suite\/2\.0\.0\/nav\.js"/g) || []).length, 1);
+  assert.doesNotMatch(html, /<ro-suite-nav[^>]*catalog-url=/);
+  assert.match(html, /<a href="https:\/\/econds\.github\.io\/ro_tools_portal\/">กลับ RO Tools Portal<\/a>/);
+  const normalize = require('../qa/dynamic-nav/normalize.cjs');
+  assert.throws(() => normalize(html.replace('2.0.0/nav.js','2.1.0/nav.js')));
+  assert.throws(() => normalize(html + './assets/ro-suite/2.0.0/nav.js'));
+});
+test('new immutable local bundle matches lock integrity and release contract', () => {
+  const dir = 'assets/ro-suite/2.0.0/';
+  const lock = JSON.parse(read(dir + 'nav.lock.json'));
+  assert.equal(lock.bundleVersion, '2.0.0');
+  assert.match(lock.sourceCommit, /^[a-f0-9]{40}$/);
+  for (const [file, data] of Object.entries(lock.files)) assert.equal(hash(read(dir + file)),data.sha256,file);
+  const js = read(dir + 'nav.js').toString();
+  assert.ok(js.includes('https://econds.github.io/ro_tools_portal/catalog/v1/tools.json'));
+  assert.doesNotMatch(js, /localStorage|sessionStorage|innerHTML/);
+});

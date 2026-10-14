@@ -29,5 +29,5 @@ test('nav 1.5.1 is the immutable Portal release with unchanged catalog and eight
   assert.doesNotMatch(css, /::part|::shadow|!important|\.bar|#tools|(?:max-width|min-height|padding)\s*:/);
   assert.match(css, /font-family: var\(--ro-suite-font-family\)/);
   assert.match(css, /outline: 2px solid var\(--ro-suite-focus\)/);
-  assert.match(read('index.html').toString(), /assets\/ro-suite\/1\.5\.1\/nav\.js/);
+  assert.match(require('../qa/dynamic-nav/normalize.cjs')(read('index.html').toString()), /assets\/ro-suite\/1\.5\.1\/nav\.js/);
 });

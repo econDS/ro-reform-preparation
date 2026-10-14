@@ -12,6 +12,7 @@ function normalize(source, file = 'index.html') {
   const entry = manifest.files[file];
   assert.ok(entry, `reviewed UI transition exists: ${file}`);
   let result = source.toString();
+  if (file === 'index.html') result = require('../dynamic-nav/normalize.cjs')(result);
   for (const [before, after] of [...entry.changes].reverse()) {
     assert.equal(result.split(after).length, 2, `${file}: exactly one reviewed UI delta`);
     result = result.replace(after, before);
