@@ -24,7 +24,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
-          node-version: '22.14.0'
+          node-version: '22.23.4'
       - name: Immutable before source and failure-safe evidence
         run: |
           mkdir -p qa-artifacts "$RUNNER_TEMP/first-run-base"
